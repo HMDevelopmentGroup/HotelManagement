@@ -1,6 +1,6 @@
 <%@ page language="java" pageEncoding="UTF-8"%>
-<!DOCTYPE jsp>
-<jsp>
+<!DOCTYPE html>
+<html>
 <head>
 	<meta charset="utf-8">
 	<title>layui后台管理模板</title>
@@ -67,10 +67,10 @@
 						<a href="javascript:;"><i class="iconfont icon-gonggao"></i><cite>系统公告</cite></a>
 					</li>
 			    	<li class="layui-nav-item" mobile>
-			    		<a href="javascript:;" class="mobileAddTab" data-url="page/user/changePwd.jsp"><i class="iconfont icon-shezhi1" data-icon="icon-shezhi1"></i><cite>设置</cite></a>
+			    		<a href="javascript:;" class="mobileAddTab" data-url="page/user/changePwd"><i class="iconfont icon-shezhi1" data-icon="icon-shezhi1"></i><cite>设置</cite></a>
 			    	</li>
 			    	<li class="layui-nav-item" mobile>
-			    		<a href="page/login/login.jsp" class="signOut"><i class="iconfont icon-loginout"></i> 退出</a>
+			    		<a href="page/login/login" class="signOut"><i class="iconfont icon-loginout"></i> 退出</a>
 			    	</li>
 					<li class="layui-nav-item lockcms" pc>
 						<a href="javascript:;"><i class="iconfont icon-lock1"></i><cite>锁屏</cite></a>
@@ -81,10 +81,10 @@
 							<cite>请叫我马哥</cite>
 						</a>
 						<dl class="layui-nav-child">
-							<dd><a href="javascript:;" data-url="page/user/userInfo.jsp"><i class="iconfont icon-zhanghu" data-icon="icon-zhanghu"></i><cite>个人资料</cite></a></dd>
-							<dd><a href="javascript:;" data-url="page/user/changePwd.jsp"><i class="iconfont icon-shezhi1" data-icon="icon-shezhi1"></i><cite>修改密码</cite></a></dd>
+							<dd><a href="javascript:;" data-url="page/user/userInfo"><i class="iconfont icon-zhanghu" data-icon="icon-zhanghu"></i><cite>个人资料</cite></a></dd>
+							<dd><a href="javascript:;" data-url="page/user/changePwd"><i class="iconfont icon-shezhi1" data-icon="icon-shezhi1"></i><cite>修改密码</cite></a></dd>
 							<dd><a href="javascript:;" class="changeSkin"><i class="iconfont icon-huanfu"></i><cite>更换皮肤</cite></a></dd>
-							<dd><a href="page/login/login.jsp" class="signOut"><i class="iconfont icon-loginout"></i><cite>退出</cite></a></dd>
+							<dd><a href="page/login/login" class="signOut"><i class="iconfont icon-loginout"></i><cite>退出</cite></a></dd>
 						</dl>
 					</li>
 				</ul>
@@ -116,7 +116,7 @@
 				</ul>
 				<div class="layui-tab-content clildFrame">
 					<div class="layui-tab-item layui-show">
-						<iframe src="page/main.jsp"></iframe>
+						<iframe src="page/main"></iframe>
 					</div>
 				</div>
 			</div>
@@ -135,4 +135,4 @@
 	<script type="text/javascript" src="${pageContext.request.contextPath}/js/leftNav.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/js/index.js"></script>
 </body>
-</jsp>
+</html>
