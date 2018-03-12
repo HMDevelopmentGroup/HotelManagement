@@ -7,8 +7,35 @@ public class User implements Serializable {
     private String username;
     private String password;
     private String realname;
+    private String sex;
     private String idCard;
-    private String integration;
+    private String telephone;
+    private Integer integration;
+    private Integer state;
+
+    public Integer getState() {
+        return state;
+    }
+
+    public void setState(Integer state) {
+        this.state = state;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public String getTelephone() {
+        return telephone;
+    }
+
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
+    }
 
     public String getUid() {
         return uid;
@@ -50,11 +77,11 @@ public class User implements Serializable {
         this.idCard = idCard;
     }
 
-    public String getIntegration() {
+    public Integer getIntegration() {
         return integration;
     }
 
-    public void setIntegration(String integration) {
+    public void setIntegration(Integer integration) {
         this.integration = integration;
     }
 }

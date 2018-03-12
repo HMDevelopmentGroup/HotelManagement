@@ -27,10 +27,12 @@
     </style>
 </head>
 <body class="childrenBody">
-<form class="layui-form" style="width:80%;" id="userInfo">
+<form class="layui-form" style="width:80%;" id="userInfo" action="${pageContext.request.contextPath}/user" method="post">
     <div class="layui-form-item">
         <label class="layui-form-label">用户名</label>
         <div class="layui-input-block">
+            <!-- RESTFul风格 -->
+            <input type="hidden" name="_method" value="POST" />
             <input type="text" name="username" lay-verify="required|username" class="layui-input userName"
                    placeholder="请输入用户名" autocomplete="off">
         </div>
@@ -83,7 +85,7 @@
     </div>
     <div class="layui-form-item">
         <div class="layui-input-block">
-            <button class="layui-btn" lay-submit="" lay-filter="addUser">立即提交</button>
+            <button class="layui-btn" lay-submit="" >立即提交</button>
             <button type="reset" class="layui-btn layui-btn-primary">重置</button>
         </div>
     </div>

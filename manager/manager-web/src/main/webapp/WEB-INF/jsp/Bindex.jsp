@@ -3,7 +3,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>layui后台管理模板</title>
+	<title>酒店后台管理</title>
 	<meta name="renderer" content="webkit">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta http-equiv="Access-Control-Allow-Origin" content="*">
@@ -21,26 +21,9 @@
 		<!-- 顶部 -->
 		<div class="layui-header header">
 			<div class="layui-main">
-				<a href="#" class="logo">layui后台管理</a>
+				<a href="#" class="logo">酒店后台管理</a>
 				<!-- 显示/隐藏菜单 -->
 				<a href="javascript:;" class="iconfont hideMenu icon-menu1"></a>
-				<!-- 搜索 -->
-				<div class="layui-form component">
-			        <select name="modules" lay-verify="required" lay-search="">
-						<option value="">直接选择或搜索选择</option>
-						<option value="1">layer</option>
-						<option value="2">form</option>
-						<option value="3">layim</option>
-						<option value="4">element</option>
-						<option value="5">laytpl</option>
-						<option value="6">upload</option>
-						<option value="7">laydate</option>
-						<option value="8">laypage</option>
-						<option value="9">flow</option>
-						<option value="10">util</option>
-			        </select>
-			        <i class="layui-icon">&#xe615;</i>
-			    </div>
 			    <!-- 天气信息 -->
 			    <div class="weather" pc>
 			    	<div id="tp-weather-widget"></div>
@@ -77,11 +60,10 @@
 					</li>
 					<li class="layui-nav-item" pc>
 						<a href="javascript:;">
-							<img src="${pageContext.request.contextPath}/images/face.jpg" class="layui-circle" width="35" height="35">
-							<cite>请叫我马哥</cite>
+							<img src="${pageContext.request.contextPath}/images/userface3.jpg" class="layui-circle" width="35" height="35">
+							<cite>${admin.adminName}admin.adminName</cite>
 						</a>
 						<dl class="layui-nav-child">
-							<dd><a href="javascript:;" data-url="page/user/userInfo"><i class="iconfont icon-zhanghu" data-icon="icon-zhanghu"></i><cite>个人资料</cite></a></dd>
 							<dd><a href="javascript:;" data-url="page/user/changePwd"><i class="iconfont icon-shezhi1" data-icon="icon-shezhi1"></i><cite>修改密码</cite></a></dd>
 							<dd><a href="javascript:;" class="changeSkin"><i class="iconfont icon-huanfu"></i><cite>更换皮肤</cite></a></dd>
 							<dd><a href="page/login/login" class="signOut"><i class="iconfont icon-loginout"></i><cite>退出</cite></a></dd>
@@ -93,8 +75,7 @@
 		<!-- 左侧导航 -->
 		<div class="layui-side layui-bg-black">
 			<div class="user-photo">
-				<a class="img" title="我的头像" ><img src="${pageContext.request.contextPath}/images/face.jpg"></a>
-				<p>你好！<span class="userName">请叫我马哥</span>, 欢迎登录</p>
+				<p>你好！<span class="userName">${admin.adminName}</span>, 欢迎登录</p>
 			</div>
 			<div class="navBar layui-side-scroll"></div>
 		</div>
@@ -123,7 +104,7 @@
 		</div>
 		<!-- 底部 -->
 		<div class="layui-footer footer">
-			<p>copyright @2017 legna　　<a onclick="donation()" class="layui-btn layui-btn-danger layui-btn-small">捐赠作者</a></p>
+			<p>copyright @2017 legna@酒店后台管理　　</p>
 		</div>
 	</div>
 	
