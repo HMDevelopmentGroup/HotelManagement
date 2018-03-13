@@ -108,7 +108,7 @@
                     laypage.render({
                         elem: 'page'
                         , count: Number(data)
-                        , limits: [10, 20, 30, 40, 50]
+                        , limit: 10
                         , jump: function(obj){
                             page=obj.curr;
                             turnPage(page);
