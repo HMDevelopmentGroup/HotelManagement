@@ -27,13 +27,7 @@
         <a class="layui-btn search_btn" onclick="queryUser()">查询</a>
     </div>
     <div class="layui-inline">
-        <a class="layui-btn layui-btn-normal usersAdd_btn" href="${pageContext.request.contextPath}/page/user/addUser">添加用户</a>
-    </div>
-    <div class="layui-inline">
         <a class="layui-btn layui-btn-danger batchDel">批量删除</a>
-    </div>
-    <div class="layui-inline">
-        <div class="layui-form-mid layui-word-aux">　本页面刷新后除新添加的文章外所有操作无效，关闭页面所有数据重置</div>
     </div>
 </blockquote>
 
