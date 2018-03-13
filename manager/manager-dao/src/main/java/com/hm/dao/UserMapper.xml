@@ -6,7 +6,7 @@
     </sql>
 
 
-    <insert id="insertUser" parameterType="com.hm.pojo.User">
+    <insert id="insertUser" parameterType="com.hm.pojo.po.User">
         INSERT INTO
         user(uid, username, password, realname ,sex ,idCard,telephone,integration,state)
         VALUES
@@ -22,31 +22,57 @@
     </insert>
 
 
-    <select id="selectUserByUid"   parameterType="java.lang.String"  resultType="com.hm.pojo.User">
+    <select id="selectUserByUid"   parameterType="java.lang.String"  resultType="com.hm.pojo.po.User">
         select
         <include refid="Base_Column_List" />
         from user
         where uid = #{uid,jdbcType=VARCHAR}
     </select>
 
-    <select id="selectUserList"     resultType="com.hm.pojo.User">
+    <select id="selectUserList"     resultType="com.hm.pojo.po.User">
         select
         <include refid="Base_Column_List" />
         from user
         WHERE
-        state = 1;
+        state = 1
+    </select>
+
+    <select id="userNums"     resultType="_int">
+        select
+        COUNT(uid)
+        from user
+        WHERE
+        state = 1
+    </select>
+
+    <select id="selectUserByUsername"   parameterType="java.lang.String"  resultType="com.hm.pojo.po.User">
+        select
+        <include refid="Base_Column_List" />
+        from user
+        where username = #{username,jdbcType=VARCHAR}
+    </select>
+
+
+    <select id="listByPage"   parameterType="com.hm.pojo.dto.Page"  resultType="com.hm.pojo.po.User">
+        select
+        <include refid="Base_Column_List" />
+        from user
+        WHERE
+        state = 1
+        limit
+        #{offset},#{limit}
     </select>
 
     <update id="removeUser" parameterType="java.lang.String">
         UPDATE user
         SET
-        state = 2;
+        state = 2
         WHERE uid = #{uid,jdbcType=VARCHAR}
     </update>
 
 
 
-    <update id="updateUser" parameterType="com.hm.pojo.User">
+    <update id="updateUser" parameterType="com.hm.pojo.po.User">
         update user
         <set>
             <if test="username != null">

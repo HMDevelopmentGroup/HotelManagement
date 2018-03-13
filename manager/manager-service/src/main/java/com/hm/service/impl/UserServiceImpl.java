@@ -1,7 +1,8 @@
 package com.hm.service.impl;
 
 import com.hm.dao.UserMapper;
-import com.hm.pojo.User;
+import com.hm.pojo.dto.Page;
+import com.hm.pojo.po.User;
 import com.hm.service.IUserService;
 import com.hm.utils.IdUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,7 @@ public class UserServiceImpl implements IUserService {
         String uid = IdUtils.getUUID();
         user.setUid(uid);
         user.setIntegration(0);
-        user.setState(0);
+        user.setState(1);
         return dao.insertUser(user);
     }
 
@@ -45,5 +46,20 @@ public class UserServiceImpl implements IUserService {
     @Override
     public List<User> listUsers() {
         return dao.selectUserList();
+    }
+
+    @Override
+    public User findUserByUsername(String username){
+        return dao.selectUserByUsername(username);
+    }
+
+    @Override
+    public List<User> listByPage(Page page) {
+        return dao.listByPage(page);
+    }
+
+    @Override
+    public int userNums(){
+        return dao.userNums();
     }
 }

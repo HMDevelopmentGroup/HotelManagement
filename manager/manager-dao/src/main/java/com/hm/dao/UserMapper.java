@@ -1,6 +1,7 @@
 package com.hm.dao;
 
-import com.hm.pojo.User;
+import com.hm.pojo.dto.Page;
+import com.hm.pojo.po.User;
 
 import java.util.List;
 
@@ -15,4 +16,10 @@ public interface UserMapper {
     User selectUserByUid(String uid);
 
     List<User> selectUserList();
+
+    User selectUserByUsername(String username);
+
+    List<User> listByPage(Page page);
+
+    int userNums();
 }
