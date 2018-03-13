@@ -5,10 +5,12 @@ import com.hm.pojo.dto.Page;
 import com.hm.pojo.po.User;
 import com.hm.service.IUserService;
 import com.hm.utils.IdUtils;
+import com.hm.utils.NumberUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 @Service
 public class UserServiceImpl implements IUserService {
@@ -61,5 +63,22 @@ public class UserServiceImpl implements IUserService {
     @Override
     public int userNums(){
         return dao.userNums();
+    }
+
+    @Override
+    public List<User> queryUser(String queryInfo) {
+        List<User> users = new ArrayList<>();
+        if (NumberUtil.isNumber(queryInfo)){
+            List<User> users1 = dao.selectUserByTelephone(queryInfo);
+            List<User> users2 = dao.selectUserByidCard(queryInfo);
+            users.addAll(users1);
+            users.addAll(users2);
+        }else {
+            List<User> users1 = dao.selectUserByVagueUsername(queryInfo);
+            List<User> users2 = dao.selectUserByRealname(queryInfo);
+            users.addAll(users1);
+            users.addAll(users2);
+        }
+        return  users;
     }
 }

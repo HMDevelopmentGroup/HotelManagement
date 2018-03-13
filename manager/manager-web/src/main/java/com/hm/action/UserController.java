@@ -4,8 +4,10 @@ import com.hm.pojo.dto.MessageResult;
 import com.hm.pojo.dto.Page;
 import com.hm.pojo.po.User;
 import com.hm.service.IUserService;
+import com.hm.utils.NumberUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -43,6 +45,18 @@ public class UserController {
     public int getUserNums(){
         int nums = service.userNums();
         return nums;
+    }
+
+    @RequestMapping(value = "/queryUser/{queryInfo}",method = RequestMethod.GET)
+    @ResponseBody
+    public MessageResult queryUser(@PathVariable("queryInfo") String queryInfo){
+        MessageResult mr = new MessageResult();
+        List<User> users = service.queryUser(queryInfo);
+        mr.setCode(0);
+        mr.setMsg("success");
+        mr.setCount(users.size());
+        mr.setData(users);
+        return mr;
     }
 
     @RequestMapping(value = "/users",method = RequestMethod.GET)

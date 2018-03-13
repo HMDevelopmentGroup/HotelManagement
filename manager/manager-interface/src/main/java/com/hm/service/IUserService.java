@@ -12,7 +12,8 @@ public interface IUserService {
     User findUser(String uid);
     User findUserByUsername(String username);
     List<User> listUsers();
-    User findUserByUsername(String username);
     List<User> listByPage(Page page);
     int userNums();
+
+    List<User> queryUser(String queryInfo);
 }

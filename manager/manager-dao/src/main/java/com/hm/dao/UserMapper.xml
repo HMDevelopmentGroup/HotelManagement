@@ -22,22 +22,22 @@
     </insert>
 
 
-    <select id="selectUserByUid"   parameterType="java.lang.String"  resultType="com.hm.pojo.po.User">
+    <select id="selectUserByUid" parameterType="java.lang.String" resultType="com.hm.pojo.po.User">
         select
-        <include refid="Base_Column_List" />
+        <include refid="Base_Column_List"/>
         from user
         where uid = #{uid,jdbcType=VARCHAR}
     </select>
 
-    <select id="selectUserList"     resultType="com.hm.pojo.po.User">
+    <select id="selectUserList" resultType="com.hm.pojo.po.User">
         select
-        <include refid="Base_Column_List" />
+        <include refid="Base_Column_List"/>
         from user
         WHERE
         state = 1
     </select>
 
-    <select id="userNums"     resultType="_int">
+    <select id="userNums" resultType="_int">
         select
         COUNT(uid)
         from user
@@ -45,17 +45,55 @@
         state = 1
     </select>
 
-    <select id="selectUserByUsername"   parameterType="java.lang.String"  resultType="com.hm.pojo.po.User">
+    <select id="selectUserByUsername" parameterType="java.lang.String" resultType="com.hm.pojo.po.User">
         select
-        <include refid="Base_Column_List" />
+        <include refid="Base_Column_List"/>
         from user
         where username = #{username,jdbcType=VARCHAR}
     </select>
 
 
-    <select id="listByPage"   parameterType="com.hm.pojo.dto.Page"  resultType="com.hm.pojo.po.User">
+    <select id="selectUserByTelephone" parameterType="java.lang.String" resultType="com.hm.pojo.po.User">
         select
-        <include refid="Base_Column_List" />
+        <include refid="Base_Column_List"/>
+        from user
+        where telephone LIKE '%${telephone}%'
+        AND
+        state = 1
+    </select>
+
+    <select id="selectUserByidCard" parameterType="java.lang.String" resultType="com.hm.pojo.po.User">
+        select
+        <include refid="Base_Column_List"/>
+        from user
+        where idCard LIKE '%${idCard}%'
+        AND
+        state = 1
+    </select>
+
+
+    <select id="selectUserByVagueUsername" parameterType="java.lang.String" resultType="com.hm.pojo.po.User">
+        select
+        <include refid="Base_Column_List"/>
+        from user
+        where username LIKE '%${username}%'
+        AND
+        state = 1
+    </select>
+
+    <select id="selectUserByRealname" parameterType="java.lang.String" resultType="com.hm.pojo.po.User">
+        select
+        <include refid="Base_Column_List"/>
+        from user
+        where realname LIKE '%${realname}%'
+        AND
+        state = 1
+    </select>
+
+
+    <select id="listByPage" parameterType="com.hm.pojo.dto.Page" resultType="com.hm.pojo.po.User">
+        select
+        <include refid="Base_Column_List"/>
         from user
         WHERE
         state = 1
@@ -69,7 +107,6 @@
         state = 2
         WHERE uid = #{uid,jdbcType=VARCHAR}
     </update>
-
 
 
     <update id="updateUser" parameterType="com.hm.pojo.po.User">

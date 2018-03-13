@@ -22,12 +22,12 @@
 <blockquote class="layui-elem-quote news_search">
     <div class="layui-inline">
         <div class="layui-input-inline">
-            <input type="text" value="" placeholder="请输入关键字" class="layui-input search_input">
+            <input type="text" value="" id="queryInfo" placeholder="请输入关键字" class="layui-input search_input">
         </div>
-        <a class="layui-btn search_btn">查询</a>
+        <a class="layui-btn search_btn" onclick="queryUser()">查询</a>
     </div>
     <div class="layui-inline">
-        <a class="layui-btn layui-btn-normal usersAdd_btn">添加用户</a>
+        <a class="layui-btn layui-btn-normal usersAdd_btn" href="${pageContext.request.contextPath}/page/user/addUser">添加用户</a>
     </div>
     <div class="layui-inline">
         <a class="layui-btn layui-btn-danger batchDel">批量删除</a>
@@ -120,7 +120,33 @@
         });
 
     });
-
+    function queryUser() {
+        var queryInfo = $("#queryInfo").val();
+        layui.use(['table','laypage'], function () {
+            var table = layui.table,
+                laypage = layui.laypage;
+            table.render({
+                elem: '#userList'
+                , url: '${pageContext.request.contextPath}/queryUser/'+queryInfo
+                , page : false
+                , cols: [[ //表头
+                    {type: 'checkbox'}
+                    , {field: 'uid', title: 'ID', width: 400, sort: true}
+                    , {field: 'username', title: '用户名', width: 120}
+                    , {field: 'realname', title: '真实姓名', width: 120}
+                    , {field: 'sex', title: '性别', width: 100, sort: true}
+                    , {field: 'idCard', title: '身份证号', width: 190}
+                    , {field: 'telephone', title: '电话', width: 130}
+                    , {field: 'integration', title: '积分', width: 120, sort: true}
+                    , {field: 'operate', title: '操作', width: 80, toolbar: '#operateTpl', unresize: true}
+                ]]
+            });
+            laypage.render({
+                elem: 'page'
+                , count: 0
+            });
+        });
+    }
 </script>
 </body>
 </html>
