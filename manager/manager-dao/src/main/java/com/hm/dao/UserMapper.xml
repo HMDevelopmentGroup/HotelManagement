@@ -29,6 +29,14 @@
         where uid = #{uid,jdbcType=VARCHAR}
     </select>
 
+    <select id="selectUserByUsername"   parameterType="java.lang.String"  resultType="com.hm.pojo.User">
+        select
+        <include refid="Base_Column_List" />
+        from user
+        where username = #{username,jdbcType=VARCHAR}
+    </select>
+
+
     <select id="selectUserList"     resultType="com.hm.pojo.User">
         select
         <include refid="Base_Column_List" />

@@ -46,4 +46,9 @@ public class UserServiceImpl implements IUserService {
     public List<User> listUsers() {
         return dao.selectUserList();
     }
+
+    @Override
+    public User findUserByUsername(String username){
+        return dao.selectUserByUsername(username);
+    }
 }

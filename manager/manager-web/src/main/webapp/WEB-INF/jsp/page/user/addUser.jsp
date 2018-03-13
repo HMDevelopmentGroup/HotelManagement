@@ -33,7 +33,7 @@
         <div class="layui-input-block">
             <!-- RESTFul风格 -->
             <input type="hidden" name="_method" value="POST" />
-            <input type="text" name="username" lay-verify="required|username" class="layui-input userName"
+            <input type="text" name="username" id="username" lay-verify="required|username" class="layui-input userName"
                    placeholder="请输入用户名" autocomplete="off">
         </div>
     </div>
@@ -90,8 +90,10 @@
         </div>
     </div>
 </form>
+
 <script type="text/javascript" src="${pageContext.request.contextPath}/layui/layui.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/addUser.js"></script>
+
 
 <script type="text/javascript">
     window.onload=function(){
@@ -109,6 +111,20 @@
                     if (/^\d+\d+\d$/.test(value)) {
                         return '用户名不能全为数字';
                     }
+                    var msg = '';
+                    $.ajax({
+                        url: "${pageContext.request.contextPath}/checkUsername",
+                        type: "post",
+                        async: false,
+                        data: {
+                            username:$('#username').val()
+                        },
+                        dataType: "html",
+                        success: function (data) {
+                            msg = data;
+                        }
+                    });
+                    if(msg==1){return "用户名已存在，请重新输入！";}
                 }
 
                 //我们既支持上述函数式的方式，也支持下述数组的形式
@@ -124,7 +140,7 @@
                     }
                 }
             });
-        })
+        });
     }
 
 
