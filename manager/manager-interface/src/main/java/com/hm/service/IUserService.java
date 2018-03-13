@@ -10,6 +10,7 @@ public interface IUserService {
     int deleteUser(String uid);
     int alterUser(User user);
     User findUser(String uid);
+    User findUserByUsername(String username);
     List<User> listUsers();
     User findUserByUsername(String username);
     List<User> listByPage(Page page);
