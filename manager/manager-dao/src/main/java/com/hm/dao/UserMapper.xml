@@ -115,21 +115,15 @@
             <if test="username != null">
                 username = #{username,jdbcType=VARCHAR},
             </if>
-            <if test="realname != null">
-                realname = #{realname,jdbcType=VARCHAR},
-            </if>
+
             <if test="sex != null">
                 sex = #{sex,jdbcType=VARCHAR},
             </if>
-            <if test="idCard != null">
-                idCard = #{idCard,jdbcType=VARCHAR},
-            </if>
+
             <if test="telephone != null">
                 telephone = #{telephone,jdbcType=VARCHAR},
             </if>
-            <if test="integration != null">
-                integration = #{integration,jdbcType=INTEGER},
-            </if>
+
         </set>
         where uid = #{uid,jdbcType=INTEGER}
     </update>

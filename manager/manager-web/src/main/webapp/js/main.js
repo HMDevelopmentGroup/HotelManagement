@@ -34,26 +34,33 @@ layui.config({
 		}
 	)
 
-	//图片总数
-	$.get("../json/images.json",
+	//空房
+	$.get("../userNums",
 		function(data){
-			$(".imgAll span").text(data.length);
+			$(".eptRooms span").text(data);
 		}
 	)
 
 	//用户数
-	$.get("../json/usersList.json",
+	$.get("../userNums",
 		function(data){
-			$(".userAll span").text(data.length);
+			$(".userAll span").text(data);
 		}
 	)
 
-	//新消息
-	$.get("../json/message.json",
+	//预订数
+	$.get("../userNums",
 		function(data){
-			$(".newMessage span").text(data.length);
+			$(".netOrder span").text(data);
 		}
 	)
+
+    //待清理
+    $.get("../userNums",
+        function(data){
+            $(".unclear span").text(data);
+        }
+    )
 
 
 	//数字格式化
