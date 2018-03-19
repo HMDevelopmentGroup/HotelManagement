@@ -11,11 +11,11 @@ public class Room implements Serializable {
 
     private Integer cateid;
 
-    private Integer statue;
+    private String statue;
 
     private static final long serialVersionUID = 1L;
 
-    public Room(Integer rid, Integer hid, String rname, Integer cateid, Integer statue) {
+    public Room(Integer rid, Integer hid, String rname, Integer cateid, String statue) {
         this.rid = rid;
         this.hid = hid;
         this.rname = rname;
@@ -59,11 +59,11 @@ public class Room implements Serializable {
         this.cateid = cateid;
     }
 
-    public Integer getStatue() {
+    public String getStatue() {
         return statue;
     }
 
-    public void setStatue(Integer statue) {
-        this.statue = statue;
+    public void setStatue(String statue) {
+        this.statue = statue == null ? null : statue.trim();
     }
 }

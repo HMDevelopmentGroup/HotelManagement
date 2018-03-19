@@ -369,52 +369,62 @@ public class RoomExample implements Serializable {
             return (Criteria) this;
         }
 
-        public Criteria andStatueEqualTo(Integer value) {
+        public Criteria andStatueEqualTo(String value) {
             addCriterion("statue =", value, "statue");
             return (Criteria) this;
         }
 
-        public Criteria andStatueNotEqualTo(Integer value) {
+        public Criteria andStatueNotEqualTo(String value) {
             addCriterion("statue <>", value, "statue");
             return (Criteria) this;
         }
 
-        public Criteria andStatueGreaterThan(Integer value) {
+        public Criteria andStatueGreaterThan(String value) {
             addCriterion("statue >", value, "statue");
             return (Criteria) this;
         }
 
-        public Criteria andStatueGreaterThanOrEqualTo(Integer value) {
+        public Criteria andStatueGreaterThanOrEqualTo(String value) {
             addCriterion("statue >=", value, "statue");
             return (Criteria) this;
         }
 
-        public Criteria andStatueLessThan(Integer value) {
+        public Criteria andStatueLessThan(String value) {
             addCriterion("statue <", value, "statue");
             return (Criteria) this;
         }
 
-        public Criteria andStatueLessThanOrEqualTo(Integer value) {
+        public Criteria andStatueLessThanOrEqualTo(String value) {
             addCriterion("statue <=", value, "statue");
             return (Criteria) this;
         }
 
-        public Criteria andStatueIn(List<Integer> values) {
+        public Criteria andStatueLike(String value) {
+            addCriterion("statue like", value, "statue");
+            return (Criteria) this;
+        }
+
+        public Criteria andStatueNotLike(String value) {
+            addCriterion("statue not like", value, "statue");
+            return (Criteria) this;
+        }
+
+        public Criteria andStatueIn(List<String> values) {
             addCriterion("statue in", values, "statue");
             return (Criteria) this;
         }
 
-        public Criteria andStatueNotIn(List<Integer> values) {
+        public Criteria andStatueNotIn(List<String> values) {
             addCriterion("statue not in", values, "statue");
             return (Criteria) this;
         }
 
-        public Criteria andStatueBetween(Integer value1, Integer value2) {
+        public Criteria andStatueBetween(String value1, String value2) {
             addCriterion("statue between", value1, value2, "statue");
             return (Criteria) this;
         }
 
-        public Criteria andStatueNotBetween(Integer value1, Integer value2) {
+        public Criteria andStatueNotBetween(String value1, String value2) {
             addCriterion("statue not between", value1, value2, "statue");
             return (Criteria) this;
         }

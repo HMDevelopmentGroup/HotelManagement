@@ -7,7 +7,7 @@
       <arg column="hid" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="rname" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="cateid" jdbcType="INTEGER" javaType="java.lang.Integer" />
-      <arg column="statue" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="statue" jdbcType="VARCHAR" javaType="java.lang.String" />
     </constructor>
   </resultMap>
   <sql id="Example_Where_Clause" >
@@ -106,7 +106,7 @@
     insert into room (rid, hid, rname, 
       cateid, statue)
     values (#{rid,jdbcType=INTEGER}, #{hid,jdbcType=INTEGER}, #{rname,jdbcType=VARCHAR}, 
-      #{cateid,jdbcType=INTEGER}, #{statue,jdbcType=INTEGER})
+      #{cateid,jdbcType=INTEGER}, #{statue,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.hm.pojo.po.Room" >
     insert into room
@@ -141,7 +141,7 @@
         #{cateid,jdbcType=INTEGER},
       </if>
       <if test="statue != null" >
-        #{statue,jdbcType=INTEGER},
+        #{statue,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -167,7 +167,7 @@
         cateid = #{record.cateid,jdbcType=INTEGER},
       </if>
       <if test="record.statue != null" >
-        statue = #{record.statue,jdbcType=INTEGER},
+        statue = #{record.statue,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -180,7 +180,7 @@
       hid = #{record.hid,jdbcType=INTEGER},
       rname = #{record.rname,jdbcType=VARCHAR},
       cateid = #{record.cateid,jdbcType=INTEGER},
-      statue = #{record.statue,jdbcType=INTEGER}
+      statue = #{record.statue,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -198,7 +198,7 @@
         cateid = #{cateid,jdbcType=INTEGER},
       </if>
       <if test="statue != null" >
-        statue = #{statue,jdbcType=INTEGER},
+        statue = #{statue,jdbcType=VARCHAR},
       </if>
     </set>
     where rid = #{rid,jdbcType=INTEGER}
@@ -208,7 +208,7 @@
     set hid = #{hid,jdbcType=INTEGER},
       rname = #{rname,jdbcType=VARCHAR},
       cateid = #{cateid,jdbcType=INTEGER},
-      statue = #{statue,jdbcType=INTEGER}
+      statue = #{statue,jdbcType=VARCHAR}
     where rid = #{rid,jdbcType=INTEGER}
   </update>
 </mapper>
