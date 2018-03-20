@@ -57,6 +57,10 @@
 	"href" : "page/room/listrooms",
 	"spread" : false
 },{
+	"title" : "订单查询",
+	"href" : "page/order/orderList",
+	"spread" : false
+},{
 	"title" : "客户需求（暂未开放）",
 	"href" : "#",
 	"spread" : false

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hm.dao.OrderCustomMapper" >
+
+    <sql id="Base_Column_List">
+        c.oid,o.ordertime,o.price,c.rid,c.status,c.offer,c.offerid,c.start,c.end,c.days
+    </sql>
+    <sql id="Where_Clause">
+        <where>
+            <if test="query != null and query.oid != null and query.oid != '' ">
+                and c.oid like '%${query.oid}%'
+            </if>
+            <if test="query != null and query.offer != null and query.offer != '' ">
+                and c.offer like '%${query.offer}%'
+            </if>
+            <if test="query != null and query.offerid != null and query.offerid != '' ">
+                and c.offerid like '%${query.offerid}%'
+            </if>
+            <if test="query != null and query.start != null and query.start != ''">
+                AND c.start <![CDATA[>=]]> #{query.start}
+            </if>
+            <if test="query != null and query.end != null and query.end != ''">
+                AND c.end <![CDATA[<=]]>#{query.end}
+            </if>
+            <if test="query != null and query.status != null and query.status != '' ">
+                and c.status=#{query.status}
+            </if>
+        </where>
+    </sql>
+    <select id="selectByPage" resultType="com.hm.pojo.vo.OrderCustom">
+       SELECT
+        <include refid="Base_Column_List"/>
+       FROM  checkinfo c  LEFT JOIN orders AS o ON c.oid = o.oid
+       <include refid="Where_Clause"/>
+        LIMIT #{page.offset},#{page.limit}
+    </select>
+    <select id="countOrders" resultType="_long">
+        select count(1)
+        from checkinfo c
+        <include refid="Where_Clause"/>
+    </select>
+</mapper>

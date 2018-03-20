@@ -20,15 +20,12 @@ public class CheckOutController {
 
 
     @RequestMapping(value = "page/checkout/checkout.do/{rid}")
-    public String checkOutRoom(@PathVariable(value = "rid") String rid) {
+    public String checkOutRoom(@PathVariable(value = "rid") Integer rid) {
         Room room=service.selectByRid(rid);
         CheckInfo checkInfo=new CheckInfo();
         checkInfo.setCid(room.getStatue());
         checkInfo.setStatus(5);
-
         service.checkOutRoom(rid);
-
-
         checkinfoService.updateCheckinfoRoom(checkInfo);
         return "redirect:/page/checkout/checkout";
     }

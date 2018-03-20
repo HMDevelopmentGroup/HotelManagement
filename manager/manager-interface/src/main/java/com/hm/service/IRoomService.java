@@ -14,7 +14,7 @@ public interface IRoomService {
 
     List<RoomCustom> checkout();
 
-    int checkOutRoom(String rid);
+    int checkOutRoom(Integer rid);
 
-    Room selectByRid(String rid);
+    Room selectByRid(Integer rid);
 }

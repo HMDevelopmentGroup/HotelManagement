@@ -51,15 +51,15 @@ public class RoomServiceImpl implements IRoomService {
         return rooms;
     }
     @Override
-    public int checkOutRoom(String rid) {
+    public int checkOutRoom(Integer rid) {
         Room room=new Room();
-        room.setRid(Integer.parseInt(rid));
+        room.setRid(rid);
         room.setStatue("3");
         return dao.updateByPrimaryKeySelective(room);
     }
 
     @Override
-    public Room selectByRid(String rid) {
-        return dao.selectByPrimaryKey(Integer.parseInt(rid));
+    public Room selectByRid(Integer rid) {
+        return dao.selectByPrimaryKey(rid);
     }
 }
