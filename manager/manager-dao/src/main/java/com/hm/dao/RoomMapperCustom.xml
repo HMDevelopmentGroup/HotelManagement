@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hm.dao.RoomMapperCustom" >
+
+  <sql id="Base_Column_List" >
+   r.`rid` ,r.`hid`,r.`rname`,r.`cateid`,r.`statue`, c.`offer` offer
+  </sql>
+
+  <select id="selectRooms" resultType="com.hm.pojo.po.RoomCustom"  >
+    select
+    <include refid="Base_Column_List" />
+    FROM room r LEFT JOIN
+    checkinfo c
+    ON
+    r.`statue`=c.`cid`
+  </select>
+
+  <select id="selectByPrimaryKey" resultType="com.hm.pojo.po.RoomCustom" parameterType="java.lang.Integer" >
+    select
+    <include refid="Base_Column_List" />
+    from room r LEFT JOIN
+    checkinfo c
+    ON
+    r.`statue`=c.`cid`
+    where r.`rid` = #{rid,jdbcType=INTEGER}
+  </select>
+
+</mapper>

@@ -31,7 +31,7 @@
 		},
 		{
 			"title" : "退房",
-			"href" : "page/checkin/checkout",
+			"href" : "page/checkout/checkout",
 			"spread" : false
 		}
 	]
@@ -55,10 +55,6 @@
 },{
 	"title" : "房间信息",
 	"href" : "page/room/listrooms",
-	"spread" : false
-},{
-	"title" : "订单查询",
-	"href" : "page/order/listOrders",
 	"spread" : false
 },{
 	"title" : "客户需求（暂未开放）",
