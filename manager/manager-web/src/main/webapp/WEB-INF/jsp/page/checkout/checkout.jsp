@@ -326,11 +326,11 @@
 </body>
 <script type="text/javascript" src="${pageContext.request.contextPath}/layui/layui.all.js"></script>
 <script>
-    function clearRoom(rid) {
+    function checkout(rid) {
         layui.use('layer', function () {
             var layer = layui.layer;
             layer.confirm("确认要退房吗？",function () {
-                location.href="${pageContext.request.contextPath}/checkout/checkout.do/"+rid;
+                location.href="${pageContext.request.contextPath}/page/checkout/checkout.do/"+rid;
             })
         });
     }

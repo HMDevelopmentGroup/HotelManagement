@@ -28,6 +28,7 @@ public class RoomServiceImpl implements IRoomService {
 
     @Override
     public int refreshStatus(String rightNow) {
+
         return 0;
     }
 
@@ -48,5 +49,17 @@ public class RoomServiceImpl implements IRoomService {
             rooms.add(room);
         }
         return rooms;
+    }
+    @Override
+    public int checkOutRoom(String rid) {
+        Room room=new Room();
+        room.setRid(Integer.parseInt(rid));
+        room.setStatue("3");
+        return dao.updateByPrimaryKeySelective(room);
+    }
+
+    @Override
+    public Room selectByRid(String rid) {
+        return dao.selectByPrimaryKey(Integer.parseInt(rid));
     }
 }

@@ -14,6 +14,5 @@ public interface IUserService {
     List<User> listUsers();
     List<User> listByPage(Page page);
     int userNums();
-
     List<User> queryUser(String queryInfo);
 }

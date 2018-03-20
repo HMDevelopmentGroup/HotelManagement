@@ -44,7 +44,7 @@ public class RoomController {
     public String refreshStatus() {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         String rightNow = sdf.format(new Date()).toString();
-        service.refreshStatus(rightNow);//todo
+        service.refreshStatus(rightNow);
         return "page/checkin/checkin";
     }
 }

@@ -13,4 +13,8 @@ public interface IRoomService {
     List<RoomCustom> getRooms();
 
     List<RoomCustom> checkout();
+
+    int checkOutRoom(String rid);
+
+    Room selectByRid(String rid);
 }
