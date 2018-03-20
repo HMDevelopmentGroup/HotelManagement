@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/manager/manager-interface/manager-interface.iml" filepath="$PROJECT_DIR$/manager/manager-interface/manager-interface.iml" />
       <module fileurl="file://$PROJECT_DIR$/manager/manager-pojo/manager-pojo.iml" filepath="$PROJECT_DIR$/manager/manager-pojo/manager-pojo.iml" />
       <module fileurl="file://$PROJECT_DIR$/manager/manager-service/manager-service.iml" filepath="$PROJECT_DIR$/manager/manager-service/manager-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/manager/manager-task/manager-task.iml" filepath="$PROJECT_DIR$/manager/manager-task/manager-task.iml" />
       <module fileurl="file://$PROJECT_DIR$/manager/manager-web/manager-web.iml" filepath="$PROJECT_DIR$/manager/manager-web/manager-web.iml" />
       <module fileurl="file://$PROJECT_DIR$/parent/parent.iml" filepath="$PROJECT_DIR$/parent/parent.iml" />
     </modules>

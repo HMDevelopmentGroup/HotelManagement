@@ -8,7 +8,6 @@ import java.util.List;
 public interface IRoomService {
     List<Room> getEmptyRoom();
 
-    int refreshStatus(String rightNow);
 
     List<RoomCustom> getRooms();
 
@@ -16,5 +15,13 @@ public interface IRoomService {
 
     int checkOutRoom(Integer rid);
 
+    int updateRooms(Room room);
+
     Room selectByRid(Integer rid);
+
+    int emptyRooms();
+
+    int dirtyRooms();
+
+    int checkOutRooms();
 }

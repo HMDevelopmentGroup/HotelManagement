@@ -26,11 +26,6 @@ public class RoomServiceImpl implements IRoomService {
         return dao.selectByExample(example);
     }
 
-    @Override
-    public int refreshStatus(String rightNow) {
-
-        return 0;
-    }
 
     @Override
     public List<RoomCustom> getRooms() {
@@ -61,5 +56,36 @@ public class RoomServiceImpl implements IRoomService {
     @Override
     public Room selectByRid(Integer rid) {
         return dao.selectByPrimaryKey(rid);
+    }
+
+    @Override
+    public int emptyRooms() {
+        RoomExample example = new RoomExample();
+        RoomExample.Criteria criteria = example.createCriteria();
+        criteria.andStatueEqualTo("0");
+        return dao.countByExample(example);
+    }
+
+    @Override
+    public int dirtyRooms() {
+        RoomExample example = new RoomExample();
+        RoomExample.Criteria criteria = example.createCriteria();
+        criteria.andStatueEqualTo("3");
+        return dao.countByExample(example);
+    }
+
+    @Override
+    public int checkOutRooms() {
+        CheckInfoExample example = new CheckInfoExample();
+        CheckInfoExample.Criteria criteria = example.createCriteria();
+        criteria.andStatusEqualTo(4);
+        List<CheckInfo> checkInfos = checkInfoDao.selectByExample(example);
+        int num = checkInfos.size();
+        return num;
+    }
+
+    @Override
+    public int updateRooms(Room room) {
+        return dao.updateByPrimaryKeySelective(room);
     }
 }

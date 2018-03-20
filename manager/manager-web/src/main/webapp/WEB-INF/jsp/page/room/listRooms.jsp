@@ -418,7 +418,7 @@
         layui.use('layer', function () {
             var layer = layui.layer;
             layer.confirm("确认清理房间了吗？",function () {
-                location.href="${pageContext.request.contextPath}/room/clearRoom/"+rid;
+                location.href="${pageContext.request.contextPath}/page/room/clearRoom/"+rid;
             })
         });
     }

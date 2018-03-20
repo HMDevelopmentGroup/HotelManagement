@@ -34,8 +34,19 @@ layui.config({
 		}
 	)
 
+    //刷新房间状态
+    $.get("../refreshStatus",
+		function () {
+            $.get("../checkoutNums",
+                function(data){
+                    $(".checkout span").text(data);
+                }
+            )
+        }
+	)
+
 	//空房
-	$.get("../userNums",
+	$.get("../emptyRooms",
 		function(data){
 			$(".eptRooms span").text(data);
 		}
@@ -49,18 +60,24 @@ layui.config({
 	)
 
 	//预订数
-	$.get("../userNums",
-		function(data){
-			$(".netOrder span").text(data);
-		}
-	)
+    $.get("#",
+        function(data){
+    		data = 0;
+            $(".netOrder span").text(data);
+        }
+    )
+
+    //退房
+
 
     //待清理
-    $.get("../userNums",
+    $.get("../dirtyRooms",
         function(data){
             $(".unclear span").text(data);
         }
     )
+
+
 
 
 	//数字格式化

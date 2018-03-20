@@ -11,6 +11,7 @@
         <module name="manager-interface" />
         <module name="manager-pojo" />
         <module name="manager-service" />
+        <module name="manager-task" />
         <module name="manager-web" />
       </profile>
     </annotationProcessing>
@@ -21,6 +22,7 @@
       <module name="manager-interface" target="1.8" />
       <module name="manager-pojo" target="1.8" />
       <module name="manager-service" target="1.8" />
+      <module name="manager-task" target="1.8" />
       <module name="manager-web" target="1.8" />
       <module name="parent" target="1.8" />
     </bytecodeTargetLevel>

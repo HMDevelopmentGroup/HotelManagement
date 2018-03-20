@@ -27,7 +27,7 @@
 			</a>
 		</div>
 		<div class="panel col">
-			<a href="javascript:;" data-url="page/room/emptyRooms">
+			<a href="javascript:;" data-url="">
 				<div class="panel_icon" style="background-color:#5FB878;">
 					<i class="layui-icon" data-icon="&#xe622;">&#xe622;</i>
 				</div>
@@ -49,7 +49,7 @@
 			</a>
 		</div>
 		<div class="panel col">
-			<a href="javascript:;" data-url="page/room/bookedRoom">
+			<a href="javascript:;" data-url="">
 				<div class="panel_icon" style="background-color:#5FB878;">
 					<i class="layui-icon" data-icon="&#xe612;">&#xe612;</i>
 				</div>
@@ -60,17 +60,18 @@
 			</a>
 		</div>
 		<div class="panel col">
-			<a href="javascript:;" data-url="page/room/checkOut">
+			<a href="javascript:;" data-url="page/checkout/checkout">
 				<div class="panel_icon" style="background-color:#F7B824;">
 					<i class="iconfont icon-wenben" data-icon="icon-wenben"></i>
 				</div>
-				<div class="panel_word">
-					<span>退房</span>
+				<div class="panel_word checkout">
+					<span></span>
+					<cite>退房</cite>
 				</div>
 			</a>
 		</div>
         <div class="panel col">
-            <a href="javascript:;" data-url="page/room/unclear">
+            <a href="javascript:;" data-url="page/room/listrooms">
                 <div class="panel_icon" style="background-color:#5FB878;">
                     <i class="layui-icon" data-icon="&#xe62e;">&#xe62e;</i>
                 </div>

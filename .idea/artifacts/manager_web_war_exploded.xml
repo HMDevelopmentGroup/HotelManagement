@@ -19,6 +19,9 @@
           <element id="archive" name="manager-interface-1.0-SNAPSHOT.jar">
             <element id="module-output" name="manager-interface" />
           </element>
+          <element id="archive" name="manager-task-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="manager-task" />
+          </element>
           <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
           <element id="library" level="project" name="Maven: org.springframework:spring-core:4.3.8.RELEASE" />
           <element id="library" level="project" name="Maven: commons-logging:commons-logging:1.2" />
