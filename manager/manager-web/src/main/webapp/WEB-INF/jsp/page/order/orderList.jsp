@@ -30,60 +30,64 @@
 
 </blockquote>
 <div class="weadmin-block demoTable">
-    <div class="layui-form" id="searchItem">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        订单号:
-        <div class="layui-input-inline">
-            <input type="text" value="" id="oid" placeholder="请输入关键字" class="layui-input search_input">
-        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        客户名称:
-        <div class="layui-input-inline">
-            <input type="text" value="" id="offer" placeholder="请输入关键字" class="layui-input search_input">
-        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        客户身份证:
-        <div class="layui-input-inline">
-            <input type="text" value="" id="offerid" placeholder="请输入关键字" class="layui-input search_input">
-        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        入住时间:
-        <div class="layui-input-inline">
-            <input type="date" value="" id="start" placeholder="请输入关键字" class="layui-input search_input">
+    <div class="layui-form" id="searchItem">
+        <div class="layui-inline">
+            <label class="layui-form-label">订单号:</label>
+            <div class="layui-input-inline">
+                <input type="text" value="" id="oid" placeholder="请输入关键字" class="layui-input search_input">
+            </div>
+        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="layui-inline">
+            <label>客户名称:</label>
+            <div class="layui-input-inline">
+                <input type="text" value="" id="offer" placeholder="请输入关键字" class="layui-input search_input">
+            </div>
+        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="layui-inline">
+            <label>客户身份证:</label>
+            <div class="layui-input-inline">
+                <input type="text" value="" id="offerid" placeholder="请输入关键字" class="layui-input search_input">
+            </div>
+        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="layui-inline">
+            <label>入住时间:</label>
+            <div class="layui-input-inline">
+                <input type="date" value="" id="start" placeholder="请输入关键字" class="layui-input search_input">
+            </div>
         </div>
         <br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        退房时间:
-        <div class="layui-input-inline">
-            <input type="date" value="" id="end" placeholder="请输入关键字" class="layui-input search_input">
-        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        订单状态:
-        <div class="layui-input-inline">
-            <select id="status">
-                <option value="">-------</option>
-                <option value="1">待付款</option>
-                <option value="2">待入住</option>
-                <option value="3">入住</option>
-                <option value="4">待退房</option>
-                <option value="5">已退房</option>
-            </select>
-        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <button class="layui-btn" lay-submit="" lay-filter="search" data-type="reload"><i class="layui-icon">&#xe615;</i></button>
+        <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="layui-inline">
+            <label>退房时间:</label>
+            <div class="layui-input-inline">
+                <input type="date" value="" id="end" placeholder="请输入关键字" class="layui-input search_input">
+            </div>
+        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="layui-inline">
+            <label>订单状态:</label>
+            <div class="layui-input-inline">
+                <select id="status" lay-filter="aihao">
+                    <option value="">---请选择---</option>
+                    <option value="1">待付款</option>
+                    <option value="2">待入住</option>
+                    <option value="3">入住</option>
+                    <option value="4">待退房</option>
+                    <option value="5">已退房</option>
+                </select>
+            </div>
+        </div>
+        <button class="layui-btn" lay-submit="" lay-filter="search" data-type="reload"><i
+                class="layui-icon">&#xe615;</i></button>
     </div>
 </div>
-
 
 <div class="layui-form oeders_list">
     <table class="layui-hide" id="orderList" lay-filter="test"></table>
 </div>
-<div id="page"></div>
-
 
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.8.3.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/layui/layui.all.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/orderList.js"></script>
-<script type="text/html" id="operateTpl">
-    <a class="" lay-event="edit" title="编辑"><i class="layui-icon">&#xe642;</i></a>
-
-    <a class="" lay-event="del" title="删除"><i class="layui-icon">&#x1006;</i></a>
-</script>
-
 
 </body>
 </html>
