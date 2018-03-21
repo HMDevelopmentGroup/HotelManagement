@@ -10,8 +10,8 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="format-detection" content="telephone=no">
-	<link rel="stylesheet" href="../../layui/css/layui.css" media="all" />
-	<link rel="stylesheet" href="../../css/login.css" media="all" />
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/layui/css/layui.css" media="all" />
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/login.css" media="all" />
 </head>
 <body>
 	<video class="video-player" preload="auto" autoplay="autoplay" loop="loop" data-height="1080" data-width="1920" height="1080" width="1920">
@@ -35,7 +35,7 @@
 			<button class="layui-btn login_btn" lay-submit="" lay-filter="login">登录</button>
 		</form>
 	</div>
-	<script type="text/javascript" src="../../layui/layui.js"></script>
-	<script type="text/javascript" src="../../../../js/login.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/layui/layui.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/js/login.js"></script>
 </body>
 </html>

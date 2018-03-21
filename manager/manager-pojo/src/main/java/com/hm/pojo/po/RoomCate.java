@@ -9,15 +9,15 @@ public class RoomCate implements Serializable {
 
     private Double price;
 
-    private Integer limit;
+    private Integer numlimit;
 
     private static final long serialVersionUID = 1L;
 
-    public RoomCate(Integer cid, String cname, Double price, Integer limit) {
+    public RoomCate(Integer cid, String cname, Double price, Integer numlimit) {
         this.cid = cid;
         this.cname = cname;
         this.price = price;
-        this.limit = limit;
+        this.numlimit = numlimit;
     }
 
     public RoomCate() {
@@ -48,11 +48,11 @@ public class RoomCate implements Serializable {
         this.price = price;
     }
 
-    public Integer getLimit() {
-        return limit;
+    public Integer getNumlimit() {
+        return numlimit;
     }
 
-    public void setLimit(Integer limit) {
-        this.limit = limit;
+    public void setNumlimit(Integer numlimit) {
+        this.numlimit = numlimit;
     }
 }

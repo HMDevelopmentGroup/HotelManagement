@@ -77,38 +77,38 @@
     </if>
     'true' as QUERYID,
     <include refid="Base_Column_List" />
-    from order
+    from orders
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
     <if test="orderByClause != null" >
-      order by ${orderByClause}
+      orders by ${orderByClause}
     </if>
   </select>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
     select 
     <include refid="Base_Column_List" />
-    from order
+    from orders
     where oid = #{oid,jdbcType=VARCHAR}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
-    delete from order
+    delete from orders
     where oid = #{oid,jdbcType=VARCHAR}
   </delete>
   <delete id="deleteByExample" parameterType="com.hm.pojo.po.OrderExample" >
-    delete from order
+    delete from orders
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
   <insert id="insert" parameterType="com.hm.pojo.po.Order" >
-    insert into order (oid, ordertime, price, 
+    insert into orders (oid, ordertime, price,
       status)
     values (#{oid,jdbcType=VARCHAR}, #{ordertime,jdbcType=VARCHAR}, #{price,jdbcType=DOUBLE}, 
       #{status,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.hm.pojo.po.Order" >
-    insert into order
+    insert into orders
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="oid != null" >
         oid,
@@ -139,13 +139,13 @@
     </trim>
   </insert>
   <select id="countByExample" parameterType="com.hm.pojo.po.OrderExample" resultType="java.lang.Integer" >
-    select count(*) from order
+    select count(*) from orders
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map" >
-    update order
+    update orders
     <set >
       <if test="record.oid != null" >
         oid = #{record.oid,jdbcType=VARCHAR},
@@ -165,7 +165,7 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map" >
-    update order
+    update orders
     set oid = #{record.oid,jdbcType=VARCHAR},
       ordertime = #{record.ordertime,jdbcType=VARCHAR},
       price = #{record.price,jdbcType=DOUBLE},
@@ -175,7 +175,7 @@
     </if>
   </update>
   <update id="updateByPrimaryKeySelective" parameterType="com.hm.pojo.po.Order" >
-    update order
+    update orders
     <set >
       <if test="ordertime != null" >
         ordertime = #{ordertime,jdbcType=VARCHAR},
@@ -190,7 +190,7 @@
     where oid = #{oid,jdbcType=VARCHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.hm.pojo.po.Order" >
-    update order
+    update orders
     set ordertime = #{ordertime,jdbcType=VARCHAR},
       price = #{price,jdbcType=DOUBLE},
       status = #{status,jdbcType=VARCHAR}

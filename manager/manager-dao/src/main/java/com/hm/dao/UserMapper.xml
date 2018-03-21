@@ -5,6 +5,12 @@
         uid, username, password, realname ,sex ,idCard,telephone,integration,state
     </sql>
 
+    <select id="selectByTelephone" parameterType="String" resultType="com.hm.pojo.po.User">
+        select
+        <include refid="Base_Column_List"></include>
+        FROM user WHERE telephone=#{telephone}
+    </select>
+
 
     <insert id="insertUser" parameterType="com.hm.pojo.po.User">
         INSERT INTO

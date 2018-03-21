@@ -273,7 +273,7 @@
 </style>
 <body>
 <c:forEach items="${rooms}" var="room">
-    <c:if test="${room.statue == 0}">
+    <c:if test="${room.statue eq '0'}">
     <div id="fj_new01">
         <div id="ps">
             <div class='ps_txt_div'>
@@ -318,7 +318,7 @@
         </div>
     </div>
     </c:if>
-    <c:if test="${room.statue != 0 && room.statue != 3}">
+    <c:if test="${!(room.statue  eq '0') && !(room.statue  eq '3')  }">
         <div id="fj_new02">
             <div id="ps">
                 <div class='ps_txt_div'>
@@ -363,7 +363,7 @@
             </div>
         </div>
     </c:if>
-    <c:if test="${room.statue == 3}">
+    <c:if test="${room.statue  eq '3'}">
         <div id="fj_new03">
             <div id="ps">
                 <div class='ps_txt_div'>

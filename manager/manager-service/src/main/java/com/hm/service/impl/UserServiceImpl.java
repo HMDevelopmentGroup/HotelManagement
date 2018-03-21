@@ -81,4 +81,9 @@ public class UserServiceImpl implements IUserService {
         }
         return  users;
     }
+
+    @Override
+    public User findUserByTelephone(String telephone) {
+        return dao.selectByTelephone(telephone);
+    }
 }

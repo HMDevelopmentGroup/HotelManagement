@@ -10,4 +10,7 @@ import java.util.List;
 public interface RoomMapperCustom {
    List<RoomCustom> selectRooms();
    RoomCustom selectByPrimaryKey(Integer rid);
+   int updateRooms(Room room);
+
+   void updateStatus(Room room);
 }

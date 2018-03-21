@@ -1,6 +1,7 @@
 package com.hm.service.impl;
 
 import com.hm.dao.CheckInfoMapper;
+import com.hm.dao.CheckInfoMapperCustom;
 import com.hm.pojo.po.CheckInfo;
 import com.hm.pojo.po.CheckInfoExample;
 import com.hm.service.ICheckInfoService;
@@ -16,10 +17,17 @@ import java.util.List;
 public class CheckInfoServiceImpl implements ICheckInfoService {
     @Autowired
     private CheckInfoMapper dao;
+    @Autowired
+    private CheckInfoMapperCustom checkInfoCustomMapper;
 
     @Override
     public int updateCheckinfoRoom(CheckInfo checkInfo) {
         return dao.updateByPrimaryKeySelective(checkInfo);
+    }
+
+    @Override
+    public void confirmPay(String cid) {
+        checkInfoCustomMapper.confirmPay(cid);
     }
 
     @Override
@@ -42,5 +50,10 @@ public class CheckInfoServiceImpl implements ICheckInfoService {
         } catch (ParseException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public void addCheckInfo(CheckInfo checkInfo) {
+        dao.insertSelective(checkInfo);
     }
 }

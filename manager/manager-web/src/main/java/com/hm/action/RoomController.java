@@ -2,6 +2,7 @@ package com.hm.action;
 
 import com.hm.pojo.po.Room;
 import com.hm.pojo.po.RoomCustom;
+import com.hm.service.ICheckInfoService;
 import com.hm.service.IRoomService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,6 +20,8 @@ import java.util.List;
 public class RoomController {
     @Autowired
     private IRoomService service;
+    @Autowired
+    private ICheckInfoService checkinfoService;
 
     @RequestMapping(value = "page/checkin/checkin", method = RequestMethod.GET)
     public String getEmptyRoom(HttpServletRequest request) {
@@ -30,6 +33,7 @@ public class RoomController {
 
     @RequestMapping(value = "page/checkout/checkout", method = RequestMethod.GET)
     public String checkout(HttpServletRequest request) {
+        checkinfoService.refreshRoomStatus();
         List<RoomCustom> rooms = service.checkout();
         request.setAttribute("rooms",rooms);
         return "page/checkout/checkout";

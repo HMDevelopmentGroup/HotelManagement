@@ -10,6 +10,7 @@
 <html>
 <head>
     <title>办理入住</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/layui/css/layui.css" media="all"/>
 </head>
 <style type="text/css">
 
@@ -276,7 +277,8 @@
     <div id="fj_new01">
         <div id="ps">
             <div class='ps_txt_div'>
-                <a href='' class='ps_txt'>
+                <a href='JavaScript:void (0)' onclick="confirm2(${room.rid})" class='ps_txt'>
+                    <span style="display: none;" id="${romm.rid}">${room.rid}</span>
                         ${room.rname}<br>
                 <span style='font-size:12px;color:#666666;'>
                     <c:if test="${room.cateid==1}">
@@ -313,10 +315,27 @@
             </div>
         </div>
         <div id="wz">
-            <a href='' class='wz_txt'>空房</a>
+            <a href='JavaScript:void (0)' onclick="confirm2(${room.rid})" class='wz_txt'>空房</a>
         </div>
     </div>
 </c:forEach>
+<script type="text/javascript" src="${pageContext.request.contextPath}/layui/layui.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/layui/layui.all.js"></script>
+<script type="text/javascript">
+    function confirm2(rid) {
+        layer.confirm("是否是会员",{btn:["是","否"]},
+           function (){
+                location.href="${pageContext.request.contextPath}/membercheckinfopage/"+rid;
+            },
+            function () {
+                location.href="${pageContext.request.contextPath}/checkinfopage/"+rid;
+            }
+        );
 
+
+
+
+    }
+</script>
 </body>
 </html>

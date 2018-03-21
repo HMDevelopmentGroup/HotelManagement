@@ -39,4 +39,8 @@
         from checkinfo c
         <include refid="Where_Clause"/>
     </select>
+
+    <update id="updateStatus" parameterType="Map">
+        update orders set status=#{status} WHERE oid=#{oid}
+    </update>
 </mapper>

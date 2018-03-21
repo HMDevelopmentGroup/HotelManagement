@@ -18,6 +18,23 @@ public class RoomServiceImpl implements IRoomService {
     private CheckInfoMapper checkInfoDao;
     @Autowired
     private RoomMapperCustom customDao;
+
+    @Override
+    public Room findRoom(Integer rid) {
+        Room room = dao.selectByPrimaryKey(rid);
+        return room;
+    }
+
+    @Override
+    public void alterRoon(Room room) {
+        dao.updateByPrimaryKey(room);
+    }
+
+    @Override
+    public void confirmPay(Room room) {
+        customDao.updateStatus(room);
+    }
+
     @Override
     public List<Room> getEmptyRoom() {
         RoomExample example = new RoomExample();

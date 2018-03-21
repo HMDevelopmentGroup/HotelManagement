@@ -299,63 +299,63 @@ public class RoomCateExample implements Serializable {
             return (Criteria) this;
         }
 
-        public Criteria andLimitIsNull() {
-            addCriterion("limit is null");
+        public Criteria andNumlimitIsNull() {
+            addCriterion("numlimit is null");
             return (Criteria) this;
         }
 
-        public Criteria andLimitIsNotNull() {
-            addCriterion("limit is not null");
+        public Criteria andNumlimitIsNotNull() {
+            addCriterion("numlimit is not null");
             return (Criteria) this;
         }
 
-        public Criteria andLimitEqualTo(Integer value) {
-            addCriterion("limit =", value, "limit");
+        public Criteria andNumlimitEqualTo(Integer value) {
+            addCriterion("numlimit =", value, "numlimit");
             return (Criteria) this;
         }
 
-        public Criteria andLimitNotEqualTo(Integer value) {
-            addCriterion("limit <>", value, "limit");
+        public Criteria andNumlimitNotEqualTo(Integer value) {
+            addCriterion("numlimit <>", value, "numlimit");
             return (Criteria) this;
         }
 
-        public Criteria andLimitGreaterThan(Integer value) {
-            addCriterion("limit >", value, "limit");
+        public Criteria andNumlimitGreaterThan(Integer value) {
+            addCriterion("numlimit >", value, "numlimit");
             return (Criteria) this;
         }
 
-        public Criteria andLimitGreaterThanOrEqualTo(Integer value) {
-            addCriterion("limit >=", value, "limit");
+        public Criteria andNumlimitGreaterThanOrEqualTo(Integer value) {
+            addCriterion("numlimit >=", value, "numlimit");
             return (Criteria) this;
         }
 
-        public Criteria andLimitLessThan(Integer value) {
-            addCriterion("limit <", value, "limit");
+        public Criteria andNumlimitLessThan(Integer value) {
+            addCriterion("numlimit <", value, "numlimit");
             return (Criteria) this;
         }
 
-        public Criteria andLimitLessThanOrEqualTo(Integer value) {
-            addCriterion("limit <=", value, "limit");
+        public Criteria andNumlimitLessThanOrEqualTo(Integer value) {
+            addCriterion("numlimit <=", value, "numlimit");
             return (Criteria) this;
         }
 
-        public Criteria andLimitIn(List<Integer> values) {
-            addCriterion("limit in", values, "limit");
+        public Criteria andNumlimitIn(List<Integer> values) {
+            addCriterion("numlimit in", values, "numlimit");
             return (Criteria) this;
         }
 
-        public Criteria andLimitNotIn(List<Integer> values) {
-            addCriterion("limit not in", values, "limit");
+        public Criteria andNumlimitNotIn(List<Integer> values) {
+            addCriterion("numlimit not in", values, "numlimit");
             return (Criteria) this;
         }
 
-        public Criteria andLimitBetween(Integer value1, Integer value2) {
-            addCriterion("limit between", value1, value2, "limit");
+        public Criteria andNumlimitBetween(Integer value1, Integer value2) {
+            addCriterion("numlimit between", value1, value2, "numlimit");
             return (Criteria) this;
         }
 
-        public Criteria andLimitNotBetween(Integer value1, Integer value2) {
-            addCriterion("limit not between", value1, value2, "limit");
+        public Criteria andNumlimitNotBetween(Integer value1, Integer value2) {
+            addCriterion("numlimit not between", value1, value2, "numlimit");
             return (Criteria) this;
         }
     }

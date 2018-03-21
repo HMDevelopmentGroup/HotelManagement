@@ -15,4 +15,5 @@ public interface IUserService {
     List<User> listByPage(Page page);
     int userNums();
     List<User> queryUser(String queryInfo);
+    User findUserByTelephone(String telephone);
 }

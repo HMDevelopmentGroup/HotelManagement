@@ -24,4 +24,10 @@ public interface IRoomService {
     int dirtyRooms();
 
     int checkOutRooms();
+
+    Room findRoom(Integer rid);
+
+    void alterRoon(Room room);
+
+    void confirmPay(Room room);
 }

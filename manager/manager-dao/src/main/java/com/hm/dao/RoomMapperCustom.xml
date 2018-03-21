@@ -25,4 +25,19 @@
     where r.`rid` = #{rid,jdbcType=INTEGER}
   </select>
 
+  <select id="updateRooms" parameterType="com.hm.pojo.po.Room" >
+    UPDATE
+    room
+    SET
+    statue= 0
+    WHERE rid = #{rid,jdbcType=INTEGER}
+  </select>
+
+
+  <update id="updateStatus" parameterType="com.hm.pojo.po.Room">
+    UPDATE room SET
+    statue=#{statue,jdbcType=VARCHAR}
+    WHERE rid=#{rid};
+  </update>
+
 </mapper>
