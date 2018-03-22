@@ -13,6 +13,11 @@
         <module name="manager-service" />
         <module name="manager-task" />
         <module name="manager-web" />
+        <module name="portal-dao" />
+        <module name="portal-interface" />
+        <module name="portal-pojo" />
+        <module name="portal-service" />
+        <module name="portal-web" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -25,6 +30,12 @@
       <module name="manager-task" target="1.8" />
       <module name="manager-web" target="1.8" />
       <module name="parent" target="1.8" />
+      <module name="portal" target="1.8" />
+      <module name="portal-dao" target="1.8" />
+      <module name="portal-interface" target="1.8" />
+      <module name="portal-pojo" target="1.8" />
+      <module name="portal-service" target="1.8" />
+      <module name="portal-web" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -1,0 +1,20 @@
+﻿.date_con .week { margin: 0 19px; height: 45px;line-height: 45px;border-bottom:1px solid #d4d4d4; font-size: 0;}
+.date_con .week li { display: inline-block;width: 14.28%; font-size: 14px;text-align: center; color: #979797; }
+.month_change {position: relative;padding-top: 15px;height: 45px;line-height: 45px;background: #fff; text-align: center;}
+.month_change a { position: absolute; top: 50%;margin-top: -8px; font-size:35px;line-height:35px;color:#90704d;}
+.month_change a.prev {left: 20px;}
+.month_change a.next {right: 20px; }
+.month_change h3 {font-size:20px; text-align: center;color: #535353;}
+.month_change h3 span{font-family:Arial;}
+.date_list {margin: 0 19px; padding-top:10px;padding-bottom: 10px;border-bottom: 1px solid #d4d4d4;background: #fff;font-size: 0;}
+ .date_list a {position: relative; float: left;margin-bottom: 5px;width: 14.28%;height: 40px;color: #535353; font-family: "arial";font-size: 15px;text-align: center;cursor: pointer; }
+.date_list a em { line-height: 40px;background-image:url("") !important}
+.date_list a.disabled {color: #d4d4d4;cursor: default;}
+.date_list a.cur {padding-top: 3px; height: 37px;background: #C0191F; color: #fff; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
+.date_list a.cur em { line-height: 20px; }
+.date_list a.mid {background: #fff5f6;color: #C0191F; }
+.date_list a.cur span { position: absolute;bottom: 4px; left: 0;width: 100%; text-align: center;line-height: 14px;font-size: 10px;font-family: 'Microsoft YaHei';}
+.no_signtxt .date_list a.cur{padding-top:0;height:40px;}
+.no_signtxt .date_list a.cur em{line-height:40px;}
+.date_box_choose { -webkit-overflow-scrolling: touch;position: fixed;overflow-y: auto;top: 0; bottom: 0;width: 100%; height: 100%;z-index: 998;  left: 200%; background-color: #fff;}
+.time_tipsH {position: fixed;top: 50%; left: 50%;z-index: 999;margin: -22.5px 0 0 -125px;width: 250px;height: 45px;line-height: 40px;text-align: center;font-size: 14px;color: #fff;background: rgba(0,0,0,0.8);border-radius: 8px; -webkit-border-radius: 8px; -moz-border-radius: 8px;}

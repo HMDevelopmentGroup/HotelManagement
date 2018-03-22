@@ -11,6 +11,12 @@
       <module fileurl="file://$PROJECT_DIR$/manager/manager-task/manager-task.iml" filepath="$PROJECT_DIR$/manager/manager-task/manager-task.iml" />
       <module fileurl="file://$PROJECT_DIR$/manager/manager-web/manager-web.iml" filepath="$PROJECT_DIR$/manager/manager-web/manager-web.iml" />
       <module fileurl="file://$PROJECT_DIR$/parent/parent.iml" filepath="$PROJECT_DIR$/parent/parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/portal/portal.iml" filepath="$PROJECT_DIR$/portal/portal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/portal/portal-dao/portal-dao.iml" filepath="$PROJECT_DIR$/portal/portal-dao/portal-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/portal/portal-interface/portal-interface.iml" filepath="$PROJECT_DIR$/portal/portal-interface/portal-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/portal/portal-pojo/portal-pojo.iml" filepath="$PROJECT_DIR$/portal/portal-pojo/portal-pojo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/portal/portal-service/portal-service.iml" filepath="$PROJECT_DIR$/portal/portal-service/portal-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/portal/portal-web/portal-web.iml" filepath="$PROJECT_DIR$/portal/portal-web/portal-web.iml" />
     </modules>
   </component>
 </project>

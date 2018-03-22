@@ -1,0 +1,109 @@
+﻿@charset "utf-8";
+.clearfix:after {
+    display: block;
+    content: ".";
+    height: 0;
+    visibility: hidden;
+    clear: both;
+    font-size: 0;
+    line-height: 0
+}
+
+.clearfix {
+    *zoom:1}
+/*公用头部*/
+.h5_header{position:relative;width:100%;height: 45px;background: #C0191F;}
+.h5_header .h5_header_back{position: absolute;left:17px;top:8px;width:30px;height: 30px;line-height:30px;font-size: 15px;color: #fff;}
+.h5_header .icon_hkl { position: absolute; right: 4.3%; top: 14px; font-size: 20px; color: #fff; }
+.h5_header .h5_header_title { width: 70%; margin: 0 auto; line-height: 45px; font-size: 18px; color: #fff; text-align: center; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+/*按钮hover、focus变色*/
+.btn_total{-webkit-tap-highlight-color:transparent;-webkit-user-select:none;}
+.btn_total.focus, .btn_total.hover{background: #CD474C !important;color: #ffffff !important;}
+.image_h5{ 
+    background-image:url(../images/public_img.png);
+    background-image:url()\9;
+    background-repeat:no-repeat;
+    display:inline-block;
+    width:321px;
+    height:230px;
+    background-size:100% 100%;
+    -webkit-background-size:100% 100%;
+    -moz-background-size:100% 100%;
+    -o-background-size:100% 100%;	
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+    src='http://images.homeinns.com/image/webH5/public_img.png',
+    sizingMethod='scale')!important
+}
+.image_h5_ie{ 
+    background-image:url();
+    background-repeat:no-repeat;
+    display:inline-block;
+    width:321;
+    height:230px;
+    background-size:100% 100%;
+    -webkit-background-size:100% 100%;
+    -moz-background-size:100% 100%;
+    -o-background-size:100% 100%;	
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+    src='http://images.homeinns.com/image/webH5/public_img.png',
+    sizingMethod='scale')!important
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .image_h5_ie{ 
+            background-image:url(../images/public_img.png);
+            background-image:url()\9;
+            background-repeat:no-repeat;
+            display:inline-block;
+            width:321px;
+            height:230px;
+            background-size:100% 100%;
+            -webkit-background-size:100% 100%;
+            -moz-background-size:100% 100%;
+            -o-background-size:100% 100%;	
+            filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+            src='http://images.homeinns.com/image/webH5/public_img.png',
+            sizingMethod='scale')
+        }
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .image_h5_ie{position:static !important}
+}
+/*loading_gif*/
+#h5_mask{
+    display:none;
+}
+.loading_h5{
+    width:125px;
+    height:125px;
+    background-image:url('../images/h5_loading.gif') ;      
+    background-size:100% 100%;
+    position:fixed;
+    top:50%;
+    left:50%;
+    margin-left:-63px;
+    margin-top:-63px;
+    z-index: 999999999999999!important; 
+    -webkit-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+			src='http://images.homeinns.com/image/webH5/h5_loading.gif',
+			sizingMethod='scale')!important;
+    background-image: url()\9; 
+}
+/*黑色透明度浮层*/
+.h5_mask{
+    position: fixed;
+    z-index: 999999;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background: #000;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    display: block;
+    overflow: hidden;
+}

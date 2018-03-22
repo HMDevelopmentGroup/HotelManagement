@@ -10,6 +10,7 @@
     <modules>
         <module>../commons</module>
         <module>../manager</module>
+        <module>../portal</module>
     </modules>
 
     <packaging>pom</packaging>
