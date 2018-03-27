@@ -13,4 +13,11 @@ public class IndexController {
     public String toIndex(){
         return "index";
     }
+
+    @RequestMapping(value = "/chooseCity",method = RequestMethod.GET)
+    public String toChooseCity(){
+        return "chooseCity";
+    }
+
+
 }

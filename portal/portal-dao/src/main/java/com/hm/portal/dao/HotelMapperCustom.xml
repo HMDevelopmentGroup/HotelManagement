@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hm.portal.dao.HotelMapperCustom" >
+
+  <sql id="Base_Column_List" >
+    h.`hid`,h.`cid`,h.`hname`,h.`address`,h.`rooms`,hc.`hlogo`,hc.`hcontent`,hc.`hdesc`
+  </sql>
+
+  <select id="selectByCid" resultType="com.hm.portal.pojo.po.HotelCustom" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from hotel h
+    LEFT JOIN hotelContent hc
+    ON
+    h.`hid`=hc.`hid`
+    where cid = #{cid,jdbcType=INTEGER}
+  </select>
+
+</mapper>
