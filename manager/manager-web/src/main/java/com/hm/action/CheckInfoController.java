@@ -166,7 +166,8 @@ private IUserService userService;
         objectMessageResult.setMsg("success");
         return objectMessageResult;
     }
-
+/*互联网订单确认状态
+* */
     @RequestMapping(value = "/internetOrderCompileStatus/{ioid}")
     @ResponseBody
   public int  internetOrderCompileStatus(@PathVariable("ioid")String ioid){
