@@ -3,7 +3,7 @@
 <mapper namespace="com.hm.portal.dao.HotelMapperCustom" >
 
   <sql id="Base_Column_List" >
-    h.`hid`,h.`cid`,h.`hname`,h.`address`,h.`rooms`,hc.`hlogo`,hc.`hcontent`,hc.`hdesc`
+    h.`hid` id,h.`cid`,h.`hname`,h.`address`,h.`rooms`,hc.`hlogo`,hc.`hcontent`,hc.`hdesc`
   </sql>
 
   <select id="selectByCid" resultType="com.hm.portal.pojo.po.HotelCustom" parameterType="java.lang.Integer" >
@@ -16,4 +16,14 @@
     where cid = #{cid,jdbcType=INTEGER}
   </select>
 
+  <select id="selectBysearch" resultType="com.hm.portal.pojo.po.HotelCustom"  >
+    select
+    <include refid="Base_Column_List" />
+    from hotel h
+    LEFT JOIN hotelContent hc
+    ON
+    h.`hid`=hc.`hid`
+    order by
+    h.`hid` desc
+  </select>
 </mapper>

@@ -82,13 +82,13 @@
                     <c:forEach items="${hotels}" var="hotel">
                         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6"><!-- 大屏幕放3张略缩图，pc端放4张，平板和手机放6张-->
                             <div class="thumbnail">
-                                <a href="${pageContext.request.contextPath}/toBook/${hotel.hid}">
+                                <a href="${pageContext.request.contextPath}/toBook/${hotel.id}">
                                 <img src="http://${hotel.hlogo}" class="img-responsive">
                                 </a>
                                 <div class="caption">
-                                    <h4><a href="${pageContext.request.contextPath}/toBook/${hotel.hid}">${hotel.hname}</a></h4>
+                                    <h4><a href="${pageContext.request.contextPath}/toBook/${hotel.id}">${hotel.hname}</a></h4>
                                     <p style="color:red;">
-                                        <a href="${pageContext.request.contextPath}/toBook/${hotel.hid}">地址：${hotel.address}</a>
+                                        <a href="${pageContext.request.contextPath}/toBook/${hotel.id}">地址：${hotel.address}</a>
                                     </p>
                                 </div>
                             </div>

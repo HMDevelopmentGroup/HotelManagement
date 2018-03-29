@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface ICityService {
 
-    List<City> getCity(int pid);
+    List<City> getCity(Integer pid);
 
     City selectCityByName(String cname);
 }

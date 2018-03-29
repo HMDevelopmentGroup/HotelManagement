@@ -9,4 +9,6 @@ import java.util.List;
 
 public interface HotelMapperCustom {
     List<HotelCustom> selectByCid(Integer cid);
+
+    List<HotelCustom> selectBysearch();
 }

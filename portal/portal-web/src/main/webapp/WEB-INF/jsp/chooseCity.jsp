@@ -46,6 +46,7 @@
                 });
         });
         function creatCityOption(data) {
+            $("#city").html(" <option value=\"\">请选择城市</option>");
             var html ="";
             for (var i=0;i<data.data.length;i++){
                 html+='<option value='+data.data[i].cname+'>'+data.data[i].cname+'</option>'
