@@ -1,5 +1,6 @@
 package com.hm.action;
 
+import com.hm.pojo.po.InternetOrder;
 import com.hm.pojo.po.Room;
 import com.hm.pojo.po.RoomCustom;
 import com.hm.service.ICheckInfoService;
@@ -23,11 +24,21 @@ public class RoomController {
     @Autowired
     private ICheckInfoService checkinfoService;
 
+
     @RequestMapping(value = "page/checkin/checkin", method = RequestMethod.GET)
     public String getEmptyRoom(HttpServletRequest request) {
         List<Room> rooms = service.getEmptyRoom();
         request.setAttribute("rooms",rooms);
         return "page/checkin/checkin";
+    }
+
+    @RequestMapping(value = "page/checkin/checkin/{ioid}", method = RequestMethod.GET)
+    public String getEmptyRoom2(HttpServletRequest request,@PathVariable("ioid") String ioid) {
+        InternetOrder internetOrder = checkinfoService.selectInternetOrderByid(ioid);
+        List<Room> rooms = service.getRoomByCateId(internetOrder.getRcate());
+        request.setAttribute("rooms",rooms);
+        request.setAttribute("ioid",ioid);
+        return "page/checkin/checkin2";
     }
 
 

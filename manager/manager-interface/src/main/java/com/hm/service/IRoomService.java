@@ -8,7 +8,7 @@ import java.util.List;
 public interface IRoomService {
     List<Room> getEmptyRoom();
 
-
+    List<Room> getRoomByCateId(int cateid);
     List<RoomCustom> getRooms();
 
     List<RoomCustom> checkout();

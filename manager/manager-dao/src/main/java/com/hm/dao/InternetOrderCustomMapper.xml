@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hm.dao.InternetOrderCustomMapper" >
+ <select id="internetorderList" resultType="com.hm.pojo.vo.InternetOrderCustom" parameterType="com.hm.pojo.dto.Page">
+  SELECT i.ioid,i.oid,u.username,u.realname,rc.cname,i.start,i.end,i.days,i.status AS i_status,o.price
+FROM
+internetorder i
+LEFT JOIN
+orders o
+ON i.oid=o.oid
+LEFT JOIN
+<![CDATA[user]]> u
+ON i.uid=u.uid
+LEFT JOIN
+room_cate rc
+ON rc.cid=i.rcate
+where rid=0 OR rid="" OR rid=null
+limit #{offset},#{limit}
+ </select>
+
+ <select id="internetorderListCheckin" resultType="com.hm.pojo.vo.InternetOrderCustom" parameterType="com.hm.pojo.dto.Page">
+  SELECT i.ioid,i.oid,u.username,u.realname,rc.cname,i.start,i.end,i.days,i.status AS i_status,o.price
+  FROM
+  internetorder i
+  LEFT JOIN
+  orders o
+  ON i.oid=o.oid
+  LEFT JOIN
+  <![CDATA[user]]> u
+  ON i.uid=u.uid
+  LEFT JOIN
+  room_cate rc
+  ON rc.cid=i.rcate
+ where i.rid is not NULL AND  i.rid!=0 AND i.status=2
+  limit #{offset},#{limit}
+ </select>
+
+ <select id="internetOrderCount"  resultType="int">
+   SELECT COUNT(1) FROM internetorder where rid=0 OR rid="" OR rid=null
+ </select>
+
+ <select id="internetOrderCountCheckin"  resultType="int">
+  SELECT COUNT(1) FROM internetorder where rid!=0 AND rid!=NULL
+ </select>
+
+ <update id="confirmRoom" >
+  UPDATE internetorder SET rid=#{rid} WHERE ioid=#{ioid}
+ </update>
+
+ <update id="internetOrderCompileStatus" >
+  UPDATE internetorder SET status=3 WHERE ioid=#{ioid}
+ </update>
+
+ <delete id="deleteInternetOrder"  parameterType="String">
+  delete FROM internetorder WHERE ioid=#{ioid}
+ </delete>
+</mapper>
