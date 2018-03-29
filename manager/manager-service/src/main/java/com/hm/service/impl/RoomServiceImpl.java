@@ -43,6 +43,15 @@ public class RoomServiceImpl implements IRoomService {
         return dao.selectByExample(example);
     }
 
+    @Override
+    public List<Room> getRoomByCateId(int cateid) {
+        RoomExample example=new RoomExample();
+        RoomExample.Criteria criteria = example.createCriteria();
+        criteria.andCateidEqualTo(cateid);
+        List<Room> rooms = dao.selectByExample(example);
+        return rooms;
+    }
+
 
     @Override
     public List<RoomCustom> getRooms() {

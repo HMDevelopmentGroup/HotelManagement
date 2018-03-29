@@ -3,20 +3,20 @@
 	"href" : "page/main",
 	"spread" : false
 },{
-	"title" : "办理入住",
-	"href" : "",
-	"spread" : false,
-	"children" : [
-		{
-			"title" : "互联网订单办理",
-			"href" : "page/checkin/waitCheckin",
-			"spread" : false
-		},
-		{
-			"title" : "直接办理",
-			"href" : "page/checkin/checkin",
-			"spread" : false
-		}
+			"title" : "办理入住",
+			"href" : "",
+			"spread" : false,
+			"children" : [
+				{
+					"title" : "互联网订单办理",
+					"href" : "page/checkin/internetCheckin",
+					"spread" : false
+				},
+				{
+					"title" : "直接办理",
+					"href" : "page/checkin/checkin",
+					"spread" : false
+				}
 	]
 }
 ,{

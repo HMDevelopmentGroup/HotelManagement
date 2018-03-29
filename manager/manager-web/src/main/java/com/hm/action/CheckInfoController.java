@@ -1,6 +1,9 @@
 package com.hm.action;
 
+import com.hm.pojo.dto.MessageResult;
+import com.hm.pojo.dto.Page;
 import com.hm.pojo.po.*;
+import com.hm.pojo.vo.InternetOrderCustom;
 import com.hm.service.*;
 import com.hm.utils.IdUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 @Controller
@@ -113,4 +117,62 @@ private IUserService userService;
             return "0";
         }
     }
+
+    @RequestMapping(value = "/internetorderList")
+    @ResponseBody
+    public MessageResult<InternetOrderCustom> internetorderList(Page page){
+        List<InternetOrderCustom> internetOrderCustoms = checkInfoService.internetorderList(page);
+        MessageResult<InternetOrderCustom> objectMessageResult = new MessageResult<>();
+        objectMessageResult.setData(internetOrderCustoms);
+        objectMessageResult.setCode(0);
+        objectMessageResult.setCount(checkInfoService.internetOrderCount());
+        objectMessageResult.setMsg("success");
+        return objectMessageResult;
+    }
+
+    @RequestMapping(value = "/internetRoom")
+    @ResponseBody
+    public int internetRoom(@RequestParam("rid") String rid,@RequestParam("ioid") String ioid){
+        int i=checkInfoService.confirmRoom(rid,ioid);
+        Room room = new Room();
+        int i1 = Integer.parseInt(rid);
+        room.setRid(i1);
+        room.setStatue("1");
+        roomService.confirmPay(room);
+        return i;
+    }
+
+@RequestMapping(value = "/deleteInternetOrder/{ioid}")
+    @ResponseBody
+    public int deleteInternetOrder(@PathVariable("ioid")String ioid){
+        try {
+            checkInfoService.deleteInternetOrder(ioid);
+        }catch (Exception e){
+            e.printStackTrace();
+            return 0;
+        }
+
+        return 1;
+}
+
+    @RequestMapping(value = "/internetCheckinConfirm")
+    @ResponseBody
+    public MessageResult<InternetOrderCustom> internetCheckinConfirm(Page page){
+        List<InternetOrderCustom> internetOrderCustoms = checkInfoService.internetorderListCheckin(page);
+        MessageResult<InternetOrderCustom> objectMessageResult = new MessageResult<>();
+        objectMessageResult.setData(internetOrderCustoms);
+        objectMessageResult.setCode(0);
+        objectMessageResult.setCount(checkInfoService.internetOrderCountCheckin());
+        objectMessageResult.setMsg("success");
+        return objectMessageResult;
+    }
+/*互联网订单确认状态
+* */
+    @RequestMapping(value = "/internetOrderCompileStatus/{ioid}")
+    @ResponseBody
+  public int  internetOrderCompileStatus(@PathVariable("ioid")String ioid){
+        checkInfoService.internetOrderCompileStatus(ioid);
+        return 1;
+    }
+
 }
