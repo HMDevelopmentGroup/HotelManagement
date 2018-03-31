@@ -196,7 +196,10 @@ color:#535353; font-size: 14px; line-height:37px; overflow: hidden;font-size: 20
     .list_intro_gift li a { float: left; border: 1px solid #4990e2; border-radius: 5px; -webkit-border-radius: 5px; padding: 0 5px; line-height: 18px; height: 17px; margin-right: 6px;  vertical-align: middle; cursor:default; }
         .list_intro_gift li a.langman_tip { border-color: #4990e2; color: #4990e2; }
         .list_intro_gift li a.coloron.langman_tip { background: #ecf3fc; }
-        .list_intro_gift li a.zero_tip, .list_intro_gift li a.ylzflj_tip,.list_intro_gift .hotel_view_tip { border-color: #fd6d00; color: #fd6d00; }
+        .list_intro_gift li a.zero_tip, .list_intro_gift li a.ylzflj_tip, .list_intro_gift .hotel_view_tip, .list_intro_gift .dear_cjth {
+            border-color: #fd6d00;
+            color: #fd6d00;
+        }
         .list_intro_gift li a.free_shuttle { border-color: #fd6d00; color: #fd6d00;  }
         .list_intro_gift li a.coloron.zero_tip { background: #fef0e5; }
         .list_intro_gift li a.ticket_tip { border-color: #fd6d00; color: #fd6d00; }

@@ -1,0 +1,144 @@
+﻿.en .club_header .menu{position:absolute;top:43px;left: 269px;height:70px;z-index:9;text-align:right;width: 760px;}
+.homeHead .menu{position:absolute;top:43px;left: 300px;height:70px;z-index:9;text-align:right;width: 757px;}
+.topbar .lmtip{ position:absolute; left:0; top:30px; width: 80px; background:#fff; padding:3px 0 0 0; display:none;}
+
+.information-phone{background: url(../images/phone_icon_2.png) no-repeat 0 2px;padding-left:22px;color:#59626a;line-height:24px;font-size:14px;}
+.volume-ago-hotel table thead th{height:32px;line-height: 22px;background:#96a0a7;color:#ffffff;font-size:14px;font-weight:normal;}
+.tab-bar-travel li a{display:inline-block;padding: 0 4px;margin: 0 0px;color:#96a0a7;}
+.information-phone{background: url(../images/phone_icon_2.png) no-repeat 0 2px;padding-left:22px;color:#59626a;line-height:24px;font-size:14px;}
+
+.search-hotel-name span{width: 75px;}
+.search-hotel-name{width: 290px;}
+
+.info-form form.jqtransformdone label:first-child{width: 126px;}
+.paddingfl{ padding-left:20px;}
+
+.column-content dt{ float:none; display:block; padding-left:0;margin-bottom:4px;}
+.column-content dd{ float:left;margin:2px 0;}
+.nodt dd:first-child{padding-left:0;}
+.column-intro{padding-left:0;}
+
+.nav-icon li a{width:122px;} 
+.discount-card-text{margin-left:0;}
+.record-step span.record-step01{width:180px;padding-top:5px;}
+.record-step span.record-step02{ width:222px;padding:7px 0 0 40px;}
+.record-step span.record-step03{ width:217px;padding:7px 0 0 0px;}
+
+
+.card-list li{ width:auto;}
+.en-card-list .en-com-card{ width:354px; border:1px solid #e5e5e5;}
+.en-card-monery{ height:45px; border:1px solid #e5e5e5; color:#FFF;cursor:auto;}
+.en-card-list .add-card{cursor:pointer;}
+.en-card-monery em{ font-size:14px; font-style:normal; padding:0px 3px 0 19px; line-height:28px;vertical-align:super; float:left; display:block; width:30px;}
+.en-card-monery span{ font-size:32px; font-weight:bold; line-height:45px;}
+.en-card-monery b{ font-size:18px; font-weight:normal; line-height:45px;}
+.en_yellow{ background:#d0c08d;}
+.en_blue{ background:#a6d5f7;}
+.en-card-list .en-com-card .card-num{ top:9px;}
+.en-card-list .en-com-card .card-num p{ font-size:16px;}
+.en-board{ color:#59626a;}
+.en-user-area{ margin-top:8px;}
+.en-user-area, .en-user-condition, .en-user-time{ line-height:22px;}
+.en-user-area b, .en-user-condition b, .en-user-time b{ padding-right:6px;}
+.en-card-list .en-add-card .card-mian{ border:none; background-position:158px -131px;}
+.en-card-list .en-add-card:hover .card-mian{background:#e8eaeb url(../images/inner_icon_2.gif) no-repeat 158px -131px; width:354px; height:172px;}
+
+
+
+
+
+.record-step{background: url(../images/record_step_en_1.png) no-repeat; height:84px;}
+.record-step span.record-step01{line-height:20px;}
+.cityBox{display:none;}
+/*add by gaonaibo 0309*/
+/*.en .right-tab-head li{ line-height:21px;}*/
+.en .record-step span{ height:auto;}
+.en .record-step span.record-step03{ width:217px;padding:7px 0 0 22px;}
+
+/*增加个人信息样式*/
+.international .info-form .jqtransformdone div.rowElem{ position:relative; padding-top:24px; padding-left:20px;}
+.international .form.jqtransformdone label{ padding-left:20px;}
+.international .info-form .stay-love .jqTransformSelectWrapper{ width:190px;}
+.international .jqtransformdone .rowElem label:first-child{ position:absolute; left:0; top:0; display:block;width:100%; text-align:left; text-indent:20px;}
+
+/*我的优惠劵*/
+.international .deadline-time p{width:74px;}
+.oprate-time #main_0_pDateSort{width:105px;}
+.en .card-list .com-card{ width:354px; border:1px solid #e5e5e5;}
+.en .card-monery{ height:45px; border:1px solid #e5e5e5; color:#FFF;cursor:auto; background:#87d1d2;}
+.card-list .com-card{cursor:pointer;}
+.en .card-list .add-card{cursor:pointer;}
+.en .card-monery em{ font-size:14px; font-style:normal; padding:0px 3px 0 19px; line-height:28px;vertical-align:super; float:left; display:block; width:30px;}
+.en .card-monery span{ font-size:32px; font-weight:bold; line-height:45px;}
+.en .card-monery b{ font-size:18px; font-weight:normal; line-height:45px;}
+/*.en .yellow{ background:#d0c08d;}
+.en .blue{ background:#a6d5f7;}*/ 
+.en .card-list .com-card .card-num{ top:9px;}
+.en .card-list .com-card .card-num p{ font-size:16px;}
+.en .board{ color:#59626a;}
+.en .user-area{ margin-top:8px;}
+.en .user-area, .user-condition, .user-time{ line-height:22px;text-overflow:ellipsis;white-space: nowrap;overflow:hidden;}
+.en .user-area b, .user-condition b, .user-time b{ padding-right:6px;}
+.en .card-list .add-card .card-mian{ border:none; background-position:158px -131px;}
+.en .card-list .add-card:hover .card-mian{background:#e8eaeb url(../images/inner_icon_2.gif) no-repeat 158px -131px; width:354px; height:172px;}
+.en .card-list .green-card .card-m-line{ background:none;width:100%;}
+.en .card-list .com-card .card-mian{width:100%;}
+.en .card-list .com-card .card-no{width:100%; border:none;}
+.en .card-list .green-card .card-mian{ background:none; border:none;}
+.en .card-list .com-card{ color:#59626a;}
+.en .card-list .add-card .card-m-line{ background:none;}
+.en .order-style .jqTransformSelectWrapper{width:140px;}
+/*我的积分*/
+.en .score-change .search-hotel-name{ margin-left:0;width:400px;}
+.en .search-hotel-name span{width:auto;}
+.en .search-hotel-name input{margin-top:6px;}
+.en .link-area a{ margin-left:6px;}
+.en .point_claim li{ line-height:21px;}
+.en .loginmain .jdbar span{ width:76px;}
+
+/*add for english pag*/
+.en .homeHead .searchHotel .frombox{ padding-left:4px;}
+.en .homeHead .searchHotel .frombox .city{ width:196px;}
+.en .homeHead .searchHotel .g_date1{ width:92px; float:left;  margin-right:12px; padding-left:4px;}
+.en .homeHead .searchHotel .g_date2{ width:92px; float:left; padding-left:0px;}
+.en .homeHead .searchHotel .date{width:92px;}
+.en .homeHead .searchHotel .name{ float:none; margin-left:0;}
+
+/*¸öÈËÐÅÏ¢¹ú¼Ê»¯*/
+.en button.jqTransformButton span{ padding:0 55px;}
+.en .add-volume-botton input{ width:150px;}
+.en .tab-bar li a{ padding:0 1px;}
+
+.en .blocks1{ display:block;}
+
+
+
+/*原score_en不相同处合并至en.css -------------------------start----------------------*/
+.right-tab-head li.on{background:#fff;}
+.nav-icon li .xjjd{background:url(../images/score_banner_en_2.png) no-repeat 5px top;_background-image:url(../images/score_banner_en.gif);}
+.nav-icon li.on .xjjd{background:url(../images/score_banner_en_2.png) no-repeat 5px bottom;_background-image:url(../images/score_banner_en.gif);}
+.nav-icon li .jjdc{background:url(../images/score_banner_en_2.png) no-repeat -172px top;_background-image:url(../images/score_banner_en.gif);}
+.nav-icon li.on .jjdc{background:url(../images/score_banner_en_2.png) no-repeat -172px bottom;_background-image:url(../images/score_banner_en.gif);}
+.nav-icon li .jjzx{background:url(../images/score_banner_en_2.png) no-repeat -312px top;_background-image:url(../images/score_banner_en.gif);}
+.nav-icon li.on .jjzx{background:url(../images/score_banner_en_2.png) no-repeat -312px bottom;_background-image:url(../images/score_banner_en.gif);}
+.nav-icon li .bskj{background:url(../images/score_banner_en_2.png) no-repeat -473px top;_background-image:url(../images/score_banner_en.gif);}
+.nav-icon li.on .bskj{background:url(../images/score_banner_en_2.png) no-repeat -473px bottom;_background-image:url(../images/score_banner_en.gif);}
+.nav-icon li .jgkj{background:url(../images/score_banner_en_2.png) no-repeat -650px top;_background-image:url(../images/score_banner_en.gif);}
+.nav-icon li.on .jgkj{background:url(../images/score_banner_en_2.png) no-repeat -650px bottom;_background-image:url(../images/score_banner_en.gif);}
+.action-inner p{color:#656d78;word-wrap:break-word;}
+/*会员优惠列表页*/
+.actions-info{width:390px;_width:380px;margin:0 174px 0 142px;padding:13px 2px 0px 0;_padding:13px 2px -10px 0;}
+.actions-time p{color:#59626a;margin-bottom:4px;word-break: break-all;}
+.actions-text a{color:#96a0a7;word-break: break-all;display: block;}
+.detail-info .main-span{color:#59626a;font-weight:bold;float:left;margin-right:6px;}
+.detail-info p{float:left;width:660px;color:#59626a;word-break: break-all;}
+/*原score_en不相同处合并至en.css -------------------------the end----------------------*/
+
+
+
+
+.en .pop-hotel-inner{background: #FFF;padding: 10px 8px;width: 405px;_width: 405px;height: auto;text-align: left;position: relative;border: 1px solid #e2e2e2;-webkit-box-shadow: 0 0 10px 3px rgba(14,5,10,0.1);box-shadow: 0 0 10px 3px rgba(14,5,10,0.1);}
+.en .room-people .price em{font-style: normal;float: left;line-height: 22px;color: #96a0a7;padding-right:4px;}
+.en .searchHotel .frombox input{padding:0;}
+.en .room-people .price em.em2{padding-right: 24px;display: inline;padding-left:3px;}
+.en .room-people .price input{padding:0;}

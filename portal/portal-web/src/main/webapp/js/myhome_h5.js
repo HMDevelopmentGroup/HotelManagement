@@ -2058,7 +2058,7 @@ function orderList(orderlist, type) {
                         '<div class="fr rightPart">'
                     if (orderlist[i].RoomNos != null && orderlist[i].RoomNos != "") {
                         var rooms = orderlist[i].RoomNos.split(',');
-                        html += "<div class='fl' onclick=window.location.href='/member/SelfChooseRoom?Order=" + orderlist[i].OrderNo +"'>已选房号"
+                        html += "<div class='fl' onclick=window.location.href='/member/SelfChooseRoom?Order="+orderlist[i].OrderNo+"'>已选房号"
                         for (var j = 0; j < rooms.length; j++) {
                             if (j == rooms.length-1) {
                                 html += rooms[j] + '</div>'
@@ -2101,8 +2101,10 @@ function orderList(orderlist, type) {
     }
 }
 function orderListLoad(pageIndex, type) {
+  
     var tabsCon = $('.my_order .tabs_con');
     if ($(document).scrollTop() + $(window).height() >= $(document).height() - 40) {
+      
         if (type == 1) {
             orderPageIndex1 = pageIndex;
             $.ajax({
@@ -2151,22 +2153,59 @@ function orderListLoad(pageIndex, type) {
                             }
                             html += '<div class="text"> <div class="hotel_name"><a href="/hotel/' + data.data[i].HotelCd + '">' + data.data[i].HotelNm + '</a></div><div class="lowest_price">' + data.data[i].CRSRmType;
                             html += '</div><div class="lowest_price"><em class="num_style">' + new Date(data.data[i].ArrDate).format("MM/dd") + "-" + new Date(data.data[i].DepDate).format("MM/dd");
+                            if (new Date(data.data[i].ArrDate).format("yyyy-MM-dd") == new Date(data.data[i].DepDate).format("yyyy-MM-dd")) {
+                                //入住日期离店日期相同则为时租房
+                                html += '</em>&nbsp;&nbsp;<em class="num_style"></em>  <em class="num_style">4</em>小时</div></div></div>';
+                            } else {
+                                html += '</em>&nbsp;&nbsp;<em class="num_style">' + DateDiffH5((new Date(data.data[i].ArrDate).format("yyyy-MM-dd")), (new Date(data.data[i].DepDate).format("yyyy-MM-dd"))) + '</em>天  <em class="num_style">' + data.data[i].RmNum + '</em>间</div></div></div>'
+                                var toDate = new Date().format("yyyy-MM-dd") //当天日期
+                                var hour = new Date().getHours() //当天小时
+                                var ArrDate = new Date(data.data[i].ArrDate).format("yyyy-MM-dd")//入住日期
+                                if (type == 1 && toDate == ArrDate && hour >= 10) { //当天未入住日期并且超过10点后可选房
+                                    html +=
+                                        '<div class="selfChooseRoom clearfix">' +
+                                        '<div class="text fl">自助选房</div>' +
+                                        '<div class="fr rightPart">'
+                                    if (data.data[i].RoomNos != null && data.data[i].RoomNos != "") {
+                                        var rooms = data.data[i].RoomNos.split(',');
+                                        html += "<div class='fl' onclick=window.location.href='/member/SelfChooseRoom?Order=" + data.data[i].OrderNo + "'>已选房号"
+                                        for (var j = 0; j < rooms.length; j++) {
+                                            if (j == rooms.length - 1) {
+                                                html += rooms[j] + '</div>'
+                                            }
+                                            else {
+                                                html += rooms[j] + ','
+                                            }
+                                        }
+                                    }
+                                    else {
+                                        html += '<div class="fl"><a class="goChoose" href="/member/SelfChooseRoom?Order=' + data.data[i].OrderNo + '">去选房</a></div>'
+                                    }
+                                    html += '<span class="fl iconfont">&#xe635;</span>' +
+                                    '</div>' +
+                                    '</div>'
+                                }
 
-                            html += '</em>&nbsp;&nbsp;<em class="num_style">' + DateDiffH5((new Date(data.data[i].ArrDate).format("yyyy-MM-dd")), (new Date(data.data[i].DepDate).format("yyyy-MM-dd"))) + '</em>天  <em class="num_style">' + data.data[i].RmNum + '</em>间</div></div></div>' +
-                                '<div class="selfChooseRoom clearfix">' +
-                                '<div class="text fl">自助选房</div>' +
-                                '<div class="fr rightPart">' +
-                                '<div class="fl"><a href="/member/SelfChooseRoom?Order="' + data.data[i].OrderNo + '>去选房</a></div>' +
-                                //'<div class="fl">已选房号</div>' +
-                                //'<div class="fl">1002，</div>' +
-                                //'<div class="fl">1003，</div>' +
-                                //'<div class="fl">1004</div>' +
-                                '<span class="fl iconfont">&#xe635;</span>' +
-                                '</div>' +
-                                '</div>'
+                            }
+                            //html += '</em>&nbsp;&nbsp;<em class="num_style">' + DateDiffH5((new Date(data.data[i].ArrDate).format("yyyy-MM-dd")), (new Date(data.data[i].DepDate).format("yyyy-MM-dd"))) + '</em>天  <em class="num_style">' + data.data[i].RmNum + '</em>间</div></div></div>' +
+                            //    '<div class="selfChooseRoom clearfix">' +
+                            //    '<div class="text fl">自助选房</div>' +
+                            //    '<div class="fr rightPart">' +
+                            //    '<div class="fl"><a href="/member/SelfChooseRoom?Order='+data.data[i].OrderNo+'">去选房</a></div>' +
+                            //    //'<div class="fl">已选房号</div>' +
+                            //    //'<div class="fl">1002，</div>' +
+                            //    //'<div class="fl">1003，</div>' +
+                            //    //'<div class="fl">1004</div>' +
+                            //    '<span class="fl iconfont">&#xe635;</span>' +
+                            //    '</div>' +
+                            //    '</div>'
 
                             if (data.data[i].paystatus == "未支付") {
-                                html += '<div class="act clearfix"><a href="javascript:" onclick=\"CancelOrderH5Show(' + data.data[i].OrderNo + ',null,null)\" class="btn_gray btn_cancel fl" id="' + data.data[i].OrderNo + '">取消订单</a><a href="/member/pay/' + data.data[i].OrderNo + '" class="btn_red fr">立即支付</a></div>';
+                                html += '<div class="act clearfix"><a href="javascript:" onclick=\"CancelOrderH5Show(' + data.data[i].OrderNo + ',null,null)\" class="btn_gray btn_cancel fl" id="' + data.data[i].OrderNo + '">取消订单</a>'
+                                if (data.data[i].ResvTypeDesp != "rjxz") {
+                                    html += '<a href="/member/pay/' + data.data[i].OrderNo + '" class="btn_red fr">立即支付</a>';
+                                }
+                                html += '</div>';
                             }
                             else if (data.data[i].OrderStatus == "退款中") {
                                 html += "<div class='act clearfix'><dd style='line-height:24px;'>退款中</dd></div>";
@@ -2180,7 +2219,7 @@ function orderListLoad(pageIndex, type) {
                         }
 
                         $("#tblistH5").append(html);
-                        alert(1)
+                       
                         $("#tblistH5 .no_content").hide();
                     }
                     $(".yx_goods").show();
@@ -2195,7 +2234,8 @@ function orderListLoad(pageIndex, type) {
                                 orderListLoad(orderPageIndex1 + 1, 1);
                             }
                             if (index == 1 && orderIfLast2 != 1) {
-                                orderListLoad(orderPageIndex2, 0);
+                           
+                                orderListLoad(orderPageIndex2 + 1, 0);
                             }
                         });
                     }
@@ -2206,7 +2246,8 @@ function orderListLoad(pageIndex, type) {
                         $(window).on('scroll', function () {
                             var index = $('.tabs a.cur').index();
                             if (index == 1 && orderIfLast2 != 1) {
-                                orderListLoad(orderPageIndex2, 0);
+                            
+                                orderListLoad(orderPageIndex2 + 1, 0);
                             }
                         });
                     }
@@ -2215,6 +2256,7 @@ function orderListLoad(pageIndex, type) {
 
         }
         else {
+          
             orderPageIndex2 = pageIndex;
 
             $.ajax({

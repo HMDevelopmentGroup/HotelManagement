@@ -1,0 +1,91 @@
+﻿@media screen and (min-width:1000px) and (max-width:1199px) {
+    .main_w1200 { margin: 0 auto; width: 1000px; }
+    .list_input input { width: 154px; }
+    .list_choose { width: 376px; }
+    .list_search input { width: 225px; }
+    .list_cx_button input { width:96px; }
+    .zb_pop { width: 998px; margin-left: -500px; }
+    .zb_pop div.zb_jt_up { left: 12px; }
+    .citypop { width: 1000px; margin-left: -500px; }
+    .citypop div.zb_jt_up { left: 12px; }
+    .citypoptwo { width: 1000px; margin-left: -500px; }
+    .citypoptwo div.zb_jt_up { left: 12px; }
+    .citypopthree { width: 1000px; margin-left: -500px; }
+    .citypopthree div.zb_jt_up { left: 12px; }
+    .city_none { width: 1000px; margin-left: -500px; }
+    .city_none div.zb_jt_up { left: 12px; }
+    .keyword_pop { width: 940px; margin-left: -500px; }
+    .keyword_pop_fix ul { width: 851px; }
+    .keyword_pop_two { width: 934px; margin-left: -500px; }
+    .keyword_pop_three { width: 966px; margin-left: -500px; }
+    .list_wz_content ul{ width: 932px; }
+    .list_wz_gd { right: 19px; }
+    .list_wz_list, .list_wz_area { width: 840px; }
+    .list_px_fix { width: 685px; }
+    .list_wz_fix .line{width:900px;}
+    .list_recommend_intro { width: 685px; }
+    .list_intro_txt { width: 288px; }
+    .list_intro_address_tj { width: 266px;padding: 9px 0 21px 10px; }
+    .list_intro_gift { width: 283px; }
+    .list_main { width: 685px; }
+    .list_heyi { width: 683px; }
+    .list_intro_name_tj { padding: 2px 0 0 10px; }
+    .list_intro_name_tj a { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 260px; display: block; }
+    .list_intro_name_tj a i { padding-left: 0; }
+    .list_intro_gift { padding: 0 0 18px 8px; }
+    .list_intro_icon_box { padding: 5px 0 0 10px; }
+    .list_room_tj_top { width: 683px; }
+    .list_room_w193 { width: 81px; padding-left: 42px; }
+    .list_room_w215 { width:215px; }
+    .list_room_w268 { width: 188px; }
+    .list_room_w236 { width: 120px; }
+    .list_room_w60 { width: 40px; }
+    .list_room_w92 { }
+    .list_room_w88 { padding-left:16px; width: 47px; }
+    /*.list_room_w88 span {width: 47px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; display:inline-block;}*/
+    .list_room_w154{}
+    /*.list_room_tj_row dl.list_room_intro { float: none; margin-top: 80px; padding-left: 0; }*/
+    .list_room_num { width: 60px; }
+    .list_room_fixbox { width:523px;}
+    .price_row { }
+    .list_room_num { width:120px;}
+    .list_room_w268 { padding-left:130px;}
+    .list_room_w345 { width:355px; padding-right:10px;}
+    .list_right_306 { margin-left: 195px; width:302px; }
+    .list_float { right: 20px; }
+    .main_pc .date_box{margin-left:-425px;}
+    .main_pc .date_box div.zb_jt_up{margin-left:-172px;}
+    .main_pc .date_box.right div.zb_jt_up{margin-left:30px;}
+    .list_room_w236 {width:125px;}
+    .list_room_tj_row dl.list_room_intro {
+        float: none; 
+        padding-left: 0px;
+        margin-top: 80px;
+    }
+    .list_room_tj_row ul.list_room_w236 {
+        width: 125px;
+        padding: 25px 0 23px 0;
+        vertical-align: top;
+    }
+    .list_room_fixbox {
+        width: 498px;
+    }
+    .list_room{width:685px;}
+    .list_room_box{width:683px;}
+    .list_room_tj_row{width:683px;}
+    .list_room_money ul li { width:59px;}
+    .list_intro_icon { padding-right:8px;}
+    .zb_pop_close{margin-left:412px;}
+    /*搜索栏置顶*/
+    .list_time.fixed .list_time_inner{width:1000px;}
+    .list_time.fixed .list_input input{width:118px;}
+    .list_time.fixed .list_choose{width:323px;}
+    .list_time.fixed .list_choose input.date_input{width:80px;}
+    .list_time.fixed .list_choose code{margin:21px 10px 0 10px;}
+
+    .list_time.fixed .list_search input{padding:11px 13px;width:184px;}
+    .list_time.fixed .list_cx_button input{width:154px;}
+    .date_box.fixed{margin-left:-475px;}
+    .date_box.right.fixed div.zb_jt_up {margin-left: 5px;}
+    .keyword_pop.fixed div.zb_jt_up{margin-left:22px;}
+}

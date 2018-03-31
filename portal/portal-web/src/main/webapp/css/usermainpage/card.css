@@ -1,0 +1,227 @@
+﻿@charset "utf-8";
+/* CSS Reset - Description :Base KISSY CSS Reset, add HTML5 elements ----------- */
+.card_warpper{margin:20px auto; color:#777; }
+.buy_card_fl{ background: #fff; padding: 24px 40px; float: left;width: 818px; border: 1px solid #e8e7e7;}
+.buy_card_fr{ background: #fff; padding:22px;float: right;width: 234px; border: 1px solid #e8e7e7;}
+.card_unit{ margin-bottom:40px; font-size: 14px;}
+.card_unit input{height: 30px;}
+.card_unit h3{ color: #666666; font-size: 16px;font-weight: normal; line-height: 38px; border-bottom:1px solid #dddddd;  text-indent: 2px; }
+.card_unit h3 span{ color: #d1ae76; font-size: 18px;font-family: arial; margin-right:4px; font-weight: bold; }
+.card_unit dl{  padding:10px 2px;  line-height: 28px;}
+.card_unit dl dt{ display: block; color: #ab8954;  }
+.card_unit dl dd{display: block;width: 48%; float: left; background:url(../images/card_circle.png) no-repeat left center; padding-left:10px; }
+.card_people_info .single_people_info{ width: 33%; display: block; float: left; margin-top:24px; height:30px;}
+.single_people_info label{width: 76px; display: block; float: left; text-align: right;}
+.card_adress{}
+.card_adress label{width: 76px; display: block; float: left; text-align: right;}
+.validate_input{float:left; margin-right: 10px;}
+.error_tip {height: 30px;line-height: 30px; color: #FF0000;}
+
+/*水印css*/
+.water_box input{ color:#777; padding:4px 0 4px 6px; border:1px solid #ccc; height:14px; line-height:14px;}
+textarea{color:#777; padding:4px 0 4px 6px; border:1px solid #ccc;line-height:14px;}
+.password_box{ position:relative;margin: 10px 0;}
+.password_box label{ color:#dedede;position:absolute; top:0;line-height: 16px;}
+
+/*模拟单复选框*/
+label.checkbox span.holder{height:61px;background:url(../images/checkbox_icon.png) 0 -1px no-repeat;}
+label.radio span.holder{height:61px;background:url(../images/radio_icon.png) 0 -1px no-repeat;}
+label.checked span.holder,label.checked span.holder,label.checked:hover span.holder,label.checked:hover span.holder{top:-17px!important;}
+label.list{float:left;clear:left;margin:0 0 5px 0;}
+label.inline{float:left;margin:0 10px 0 0;}
+input.hiddenCheckbox{position:absolute;left:-10000px;}
+label.prettyCheckbox span.holderWrap{display:block;float:left;position:relative;margin-right:5px;overflow:hidden;}
+label.prettyCheckbox span.holder{display:block;position:absolute;top:0;left:0;}
+label{cursor:pointer;}
+fieldset{padding:10px;}
+
+/*模拟下拉菜单css*/
+.CRselectBox {
+	background:#FFFFFF url(../images/select_box_off.gif) no-repeat right center;
+	border:1px solid #dedede;
+	cursor:pointer;
+	display:block;
+	width: 100px; height: 20px;
+}
+.CRselectBoxHover {
+	background:#FFFFFF url(../images/select_box_on.gif) no-repeat right center;
+}
+.CRselectBox a.CRselectValue {
+	display:block;
+	margin:1px 1px 2px;
+	padding:1px 20px 2px 10px;
+	white-space:nowrap;
+	color:#000;	
+	overflow:hidden;
+}
+.CRselectBoxOptions {
+	background:#FFFFFF;
+	border:1px solid #999;
+	margin-left:-1px;
+	list-style:none;
+	overflow-y:auto;
+	z-index:1000;
+	position: absolute;
+	width:100px;display:none;
+}
+.CRselectBoxOptions a{
+	color:#000;
+	display:block;
+	height:22px;
+	line-height:22px;
+	padding-left:4px;
+	background:#fff;	
+	overflow:hidden;
+	white-space:nowrap;
+}
+.CRselectBoxOptions a:hover{
+	background:#bbb
+}
+.CRselectBoxOptions a.selected{
+	background:#bbb
+}
+/* 解决 firefox 点击放大出现虚线框，从而导致滚动条的问题  */
+.CRselectBox a { 
+	outline: none; 
+	text-decoration:none;
+}
+.CRselectBox a:focus { 
+	outline: none; 
+	text-decoration:none;
+} 
+.card_adress{ padding-top: 20px;}
+.city_select,.city_detailed {margin-bottom: 16px;height: 32px;}
+.city_detailed input{width: 362px;*float: left;}
+.card_adress label{ line-height: 30px;}
+.city_select .CRselectBox{ margin-right: 12px; border: 1px solid #e0e0e0;}
+.city_select  .CRselectBox a.CRselectValue{color: #999999;}
+.city_select .CRselectBoxOptions a{color: #666666;}
+
+/* m_zlxg */
+#sjld,#invoice_adress{width: 520px; position: relative;}
+.m_zlxg{ width:114px; height:30px; line-height:30px;cursor:pointer;float:left;margin:0 12px 0 0;display:inline;background:url(../images/select_box_off.gif) no-repeat right center;border:1px solid #dedede;}
+.m_zlxg p{ width:104px; padding-left:10px; overflow:hidden; line-height:30px; color:#333333; font-family:"微软雅黑";text-overflow:ellipsis; white-space:nowrap;}
+.m_zlxg2{ position:absolute; top:31px; border:1px solid #ded3c1;background:#fff; width:113px; display:none; max-height:224px;-height:224px; overflow-x:hidden; overflow-y:auto;white-space:nowrap; z-index:2;}
+.m_zlxg2 li{line-height:28px;white-space:nowrap; padding-left:10px;font-family:"微软雅黑";color:#333333; font-size:12px;}
+.m_zlxg2 li:hover{ background:#bbb}
+
+/*发票内容*/
+.invoice_head{ margin:10px 0;  line-height: 30px; padding-left:26px; }
+.invoice_head label.radio span.holder{ background-position: 0 1px; }
+.invoice_head label.radio span.holder{ background-position: 0 1px; }
+.invoice_head label.checked span.holder,.invoice_head label.checked span.holder,.invoice_head label.checked:hover span.holder,.invoice_head label.checked:hover span.holder{top:-30px !important;}
+.invoice_head .prettyCheckbox{ margin-right:30px; }
+.invoice_main label{width: 76px; display: block; float: left; text-align: right; line-height: 30px;}
+.invoice_singel input.invoice_adress_info{width: 362px;}
+.invoice_main .invoice_singel{margin-bottom:16px; }
+.invoice_singel .CRselectBoxOptions{height:200px;}
+.invoice_singel label.checkbox{padding-left:0; background:none;}
+.invoice_singel label.checked span.holder,.invoice_singel label.checked span.holder,.invoice_singel label.checked:hover span.holder,.invoice_singel label.checked:hover span.holder{top:-30px !important;}
+.invoice_main .some_adress label{width:auto}
+/*! nice Validator 0.7.3
+ * (c) 2012-2014 Jony Zhang <zj86@live.cn>, MIT Licensed
+ * http://niceue.com/validator/
+ */
+.n-inline-block,.nice-validator input,.nice-validator select,.nice-validator textarea,.msg-wrap,.n-icon,.n-msg{display:inline-block;*display:inline;*zoom:1}
+.msg-box{position:relative;*zoom:1}
+.msg-wrap{position:relative;white-space:nowrap}
+.msg-wrap,.n-icon,.n-msg{vertical-align:top}
+.n-arrow{position:absolute;overflow:hidden;}
+.n-arrow b,.n-arrow i{position:absolute;left:0;top:0;border:0;margin:0;padding:0;overflow:hidden;font-weight:400;font-style:normal;font-size:12px;font-family:serif;line-height:14px;_line-height:15px}
+.n-arrow i{text-shadow:none}
+.n-icon{width:16px;height:16px;overflow:hidden;background-repeat:no-repeat}
+.n-msg{display:inline-block;line-height:15px;margin-left:2px;*margin-top:-1px;_margin-top:0;font-size:12px;font-family:simsun; width:78px;}
+#contact_form .n-msg{ width:110px;}
+.international #contact_form .n-msg{ width:104px;}
+#contact_form .n-msg:lang(ja-JP){ width:228px;}
+#contact_form .n-msg:lang(en){ width:180px;}
+.n-error{color:#c33}
+.n-ok{color:#390}
+.n-tip,.n-loading{color:#808080}
+.n-error .n-icon{background-image:url(../images/validator_default.png);background-position:0 0; margin-left:8px;}
+.n-ok .n-icon{ background-image:url(../images/validator_default.png);background-position:-17px 0; margin-left:8px;}
+.n-tip .n-icon{background-position:-32px 0}
+.n-loading .n-icon{background:url("../images/loading.gif") 0 center no-repeat !important}
+.n-top,.n-right,.n-bottom,.n-left{display:inline-block;*display:block;*float:left;line-height:0;vertical-align:top;outline:0}
+.n-top .n-arrow,.n-bottom .n-arrow{height:6px;width:12px;left:8px}
+.n-left .n-arrow,.n-right .n-arrow{width:6px;height:12px;top:6px}
+.n-top{vertical-align:top;}
+.n-top .msg-wrap{margin-bottom:6px}
+.n-top .n-arrow{bottom:-6px;}
+.n-top .n-arrow b{top:-6px}
+.n-top .n-arrow i{top:-7px}
+.n-bottom{vertical-align:bottom;}
+.n-bottom .msg-wrap{margin-top:6px}
+.n-bottom .n-arrow{top:-6px;}
+.n-bottom .n-arrow b{top:-1px}
+.n-bottom .n-arrow i{top:0}
+.n-left .msg-wrap{right:100%;margin-right:6px}
+.n-left .n-arrow{right:-6px;}
+.n-left .n-arrow b{left:-6px}
+.n-left .n-arrow i{left:-7px}
+.n-right .msg-wrap{}
+.n-right .n-arrow{left:-6px;}
+.n-right .n-arrow b{left:1px}
+.n-right .n-arrow i{left:2px}
+.n-default .n-left,.n-default .n-right{color: #d70000; margin:9px 0 0;}
+.n-default .n-top .msg-wrap{bottom:100%}
+.n-default .n-bottom .msg-wrap{top:100%}
+.n-default .msg-wrap{z-index:1;}
+.n-default .msg-wrap .n-icon{ }
+.n-default .n-tip .n-icon{display:none}
+.n-simple .msg-wrap{position:absolute;z-index:1;}
+.n-simple .msg-wrap .n-icon{background-image:url("../images/validator_simple.png")}
+.n-simple .n-top .msg-wrap{bottom:100%}
+.n-simple .n-bottom .msg-wrap{top:100%}
+.n-simple .n-left,.n-simple .n-right{margin-top:5px}
+.n-simple .n-bottom .msg-wrap{margin-top:3px}
+.n-simple .n-tip .n-icon{display:none}
+.n-yellow .msg-wrap{position:absolute;z-index:1;padding:4px 6px;font-size:12px;border:1px solid transparent;background-color:#fffcef;border-color:#ffbb76;color:#db7c22;box-shadow:0 1px 3px #ccc;border-radius:2px;}
+.n-yellow .msg-wrap .n-arrow b{color:#ffbb76;text-shadow:0 0 2px #ccc}
+.n-yellow .msg-wrap .n-arrow i{color:#fffcef}
+.n-yellow .msg-wrap .n-icon{background-image:url("../images/validator_simple.png")}
+.n-yellow .n-top .msg-wrap{bottom:100%}
+.n-yellow .n-bottom .msg-wrap{top:100%}
+.n-yellow .n-tip,.n-yellow .n-ok,.n-yellow .n-loading{background-color:#f8fdff;border-color:#ddd;color:#333;box-shadow:0 1px 3px #ccc;}
+.n-yellow .n-tip .n-arrow b,.n-yellow .n-ok .n-arrow b,.n-yellow .n-loading .n-arrow b{color:#ddd;text-shadow:0 0 2px #ccc}
+.n-yellow .n-tip .n-arrow i,.n-yellow .n-ok .n-arrow i,.n-yellow .n-loading .n-arrow i{color:#f8fdff}
+.n-yellow .n-tip .n-icon{display:none}
+.validate_unit{ width:50%;}
+
+/*右侧卡片显示*/
+.card_show h2{font-size: 16px; font-weight: normal; margin-bottom:10px; }
+.card_price{margin: 10px 0; padding: 10px 2px; border-top: 1px solid #dddddd; border-bottom: 1px solid #dddddd;}
+.card_price p{ margin-top:12px; }
+.card_price p label{min-width: 68px; float: left;}
+.card_price p span{ color:#ff0000;font-size: 14px; font-family: arial;}
+.card_price p.card_total_price{line-height: 28px; margin-top:8px; }
+.card_price p.card_total_price span{font-size: 18px;}
+.card_price p span den{ color: #777; font-size: 12px; padding-right:1px; }
+.card_submit{position: relative;}
+.card_submit label.checkbox{background: none;padding-left: 0; line-height: 20px;}
+.card_submit .holderWrap{ margin-top:2px; }
+.card_submit .submit_btn{font-size:14px;width: 118px;height: 38px;line-height: 36px;border:none;border-radius: 3px; padding-left:0; margin: 32px 0 0 60px;cursor:pointer }
+.card_submit .unsure{background:#d4443a; color:#fff;}
+.card_submit .sure{background: #d4443a;cursor: pointer;}
+.card_submit .sure:hover{background: #a92219;}
+.card_submit .notice_tip{position:absolute; top:40px;left: 0; display:block; color:#d26969; text-align:center; width:100%; height:18px; line-height:14px; display:none;}
+.card_submit .notice_tip i{ background:url(../images/icon_34.png) no-repeat left bottom; display:inline-block;  width:18px; height:18px;vertical-align:-2px;*vertical-align:0;}
+.card_submit label.checkbox span.holder{ background-position:0 -9px;}
+.card_submit label.checked span.holder{ background-position:0 -22px;}
+
+.card_unit .tipText{background:url(../images/icon_34.png) no-repeat 10px center;font-family:"Hiragino Sans GB","宋体",tahoma,arial,sans-serif; font-size:12px;padding:8px 32px;line-height:16px;margin-top:-10px;margin-bottom:20px;color:#999999;}
+
+/*未完善注册用户*/
+.no_complete label,.no_complete span{ line-height:30px;}
+.no_complete input.complete_name,.no_complete input.paper_num{ width:112px;}
+.no_complete .tipText{ margin:12px 0 -12px 0;}
+.no_complete span.n-msg{ width:44px; line-height:15px;}
+.no_complete span.n-right{ line-height:0;}
+#qitazheng{ display:none;}
+/*.no_complete .n-default .n-left,.no_complete .n-default .n-right{ margin:0;}*/
+
+/*城市提醒*/
+.card_adress .tipText,.invoice_singel .tipText{ margin-left:26px; color:#d70000; margin-bottom:10px; display:none;}
+.invoice_singel .tipText{ margin-left:64px;}
+.invoice_single .tipshowText{height:18px;line-height:18px;margin-left:70px;}
+

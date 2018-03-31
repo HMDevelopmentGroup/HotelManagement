@@ -1,0 +1,184 @@
+﻿
+.clearfix {
+    *zoom: 1;
+}
+
+    .clearfix:before,
+    .clearfix:after {
+        display: table;
+        line-height: 0;
+        content: "";
+    }
+
+    .clearfix:after {
+        clear: both;
+    }
+
+
+
+.coupondetail{
+	padding-bottom: 20px;
+}
+.coupon{	
+	position: relative;
+	padding-left: 30px;
+	padding-top: 35px;
+}
+.coupon h4{
+	color:#d1ae76;
+	font-size: 18px;
+	font-weight: normal;
+	margin-bottom: 30px;
+}
+.coupon .section{
+	float: left;
+	width: 720px;
+	font-size: 0;
+}
+.coupon .section p{
+	display: inline-block;
+	*zoom: 1;
+	*display: inline;
+	width: 100%;
+	line-height: 1;
+	font-size: 14px;
+	color: #5d5e60;
+	margin-bottom: 20px;
+}
+.coupon .section span{
+	font-size: 12px;
+	color: #9fa0a2;
+}
+.coupon .section .w-all{display:block; width:100%;}
+.tag{
+	position: absolute;
+	right: 0;
+	top: 30px;
+	width: 103px;
+	height: 30px;
+	background: url(../images/inner_icon.gif) no-repeat;
+}
+.tag-over{
+	background-position: 0 -435px;
+}
+.tag-cando{
+	background-position: 0 -471px;
+}
+.hotelsearch{
+	position: relative;
+	padding:0 15px;
+	margin-bottom: 15px;
+}
+.hotelsearch .text{
+	float: left;
+	margin-right: 47px;
+}
+.hotelsearch .text input{
+	line-height: 25px;
+	height: 25px;
+}
+.text .m_zlxg{
+	margin-right: 0;
+	height: auto;
+	width: 145px
+}
+.text .m_zlxg p{
+	line-height: 25px;
+	height: 25px;
+	width: 145px
+}
+.text .m_zlxg .m_zlxg2{
+	width: 145px
+}
+.hotelsearch .text label{
+	display: block;
+	color: #5d5e60;
+	font-size: 14px;
+	line-height: 1;
+	padding: 10px 0;
+}
+.coupondetail .tit{
+	padding: 35px 0 0 30px;
+	background: none;
+	border-top: 1px solid #ececec;
+	height: auto;
+	font-size: 14px;
+	color: #59626a;
+}
+.hotelsearch .input{
+	border:  1px solid #ececec;
+	padding:0 15px 15px;
+}
+/*table*/
+.table{
+	margin: 0 20px 20px;
+	width: 750px;
+}
+.table tbody{
+	border-bottom: 2px solid #ececec;
+}
+.coupondetail tr,.coupondetail td{
+	height: 42px;
+}
+.coupondetail td{
+		    padding: 0 20px;
+		    color: #59626a;
+			font-size: 12px;
+}
+.coupondetail td a {
+	color: #1d7ad9;
+}
+
+.striped{
+	background-color: #ececec;
+}
+.btn {
+	border: 1px solid #bdbcbd;
+	font-size: 13px;
+	text-decoration: none;
+	color: #59626a;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	text-align: center;
+	vertical-align: bottom;
+}
+.btn:hover{
+	text-decoration: none;
+	    color: #d1ae76;
+}
+.btn-search{
+	width: 65px;
+	line-height: 28px;
+	box-sizing:border-box;
+	margin-top: 32px;
+
+}
+/*搜索失败*/
+.fail-search{
+	text-align: center;
+	font-size: 0;
+	padding: 20px 0;
+}
+.fail-search p{
+	display: inline-block;
+	width: 310px;
+	*display: inline;
+	*zoom: 1;
+	font-size: 16px;
+	color: #333;
+	text-align: left;
+	vertical-align: middle;
+}
+.fail-search span{
+	color: #d64c4c;
+}
+
+.fail-pic{
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	width: 125px;
+	height: 124px;
+	vertical-align: middle;
+}

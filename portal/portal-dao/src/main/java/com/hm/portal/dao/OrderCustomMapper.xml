@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hm.portal.dao.OrderCustomMapper" >
+
+    <sql id="Base_Column_List">
+        c.oid,o.ordertime,o.price,c.rid,c.status,c.offer,c.offerid,c.start,c.end,c.days
+    </sql>
+
+    <select id="selectByClause" resultType="com.hm.portal.pojo.vo.OrderCustom">
+       SELECT  c.oid,o.ordertime,o.price,c.rid,c.status,c.offer,c.offerid,c.start,c.end,c.days FROM checkinfo c LEFT
+        JOIN orders o ON c.oid = o.oid LEFT JOIN user u ON u.uid=c.uid WHERE (u.telephone=#{info} OR c.offer=#{info}) AND c.oid =#{orderNo}
+    </select>
+
+</mapper>

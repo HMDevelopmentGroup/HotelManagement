@@ -215,19 +215,16 @@
                 <li style="background: url(http://image-homeinn.b0.upaiyun.com/web/image/cb606310-7a8d-4bf9-af83-fe671cedac69.jpg) no-repeat center center" gsregion="1" gssnapshot="1">
                     <a  onclick="bannerlog(1316)" href="http://images.homeinns.com/Activity/springTravel/index.html" target="_blank"></a>
                 </li>
-                <li style="background: url(http://image-homeinn.b0.upaiyun.com/web/image/13c17105-23c3-459b-86c9-0a565f111733.jpg) no-repeat center center" gsregion="1" gssnapshot="2">
-                    <a  onclick="bannerlog(1311)" href="http://youxuan.bthhotels.com/Home/ActivityNew?type=activitytwo" target="_blank"></a>
-                </li>
-                <li style="background: url(http://image-homeinn.b0.upaiyun.com/web/image/d365ff9c-cfec-49d9-8250-d7eda7c05c21.jpg) no-repeat center center" gsregion="1" gssnapshot="3">
+                <li style="background: url(http://image-homeinn.b0.upaiyun.com/web/image/d365ff9c-cfec-49d9-8250-d7eda7c05c21.jpg) no-repeat center center" gsregion="1" gssnapshot="2">
                     <a  onclick="bannerlog(1313)" href="http://images.homeinns.com/Activity/RujiaBus/index.html " target="_blank"></a>
                 </li>
-                <li style="background: url(http://image-homeinn.b0.upaiyun.com/web/image/1d97d6aa-6c18-4411-9b76-813ed6b6e59d.jpg) no-repeat center center" gsregion="1" gssnapshot="4">
-                    <a  onclick="bannerlog(1312)" href="http://images.homeinns.com/Activity/magic_academy/index.html" target="_blank"></a>
-                </li>
-                <li style="background: url(http://image-homeinn.b0.upaiyun.com/web/image/2ffb96d1-7aa4-4021-838c-15b45cdd1906.jpg) no-repeat center center" gsregion="1" gssnapshot="5">
+                <li style="background: url(http://image-homeinn.b0.upaiyun.com/web/image/2ffb96d1-7aa4-4021-838c-15b45cdd1906.jpg) no-repeat center center" gsregion="1" gssnapshot="3">
                     <a  onclick="bannerlog(1315)" href=" http://images.homeinns.com/Activity/hk_trip/index.html" target="_blank"></a>
                 </li>
-                <li style="background: url(http://image-homeinn.b0.upaiyun.com/web/image/7a72d6b6-6ea0-4ec0-b595-5573e3ceabd5.jpg) no-repeat center center" gsregion="1" gssnapshot="6">
+                <li style="background: url(http://image-homeinn.b0.upaiyun.com/web/image/13c17105-23c3-459b-86c9-0a565f111733.jpg) no-repeat center center" gsregion="1" gssnapshot="4">
+                    <a  onclick="bannerlog(1311)" href="http://youxuan.bthhotels.com/Home/ActivityNew?type=activitytwo" target="_blank"></a>
+                </li>
+                <li style="background: url(http://image-homeinn.b0.upaiyun.com/web/image/7a72d6b6-6ea0-4ec0-b595-5573e3ceabd5.jpg) no-repeat center center" gsregion="1" gssnapshot="5">
                     <a  onclick="bannerlog(1308)" href="http://images.homeinns.com/Activity/sunny_rum/index.html " target="_blank"></a>
                 </li>
             
@@ -256,11 +253,11 @@
                             <input id="cityName_old" name="cityName_old" type="hidden" title="城市" />
                         </div>
                         <div class="home_input_time">
-                            <input id="beginDate" name="beginDate" class="date_input start_data gundong" readonly value="2018/03/22" time_group="one">
+                            <input id="beginDate" name="beginDate" class="date_input start_data gundong" readonly value="2018/03/26" time_group="one">
                             <span>入住</span>
                         </div>
                         <div class="home_input_time">
-                            <input id="endDate" name="endDate" class="date_input end_data gundong" readonly value="2018/03/23" time_group="one">
+                            <input id="endDate" name="endDate" class="date_input end_data gundong" readonly value="2018/03/27" time_group="one">
                             <span>退房</span>
                         </div>
                         <div class="home_search">
@@ -302,8 +299,8 @@
                         </div>
                         <!--20180202 yanxuan 日期 S-->
                         <div class="home_date_choose">
-                            <input  type="text" class="start_data gundong date_input" name="xybeginDate" id="xybeginDate" value="2018/03/22" readonly/><span>入住</span><b>-</b>
-                            <input type="text" class="end_data gundong date_input" name="xyendDate" id="xyendDate" value="2018/03/23" readonly><span>退房</span>
+                            <input  type="text" class="start_data gundong date_input" name="xybeginDate" id="xybeginDate" value="2018/03/26" readonly/><span>入住</span><b>-</b>
+                            <input type="text" class="end_data gundong date_input" name="xyendDate" id="xyendDate" value="2018/03/27" readonly><span>退房</span>
                         </div>
                         <!--20180202 yanxuan 日期 E-->
                         <div class="home_agree_choose">
@@ -2663,16 +2660,16 @@
         <input id="cityName_old" name="cityName_old" type="hidden" title="城市" />
         <div class="Check_in fix enter_time">
             <div class="fl">
-                <input type="hidden" readonly value="2018-03-22)" name="s_ArrDate" time_group="one" id="s_ArrDate">
-                <span class="start_date" style="padding-right:2.2%;color: #535353;" data-time="2018-03-22">2018-03-22</span>
+                <input type="hidden" readonly value="2018-03-26)" name="s_ArrDate" time_group="one" id="s_ArrDate">
+                <span class="start_date" style="padding-right:2.2%;color: #535353;" data-time="2018-03-26">2018-03-26</span>
                 <span class="Check_date" style="padding-right:4.3%"></span>
             </div>
             <div class="fl Days">
                 - 1晚  -
             </div>
             <div class="fl">
-                <input type="hidden" name="s_DepDate" readonly value="2018-03-23" time_group="one" id="s_DepDate">
-                <span class="end_date" style="padding-left:4.3%;padding-right:2.2%;color: #535353;" data-time="2018-03-23">2018-03-23</span>
+                <input type="hidden" name="s_DepDate" readonly value="2018-03-27" time_group="one" id="s_DepDate">
+                <span class="end_date" style="padding-left:4.3%;padding-right:2.2%;color: #535353;" data-time="2018-03-27">2018-03-27</span>
                 <span class="Departure"></span>
             </div>
         </div>
@@ -3145,5 +3142,5 @@
 
 </body>
 </html>
-<!--20-->
+<!--65-->
  

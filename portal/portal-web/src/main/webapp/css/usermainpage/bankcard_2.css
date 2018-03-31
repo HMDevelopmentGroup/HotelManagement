@@ -1,0 +1,147 @@
+﻿
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Microsoft YaHei;
+}
+
+.warp {
+    width: 786px;
+    min-height: 458px;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+    .clearfix:before,
+    .clearfix:after {
+        display: table;
+        line-height: 0;
+        content: "";
+    }
+
+    .clearfix:after {
+        clear: both;
+    }
+
+.nodemo {
+    width: 149px;
+    height: 117px;
+    margin: 100px auto 0;
+}
+
+.demo {
+    position: relative;
+    width: 230px;
+    height: 135px;
+    border: 1px solid #ddd;
+    display: block;
+    float: left;
+    margin: 30px 0 0 30px;
+    background-color:#fff;
+    border-radius: 3px;
+}
+
+.bank-name p {
+    text-align: right;
+    margin: 0;
+    padding: 10px;
+    font-size: 18px;
+    background-color: #ececec;
+    color: #59626a;
+}
+
+.del {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    font-size: 12px;
+    text-align: center;
+    z-index: 1;
+    color: #1d7ad9;
+    cursor: pointer;
+}
+
+.cardnb {
+    height: 70px;
+    padding-left: 15px;
+    padding-top: 24px;
+}
+
+    .cardnb p {
+        margin: 0;
+        color: #59626a;
+        font-size: 18px;
+        line-height: 1;
+    }
+
+    .cardnb span {
+        color: #96a0a7;
+        font-size: 14px;
+        margin-right: 10px;
+    }
+
+.db {
+    display: block !important;
+}
+
+p {
+    margin: 0;
+}
+
+.bank-name i {
+    font-style: normal;
+    background: url(../images/bank-icon_2.png) no-repeat;
+    width: 50px;
+    height: 30px;
+    float: left;
+    margin: 8px;
+}
+
+.icon-bocom {
+    background-position: 0 0 !important;
+}
+
+.icon-up {
+    background-position: -76px 0 !important;
+}
+
+.layui-layer {
+    -webkit-background-clip: border-box;
+    padding: 20px;
+    left: 50%;
+    margin-left: -237px;
+}
+
+.layui-layer-title {
+    padding: 0 0 0 10px;
+    line-height: 30px;
+    height: auto;
+    border-bottom: 1px solid #dedcdc;
+}
+
+.layui-layer-btn {
+    text-align: center;
+    padding: 0;
+}
+
+    .layui-layer-btn .layui-layer-btn0 {
+        background-color: #d64c4c;
+        border: #d64c4c;
+    }
+
+.layui-layer-dialog {
+    min-width: 435px;
+}
+
+    .layui-layer-dialog .layui-layer-content {
+        color: #59626a;
+        font-size: 14px;
+        padding: 25px 0 0 10px;
+        height: 60px;
+    }
+
+.layui-layer-ico {
+    background: url(../images/bank-icon_2.png) no-repeat;
+}

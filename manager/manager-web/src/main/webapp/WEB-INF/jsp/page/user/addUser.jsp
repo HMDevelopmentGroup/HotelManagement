@@ -92,7 +92,6 @@
 </form>
 
 <script type="text/javascript" src="${pageContext.request.contextPath}/layui/layui.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/addUser.js"></script>
 
 
 <script type="text/javascript">
@@ -121,7 +120,7 @@
 
 
         layui.use('form', function () {
-            var form = layui.form();
+            var form = layui.form;
 
             form.verify({
                 username: function (value, item) { //value：表单的值、item：表单的DOM对象

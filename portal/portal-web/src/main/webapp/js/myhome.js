@@ -91,6 +91,7 @@ $(function () {
             $("#OrderhistorylistPagination").hide();
         }
         if ($(this).html() == "历史订单") {
+            
             $("#OrderlistPage").hide();
             $("#OrderhistorylistPagination").show();
         }
@@ -1424,3 +1425,116 @@ $(function () {
 
 
 
+
+function initOrderPagination(totalRow, currentPageIndex) {
+    $("#OrderlistPage").pagination(totalRow, {
+        num_edge_entries: 1, //边缘页数
+        num_display_entries: 4, //主体页数
+        current_page: currentPageIndex,
+        items_per_page: 15, //每页显示1项
+        callback: function (pageindex, jq) {
+          
+            if (pageindex == currentPageIndex) {
+                return false;
+            }
+            $("#pageNo").val(parseInt(pageindex));
+            loadorderaync();
+        }
+    });
+}
+function loadorderaync() {
+    var pageNo = "0";
+    if ($("#pageNo").val() != null) {
+        pageNo = $("#pageNo").val();
+    }
+
+    var parms = {
+        pageIndex: pageNo,
+        pageSize: 8,
+        type: 1
+    }
+    var url = "/member/getmemberorderlist";
+    $.ajax({
+        type: "GET",
+        url: url,
+        data: parms,
+        success: function (data) {
+            //pageinit();
+            $("#tblist").html("");
+            if ($(data).html() == null) {
+                $("#tblist").append(" <p class='rev_none_txt' style='text-align: center;'>您目前没有未入住订单</p>");
+            } else {
+                $("#tblist").append(data);
+                $("#OrderlistPage").show();
+                loadLMMOrderInfoByAsync("tblist");
+                $(".load").hide();
+            }
+            $(".yx_goods").show();
+            $(".yx_roomicon").addClass("minon");
+        }
+    });
+}
+
+
+function initHistoryOrderPagination(totalRow, currentPageIndex) {
+
+    $("#OrderhistorylistPagination").pagination(totalRow, {
+        num_edge_entries: 1, //边缘页数
+        num_display_entries: 4, //主体页数
+        current_page: currentPageIndex,
+        items_per_page: 15, //每页显示1项
+        callback: function (pageindex, jq) {
+            if (pageindex == currentPageIndex) {
+                //     $("#OrderhistorylistPagination").hide();
+                return false;
+            }
+            $("#historypageNo").val(parseInt(pageindex));
+       
+            loadhistoryorderaync();
+            $("#OrderhistorylistPagination").show();
+        }
+    });
+}
+function loadhistoryorderaync() {
+    var pageNo = "0";
+    if ($("#historypageNo").val() != null)
+    {
+        pageNo = $("#historypageNo").val();
+    }
+
+
+    var parms = {
+        pageIndex: pageNo,
+        pageSize: 8
+    }
+    var url = "/member/GetMemberOrderHistoryList";
+    $.ajax({
+        type: "GET",
+        url: url,
+        data: parms,
+        success: function (data) {
+            //pageinit();
+            $("#historyorderlist").html("");
+            if ($(data).html() == null) {
+                $("#historyorderlist").append(" <p class='rev_none_txt' style='text-align: center;'>您目前没有未入住订单</p>");
+            } else {
+              
+                if ($(".rj_public_nav").find("li").eq(0).hasClass("navon")) {
+                    $("#OrderhistorylistPagination").hide();
+                }
+                else {
+                    $("#OrderhistorylistPagination").show();
+                }
+                
+                $("#historyorderlist").append(data);
+
+
+                loadLMMOrderInfoByAsync("historyorderlist");
+
+                $(".load").hide();
+            }
+            $(".yx_goods").show();
+            $(".yx_roomicon").addClass("minon");
+        }
+    });
+}
