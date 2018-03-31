@@ -14,19 +14,15 @@
 
     <title>酒店列表</title>
     <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap-theme.min.css"
-          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap-theme.min.css">
     <link href="${pageContext.request.contextPath}/css/reset.css" rel="stylesheet"/>
     <link href="${pageContext.request.contextPath}/css/public.css" rel="stylesheet"/>
     <link href="${pageContext.request.contextPath}/css/list.css" rel="stylesheet"/>
     <link href="${pageContext.request.contextPath}/layui/css/layui.css" rel="stylesheet"/>
 
-    <script src="${pageContext.request.contextPath}/js/jquery-1.8.3.min.js"></script>
-    <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"
-            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-            crossorigin="anonymous"></script>
+    <script src="${pageContext.request.contextPath}/js/jquery-1.10.2.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
     <script src="${pageContext.request.contextPath}/js/public.js"></script>
     <script src="${pageContext.request.contextPath}/layui/layui.all.js"></script>
 </head>
@@ -77,10 +73,10 @@
 
     <div style="position: relative;left: 150px">
         <div class="list_main" align="center" style="margin: auto">
-            <div class="container">
+            <div class="container" style="width: 1200px">
                 <div class="row">
                     <c:forEach items="${hotels}" var="hotel">
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6"><!-- 大屏幕放3张略缩图，pc端放4张，平板和手机放6张-->
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6" style="margin-top: 6px;margin-bottom: 1px;"  onmouseover="show(this)" onmouseout="disshow(this)"><!-- 大屏幕放3张略缩图，pc端放4张，平板和手机放6张-->
                             <div class="thumbnail">
                                 <a href="${pageContext.request.contextPath}/toBook/${hotel.id}">
                                 <img src="http://${hotel.hlogo}" class="img-responsive">
@@ -100,5 +96,18 @@
     </div>
 </div>
 </body>
+<script>
+    function show(obj) {
+        $(obj).css("margin-top","0px");
+        $(obj).css("margin-bottom","1px");
+        $(obj).css("box-shadow","0px 0px 6px #2ffff3");
+
+    }
+    function disshow(obj) {
+        $(obj).css("margin-top","1px");
+        $(obj).css("margin-bottom","0px");
+        $(obj).css("box-shadow","0px 0px 0px #fff");
+    }
+</script>
 </html>
 

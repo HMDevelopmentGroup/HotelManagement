@@ -46,7 +46,7 @@
             </a>
             <ul class="nav">
 
-                <li id="jifenshangcheng"><a href="http://shop.homeinns.com/">积分商城</a></li>
+                <li id="jifenshangcheng"><a href="${pageContext.request.contextPath}/shop">积分商城</a></li>
 
                 <li id="about">
                     <a style="cursor:default;">
@@ -1072,7 +1072,11 @@
             var keyDescript = $("#keyDescript").val();
             if (keyDescript==null || ""==keyDescript){
                 location.href="${pageContext.request.contextPath}/listHotel/"+cityName;
+            }else{
+                location.href="http://127.0.0.1:83/Search/searchHotel?cityName="+cityName+"&keyword="+keyDescript;
+                //todo
             }
+
         });
     }
 </script>

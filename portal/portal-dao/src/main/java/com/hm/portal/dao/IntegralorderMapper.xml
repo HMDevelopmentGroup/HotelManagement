@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hm.portal.dao.IntegralorderMapper" >
+  <resultMap id="BaseResultMap" type="com.hm.portal.pojo.po.Integralorder" >
+    <constructor >
+      <idArg column="integralorder_id" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="uid" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="product_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="integral_tel" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="integralorder_status" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="integral_address" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    integralorder_id, uid, product_id, integral_tel, integralorder_status, integral_address
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.hm.portal.pojo.po.IntegralorderExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from integralorder
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from integralorder
+    where integralorder_id = #{integralorderId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from integralorder
+    where integralorder_id = #{integralorderId,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.hm.portal.pojo.po.IntegralorderExample" >
+    delete from integralorder
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.hm.portal.pojo.po.Integralorder" >
+    insert into integralorder (integralorder_id, uid, product_id, 
+      integral_tel, integralorder_status, integral_address
+      )
+    values (#{integralorderId,jdbcType=VARCHAR}, #{uid,jdbcType=VARCHAR}, #{productId,jdbcType=INTEGER}, 
+      #{integralTel,jdbcType=VARCHAR}, #{integralorderStatus,jdbcType=INTEGER}, #{integralAddress,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.hm.portal.pojo.po.Integralorder" >
+    insert into integralorder
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="integralorderId != null" >
+        integralorder_id,
+      </if>
+      <if test="uid != null" >
+        uid,
+      </if>
+      <if test="productId != null" >
+        product_id,
+      </if>
+      <if test="integralTel != null" >
+        integral_tel,
+      </if>
+      <if test="integralorderStatus != null" >
+        integralorder_status,
+      </if>
+      <if test="integralAddress != null" >
+        integral_address,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="integralorderId != null" >
+        #{integralorderId,jdbcType=VARCHAR},
+      </if>
+      <if test="uid != null" >
+        #{uid,jdbcType=VARCHAR},
+      </if>
+      <if test="productId != null" >
+        #{productId,jdbcType=INTEGER},
+      </if>
+      <if test="integralTel != null" >
+        #{integralTel,jdbcType=VARCHAR},
+      </if>
+      <if test="integralorderStatus != null" >
+        #{integralorderStatus,jdbcType=INTEGER},
+      </if>
+      <if test="integralAddress != null" >
+        #{integralAddress,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.hm.portal.pojo.po.IntegralorderExample" resultType="java.lang.Integer" >
+    select count(*) from integralorder
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update integralorder
+    <set >
+      <if test="record.integralorderId != null" >
+        integralorder_id = #{record.integralorderId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.uid != null" >
+        uid = #{record.uid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.productId != null" >
+        product_id = #{record.productId,jdbcType=INTEGER},
+      </if>
+      <if test="record.integralTel != null" >
+        integral_tel = #{record.integralTel,jdbcType=VARCHAR},
+      </if>
+      <if test="record.integralorderStatus != null" >
+        integralorder_status = #{record.integralorderStatus,jdbcType=INTEGER},
+      </if>
+      <if test="record.integralAddress != null" >
+        integral_address = #{record.integralAddress,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update integralorder
+    set integralorder_id = #{record.integralorderId,jdbcType=VARCHAR},
+      uid = #{record.uid,jdbcType=VARCHAR},
+      product_id = #{record.productId,jdbcType=INTEGER},
+      integral_tel = #{record.integralTel,jdbcType=VARCHAR},
+      integralorder_status = #{record.integralorderStatus,jdbcType=INTEGER},
+      integral_address = #{record.integralAddress,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.hm.portal.pojo.po.Integralorder" >
+    update integralorder
+    <set >
+      <if test="uid != null" >
+        uid = #{uid,jdbcType=VARCHAR},
+      </if>
+      <if test="productId != null" >
+        product_id = #{productId,jdbcType=INTEGER},
+      </if>
+      <if test="integralTel != null" >
+        integral_tel = #{integralTel,jdbcType=VARCHAR},
+      </if>
+      <if test="integralorderStatus != null" >
+        integralorder_status = #{integralorderStatus,jdbcType=INTEGER},
+      </if>
+      <if test="integralAddress != null" >
+        integral_address = #{integralAddress,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where integralorder_id = #{integralorderId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.hm.portal.pojo.po.Integralorder" >
+    update integralorder
+    set uid = #{uid,jdbcType=VARCHAR},
+      product_id = #{productId,jdbcType=INTEGER},
+      integral_tel = #{integralTel,jdbcType=VARCHAR},
+      integralorder_status = #{integralorderStatus,jdbcType=INTEGER},
+      integral_address = #{integralAddress,jdbcType=VARCHAR}
+    where integralorder_id = #{integralorderId,jdbcType=VARCHAR}
+  </update>
+</mapper>

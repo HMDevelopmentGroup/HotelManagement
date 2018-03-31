@@ -55,8 +55,8 @@
                 <groupId>org.apache.tomcat.maven</groupId>
                 <artifactId>tomcat7-maven-plugin</artifactId>
                 <configuration>
-                    <port>82</port>
-                    <path>/Hotel</path>
+                    <port>83</port>
+                    <path>/Search</path>
                     <uriEncoding>UTF-8</uriEncoding>
                 </configuration>
             </plugin>
