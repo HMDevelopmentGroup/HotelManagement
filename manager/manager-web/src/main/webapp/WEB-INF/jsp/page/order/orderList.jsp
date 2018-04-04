@@ -19,9 +19,9 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/layui/css/layui.css" media="all"/>
-
     <link rel="stylesheet" href="//at.alicdn.com/t/font_tnyc012u2rlwstt9.css" media="all"/>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/user.css" media="all"/>
+
 </head>
 
 <body class="childrenBody">
@@ -75,6 +75,9 @@
                     <option value="5">已退房</option>
                 </select>
             </div>
+        </div>
+        <div class="layui-inline">
+            <a href="${pageContext.request.contextPath}/export" class="layui-btn layui-btn-normal">导出</a>
         </div>
         <button class="layui-btn" lay-submit="" lay-filter="search" data-type="reload"><i
                 class="layui-icon">&#xe615;</i></button>

@@ -15,4 +15,6 @@ public interface OrderCustomMapper {
 
 
     void updateStatus(Map<String,String> map);
+
+    List<OrderCustom> selectApartInfo();
 }
