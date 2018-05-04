@@ -12,8 +12,6 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/layui/css/layui.css" media="all"/>
-
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_tnyc012u2rlwstt9.css" media="all"/>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/user.css" media="all"/>
 </head>
 

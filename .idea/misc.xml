@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/backstage" />
     <file type="web" url="file://$PROJECT_DIR$/manager/manager-web" />
     <file type="web" url="file://$PROJECT_DIR$/portal/portal-web" />
     <file type="web" url="file://$PROJECT_DIR$/search/search-web" />
+    <file type="web" url="file://$PROJECT_DIR$/sso-web" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">

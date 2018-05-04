@@ -135,4 +135,13 @@
     </update>
 
 
+    <update id="updateIntegration" parameterType="java.lang.Integer">
+        UPDATE user
+        <set>
+            integration = #{integration,jdbcType=INTEGER}
+        </set>
+        where uid = #{uid,jdbcType=INTEGER}
+    </update>
+
+
 </mapper>

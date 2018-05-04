@@ -9,6 +9,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class IndexController {
 
     @RequestMapping(value = "/",method = RequestMethod.GET)
+    public String toLogin(){
+        return "page/login/login";
+    }
+
+    @RequestMapping(value = "/index",method = RequestMethod.GET)
     public String toIndex(){
         return "Bindex";
     }

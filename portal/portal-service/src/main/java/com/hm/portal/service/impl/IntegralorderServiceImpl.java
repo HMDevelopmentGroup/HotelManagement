@@ -22,7 +22,6 @@ public class IntegralorderServiceImpl implements IntegralorderService {
     @Override
     @Transactional
     public int addIntegralorder(Integralorder integralorder) {
-
         String integralorderId = IdUtils.getUUID();
         integralorder.setIntegralorderId(integralorderId);
         integralorder.setUid("48fce4d7c1e04943ab26b11eb79d0710");
@@ -31,6 +30,7 @@ public class IntegralorderServiceImpl implements IntegralorderService {
         try{
             i =integralorderdao.insert(integralorder);
         }catch (Exception e){
+            logger.debug(e.getMessage(),e);
             e.printStackTrace();
         }
         return i;

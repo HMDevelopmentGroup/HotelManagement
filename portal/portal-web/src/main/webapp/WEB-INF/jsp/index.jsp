@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
@@ -39,46 +40,54 @@
 <div class="main_pc">
 
     <%--首页头--%>
-    <div class="top">
-        <div class="main_w1200 top_nav">
-            <a href="/" class="top_logo">
-                <div class="brands_logo"></div>
-            </a>
-            <ul class="nav">
+        <div class="top">
+            <div class="main_w1200 top_nav">
+                <a href="/" class="top_logo">
+                    <div class="brands_logo"></div>
+                </a>
+                <ul class="nav">
 
-                <li id="jifenshangcheng"><a href="${pageContext.request.contextPath}/shop">积分商城</a></li>
+                    <li id="jifenshangcheng"><a href="${pageContext.request.contextPath}/shop">积分商城</a></li>
 
-                <li id="about">
-                    <a style="cursor:default;">
-                        关于首旅如家</a>
-                    <div class="nav_con">
-                        <a href="/Event">大事记</a>
-                        <a href="/About">品牌介绍</a>
-                        <a href="/News">集团快讯</a>
-                        <a href="/Recruit">招贤纳士</a>
-                        <a href="http://images.homeinns.com/Activity/senses.html">微电影</a>
-                    </div>
-                </li>
-            </ul>
+                    <li id="about">
+                        <a style="cursor:default;">
+                            关于首旅如家</a>
+                        <div class="nav_con">
+                            <a href="#">大事记</a>
+                            <a href="#">品牌介绍</a>
+                            <a href="#">集团快讯</a>
+                            <a href="#">招贤纳士</a>
+                            <a href="#">微电影</a>
+                        </div>
+                    </li>
+                </ul>
 
-            <div class="top_login" style="margin-top: 25px">
-                <div class="top_login_txt fl">
-                    <span class="icon iconfont login_icon">&#xe60a;</span>
-                    <a class="login_txt"
-                       href="https://login.bthhotels.com/login/index?returnUrl=http%3a%2f%2fwww.bthhotels.com%2f">登录家宾会</a>
-                    <code>|</code>
-                    <dl class="top_login_xl">
-                        <dt>
-                            <a href="https://login.bthhotels.com/login/index?returnUrl=http%3a%2f%2fwww.bthhotels.com%2f">登录</a>
-                        </dt>
-                        <dd><a href="/Order/FitOrderSelect">非会员查订单</a></dd>
-                    </dl>
+                <div class="top_login" style="margin-top: 25px">
+                    <c:if test="${empty user}">
+                        <div class="top_login_txt fl">
+                            <span class="icon iconfont login_icon">&#xe60a;</span>
+                            <a class="login_txt"
+                               href="http://www.legna.top/login">登录家宾会</a>
+                            <code>|</code>
+                            <dl class="top_login_xl">
+                                <dt>
+                                    <a href="http://127.0.0.1:85/sso">登录</a>
+                                </dt>
+                                <dd><a href="${pageContext.request.contextPath}/Order/FitOrderSelect">非会员查订单</a></dd>
+                            </dl>
+                        </div>
+                        <a href="${pageContext.request.contextPath}/userRegister" class="login_line fl">注册</a>
+                    </c:if>
+                    <c:if test="${!empty user}">
+                        <div class="top_login_txt fl">
+                            欢迎您，${user.realname}
+                        </div>
+                        <a href="${pageContext.request.contextPath}/userInfo" class="login_line fl">个人中心</a>
+                    </c:if>
                 </div>
-                <a href="https://login.bthhotels.com/Reg" class="login_line fl">注册</a>
+                <div class="clear"></div>
             </div>
-            <div class="clear"></div>
         </div>
-    </div>
 
 
     <!--新首页-->
@@ -90,37 +99,37 @@
             <ul class="fix">
                 <li style="background: url(images/d34cba17-9f41-485b-97d8-3f7e400c736c.jpg) no-repeat center center"
                     gsregion="1" gssnapshot="0">
-                    <a onclick="bannerlog(1317)" href="http://images.homeinns.com/Activity/springFlower/index.html"
+                    <a onclick="bannerlog(1317)" href="#"
                        target="_blank"></a>
                 </li>
                 <li style="background: url(images/cb606310-7a8d-4bf9-af83-fe671cedac69.jpg) no-repeat center center"
                     gsregion="1" gssnapshot="1">
-                    <a onclick="bannerlog(1316)" href="http://images.homeinns.com/Activity/springTravel/index.html"
+                    <a onclick="bannerlog(1316)" href="#"
                        target="_blank"></a>
                 </li>
                 <li style="background: url(images/13c17105-23c3-459b-86c9-0a565f111733.jpg) no-repeat center center"
                     gsregion="1" gssnapshot="2">
-                    <a onclick="bannerlog(1311)" href="http://youxuan.bthhotels.com/Home/ActivityNew?type=activitytwo"
+                    <a onclick="bannerlog(1311)" href="#"
                        target="_blank"></a>
                 </li>
                 <li style="background: url(images/d365ff9c-cfec-49d9-8250-d7eda7c05c21.jpg) no-repeat center center"
                     gsregion="1" gssnapshot="3">
-                    <a onclick="bannerlog(1313)" href="http://images.homeinns.com/Activity/RujiaBus/index.html "
+                    <a onclick="bannerlog(1313)" href="#"
                        target="_blank"></a>
                 </li>
                 <li style="background: url(images/1d97d6aa-6c18-4411-9b76-813ed6b6e59d.jpg) no-repeat center center"
                     gsregion="1" gssnapshot="4">
-                    <a onclick="bannerlog(1312)" href="http://images.homeinns.com/Activity/magic_academy/index.html"
+                    <a onclick="bannerlog(1312)" href="#"
                        target="_blank"></a>
                 </li>
                 <li style="background: url(images/2ffb96d1-7aa4-4021-838c-15b45cdd1906.jpg) no-repeat center center"
                     gsregion="1" gssnapshot="5">
-                    <a onclick="bannerlog(1315)" href=" http://images.homeinns.com/Activity/hk_trip/index.html"
+                    <a onclick="bannerlog(1315)" href="#"
                        target="_blank"></a>
                 </li>
                 <li style="background: url(images/7a72d6b6-6ea0-4ec0-b595-5573e3ceabd5.jpg) no-repeat center center"
                     gsregion="1" gssnapshot="6">
-                    <a onclick="bannerlog(1308)" href="http://images.homeinns.com/Activity/sunny_rum/index.html "
+                    <a onclick="bannerlog(1308)" href="#"
                        target="_blank"></a>
                 </li>
 
@@ -171,32 +180,32 @@
             <div class="list_logos">
                 <div class="list_logos_title">首旅如家酒店集团旗下品牌</div>
                 <ul class="list_logos_items1 fix">
-                    <a target="_blank" href="/About/JianGuo">
+                    <a target="_blank" href="#">
                         <li class="jianguo_logo">
                             <div class="Artboard_logo"></div>
                         </li>
                     </a>
-                    <a target="_blank" href="/About/slny">
+                    <a target="_blank" href="#">
                         <li class="lanyuan_logo">
                             <div class="Artboard_logo"></div>
                         </li>
                     </a>
-                    <a target="_blank" href="/About/jlfd">
+                    <a target="_blank" href="#">
                         <li class="jinglun_logo">
                             <div class="Artboard_logo"></div>
                         </li>
                     </a>
-                    <a target="_blank" href="/About/py">
+                    <a target="_blank" href="#">
                         <li class="xiying_logo">
                             <div class="Artboard_logo"></div>
                         </li>
                     </a>
-                    <a target="_blank" href="/About/jlfm">
+                    <a target="_blank" href="#">
                         <li class="feiman_logo">
                             <div class="Artboard_logo"></div>
                         </li>
                     </a>
-                    <a target="_blank" href="/About/nshg">
+                    <a target="_blank" href="#">
                         <li class="lansanxiuxian_logo">
                             <div class="Artboard_logo"></div>
                         </li>
@@ -204,85 +213,85 @@
 
                 </ul>
                 <ul class="list_logos_items2 fix">
-                    <a target="_blank" href="/About/ytel">
+                    <a target="_blank" href="#">
                         <li class="hy_zhizun_logo">
                             <div class="Artboard_logo"></div>
                         </li>
                     </a>
-                    <a target="_blank" href="/About/ytelzs">
+                    <a target="_blank" href="#">
                         <li class="hy_zhishang_logo">
                             <div class="Artboard_logo"></div>
                         </li>
                     </a>
-                    <a target="_blank" href="/About/ytelzg">
+                    <a target="_blank" href="#">
                         <li class="hy_zhige_logo">
                             <div class="Artboard_logo"></div>
                         </li>
                     </a>
-                    <a target="_blank" href="/About/plus">
+                    <a target="_blank" href="#">
                         <li class="rj_jingxuan_logo">
                             <div class="Artboard_logo"></div>
                         </li>
                     </a>
-                    <a target="_blank" href="/About/rjsl">
+                    <a target="_blank" href="#">
                         <li class="rj_sl_logo">
                             <div class="Artboard_logo"></div>
                         </li>
                     </a>
-                    <a target="_blank" href="/About/yj">
+                    <a target="_blank" href="#">
                         <li class="yiju_logo">
                             <div class="Artboard_logo"></div>
                         </li>
                     </a>
                 </ul>
                 <ul class="list_logos_items3 fix">
-                    <a target="_blank" href="/About/homeinn">
+                    <a target="_blank" href="#">
                         <li class="rujia_logo">
                             <div class="Artboard_logo"></div>
                         </li>
                     </a>
-                    <a target="_blank" href="/About/motel">
+                    <a target="_blank" href="#">
                         <li class="motai_logo">
                             <div class="Artboard_logo"></div>
                         </li>
                     </a>
-                    <a target="_blank" href="/About/yssj">
+                    <a target="_blank" href="#">
                         <li class="yunshangsiji_jiudian_logo">
                             <div class="Artboard_logo"></div>
                         </li>
                     </a>
-                    <a href="/About/yssjms" target="_blank">
+                    <a href="#" target="_blank">
                         <li class="yunshangsiji_ms_logo">
                             <div class="Artboard_logo"></div>
                         </li>
                     </a>
-                    <a target="_blank" href="/About/ykej">
+                    <a target="_blank" href="#">
                         <li class="yake_logo">
                             <div class="Artboard_logo"></div>
                         </li>
                     </a>
-                    <a target="_blank" href="/About/xyd">
+                    <a target="_blank" href="#">
                         <li class="xingyandu_logo">
                             <div class="Artboard_logo"></div>
                         </li>
                     </a>
-                    <a target="_blank" href="/About/shiby">
+                    <a target="_blank" href="#">
                         <li class="shiboyun_logo">
                             <div class="Artboard_logo"></div>
                         </li>
                     </a>
-                    <a target="_blank" href="/About/sby">
+                    <a target="_blank" href="#">
                         <li class="shubo_yun_logo">
                             <div class="Artboard_logo"></div>
                         </li>
                     </a>
 
-                    <a target="_blank" href="/About/rby">
+                    <a target="_blank" href="#">
                         <li class="ruibo_logo">
                             <div class="Artboard_logo"></div>
                         </li>
                     </a>
-                    <a target="_blank" href="/About/pby">
+                    <a target="_blank" href="#">
                         <li class="paibo_logo">
                             <div class="Artboard_logo"></div>
                         </li>
@@ -299,22 +308,22 @@
                             <div class="Artboard_logo"></div>
                         </li>
                     </a>
-                    <a target="_blank" href="/hotel/K21001">
+                    <a target="_blank" href="#">
                         <li class="manquleyuan_logo">
                             <div class="Artboard_logo"></div>
                         </li>
                     </a>
-                    <a target="_blank" href="http://www.douhaogongyu.com/comma/list.html">
+                    <a target="_blank" href="#">
                         <li class="douhaogongyu_logo">
                             <div class="Artboard_logo"></div>
                         </li>
                     </a>
-                    <a target="_blank" href="http://www.douhaogongyu.com/qc/list.html">
+                    <a target="_blank" href="#">
                         <li class="qingchaogongyu_logo">
                             <div class="Artboard_logo"></div>
                         </li>
                     </a>
-                    <a target="_blank" href="http://www.douhaogongyu.com/dorm/list.html">
+                    <a target="_blank" href="#">
                         <li class="douhaozhijia_logo">
                             <div class="Artboard_logo"></div>
                         </li>
@@ -340,110 +349,110 @@
                     <ul class="home_logo_nav" id="logo_nav1">
                         <!--高端商旅-->
                         <li class="home_jianguo_logobg" TypeClassId="3" TypeId="109">
-                            <a title="首旅建国酒店" target="_blank" href="/About/JianGuo"><span class="home_jianguo_icon"><em
+                            <a title="首旅建国酒店" target="_blank" href="#"><span class="home_jianguo_icon"><em
                                     class="em_cm home_jianguo_span"></em></span></a>
                         </li>
                         <li class="home_puyin_logobg" TypeClassId="3" TypeId="107">
-                            <a title="璞隐酒店" target="_blank" href="/About/py"><span class="home_puyin_icon"><em
+                            <a title="璞隐酒店" target="_blank" href="#"><span class="home_puyin_icon"><em
                                     class="em_cm home_puyin_span"></em></span></a>
                         </li>
                         <li class="home_nanyuan_logobg" TypeClassId="3" TypeId="112">
-                            <a title="首旅南苑酒店" target="_blank" href="/About/slny"><span class="home_nanyuan_icon"><em
+                            <a title="首旅南苑酒店" target="_blank" href="#"><span class="home_nanyuan_icon"><em
                                     class="em_cm home_nanyuan_span"></em></span></a>
                         </li>
                         <li class="home_jinglun_logobg" TypeClassId="3" TypeId="110">
-                            <a title="首旅京伦酒店" target="_blank" href="/About/jlfd"><span class="home_jinglun_icon"><em
+                            <a title="首旅京伦酒店" target="_blank" href="#"><span class="home_jinglun_icon"><em
                                     class="em_cm home_jinglun_span"></em></span></a>
                         </li>
                         <li class="home_feiman_logobg" TypeClassId="3" TypeId="108">
-                            <a title="扉缦酒店" target="_blank" href="/About/jlfm"><span class="home_feiman_icon"><em
+                            <a title="扉缦酒店" target="_blank" href="#"><span class="home_feiman_icon"><em
                                     class="em_cm home_feiman_span"></em></span></a>
                         </li>
                         <li class="home_nanshan_logobg" TypeClassId="3" TypeId="111">
-                            <a title="南山休闲会馆" target="_blank" href="/About/nshg"><span class="home_nanshan_icon"><em
+                            <a title="南山休闲会馆" target="_blank" href="#"><span class="home_nanshan_icon"><em
                                     class="em_cm home_nanshan_span"></em></span></a>
                         </li>
 
                         <!--中高端商旅-->
                         <li class="home_heyi_zhizun_logobg" TypeClassId="4" TypeId="122">
-                            <a title="和颐至尊酒店" target="_blank" href="/About/ytel"><span class="home_heyi_zhizun_icon"><em
+                            <a title="和颐至尊酒店" target="_blank" href="#"><span class="home_heyi_zhizun_icon"><em
                                     class="em_cm home_heyi_zhizun_span"></em></span></a>
                         </li>
                         <li class="home_heyi_zhishang_logobg" TypeClassId="4" TypeId="121">
-                            <a title="和颐至尚酒店" target="_blank" href="/About/ytelzs"><span
+                            <a title="和颐至尚酒店" target="_blank" href="#"><span
                                     class="home_heyi_zhishang_icon"><em
                                     class="em_cm home_heyi_zhishang_span"></em></span></a>
                         </li>
                         <li class="home_heyi_zhige_logobg" TypeClassId="4" TypeId="120">
-                            <a title="和颐至格酒店" target="_blank" href="/About/ytelzg"><span
+                            <a title="和颐至格酒店" target="_blank" href="#"><span
                                     class="home_heyi_zhige_icon"><em class="em_cm home_heyi_zhige_span"></em></span></a>
                         </li>
                         <li class="home_jingxuan_logobg" TypeClassId="4" TypeId="123">
-                            <a title="如家精选酒店" target="_blank" href="/About/plus"><span class="home_jingxuan_icon"><em
+                            <a title="如家精选酒店" target="_blank" href="#"><span class="home_jingxuan_icon"><em
                                     class="em_cm home_jingxuan_span"></em></span></a>
                         </li>
                         <li class="home_shanglv_logobg" TypeClassId="4" TypeId="124">
-                            <a title="如家商旅酒店" target="_blank" href="/About/rjsl"><span class="home_shanglv_icon"><em
+                            <a title="如家商旅酒店" target="_blank" href="#"><span class="home_shanglv_icon"><em
                                     class="em_cm home_shanglv_span"></em></span></a>
                         </li>
                         <li class="home_yiju_jin_logobg" TypeClassId="4" TypeId="127">
-                            <a title="驿居酒店（金）" target="_blank" href="/About/yj"><span class="home_yiju_jin_icon"><em
+                            <a title="驿居酒店（金）" target="_blank" href="#"><span class="home_yiju_jin_icon"><em
                                     class="em_cm home_yiju_jin_span"></em></span></a>
                         </li>
                         <li class="home_subo_logobg" TypeClassId="4" TypeId="126">
-                            <a title="素柏云酒店" target="_blank" href="/About/sby"><span class="home_subo_icon"><em
+                            <a title="素柏云酒店" target="_blank" href="#"><span class="home_subo_icon"><em
                                     class="em_cm home_subo_span"></em></span></a>
                         </li>
                         <li class="home_ruibo_logobg" TypeClassId="4" TypeId="125">
-                            <a title="睿柏云酒店" target="_blank" href="/About/rby"><span class="home_ruibo_icon"><em
+                            <a title="睿柏云酒店" target="_blank" href="#"><span class="home_ruibo_icon"><em
                                     class="em_cm home_ruibo_span"></em></span></a>
                         </li>
 
                         <!--商旅-->
                         <li class="home_rujia_logobg" TypeClassId="5" TypeId="115">
-                            <a title="如家酒店" target="_blank" href="/About/homeinn"><span class="home_rujia_icon"><em
+                            <a title="如家酒店" target="_blank" href="#"><span class="home_rujia_icon"><em
                                     class="em_cm home_rujia_span"></em></span></a>
                         </li>
                         <li class="home_motai_logobg" TypeClassId="5" TypeId="113">
-                            <a title="莫泰酒店" target="_blank" href="/About/motel"><span class="home_motai_icon"><em
+                            <a title="莫泰酒店" target="_blank" href="#"><span class="home_motai_icon"><em
                                     class="em_cm home_motai_span"></em></span></a>
                         </li>
                         <li class="home_yssj_logobg" TypeClassId="5" TypeId="119">
-                            <a title="云上四季酒店" target="_blank" href="/About/yssj"><span class="home_yssj_icon"><em
+                            <a title="云上四季酒店" target="_blank" href="#"><span class="home_yssj_icon"><em
                                     class="em_cm home_yssj_span"></em></span></a>
                         </li>
                         <li class="home_yiju_lan_logobg" TypeClassId="5" TypeId="118">
-                            <a title="驿居酒店（蓝）" target="_blank" href="/About/slyj"><span class="home_yiju_lan_icon"><em
+                            <a title="驿居酒店（蓝）" target="_blank" href="#"><span class="home_yiju_lan_icon"><em
                                     class="em_cm home_yiju_lan_span"></em></span></a>
                         </li>
                         <li class="home_xinyandu_logobg" TypeClassId="5" TypeId="116">
-                            <a title="欣燕都酒店" target="_blank" href="/About/xyd"><span class="home_xinyandu_icon"><em
+                            <a title="欣燕都酒店" target="_blank" href="#"><span class="home_xinyandu_icon"><em
                                     class="em_cm home_xinyandu_span"></em></span></a>
                         </li>
                         <li class="home_yake_logobg" TypeClassId="5" TypeId="117">
-                            <a title="雅客e家酒店" target="_blank" href="/About/ykej"><span class="home_yake_icon"><em
+                            <a title="雅客e家酒店" target="_blank" href="#"><span class="home_yake_icon"><em
                                     class="em_cm home_yake_span"></em></span></a>
                         </li>
                         <li class="home_paibo_logobg" TypeClassId="5" TypeId="114">
-                            <a title="派柏云酒店" target="_blank" href="/About/pby"><span class="home_paibo_icon"><em
+                            <a title="派柏云酒店" target="_blank" href="#"><span class="home_paibo_icon"><em
                                     class="em_cm home_paibo_span"></em></span></a>
                         </li>
 
                         <!--休闲度假-->
                         <li class="home_hanshe_logobg" TypeClassId="6" TypeId="home_hanshe_logobg">
-                            <a title="首旅寒舍酒店" target="_blank" href="/About/slhs"><span class="home_hanshe_icon"><em
+                            <a title="首旅寒舍酒店" target="_blank" href="#"><span class="home_hanshe_icon"><em
                                     class="em_cm home_hanshe_span em_cm"></em></span></a>
                         </li>
                         <li class="home_jialebi_logobg" TypeClassId="6" TypeId="home_jialebi_logobg">
-                            <a title="嘉乐比酒店" target="_blank" href="/About/jlb"><span class="home_jialebi_icon"><em
+                            <a title="嘉乐比酒店" target="_blank" href="#"><span class="home_jialebi_icon"><em
                                     class="em_cm home_jialebi_span em_cm"></em></span></a>
                         </li>
                         <li class="home_shiby_logobg" TypeClassId="6" TypeId="home_shiby_logobg">
-                            <a title="诗柏云酒店" target="_blank" href="/About/shiby"><span class="home_shiby_icon"><em
+                            <a title="诗柏云酒店" target="_blank" href="#"><span class="home_shiby_icon"><em
                                     class="em_cm home_shiby_span em_cm"></em></span></a>
                         </li>
                         <li class="home_manqu_logobg" TypeClassId="6" TypeId="home_manqu_logobg">
-                            <a title="漫趣乐园酒店" target="_blank" href="/hotel/K21001"><span class="home_manqu_icon"><em
+                            <a title="漫趣乐园酒店" target="_blank" href="#"><span class="home_manqu_icon"><em
                                     class="em_cm home_manqu_span em_cm"></em></span></a>
                         </li>
                         <li class="home_xiaozhen_logobg no_link" TypeClassId="6" TypeId="home_xiaozhen_logobg">
@@ -451,7 +460,7 @@
                                     class="em_cm home_xiaozhen_span em_cm"></em></span></a>
                         </li>
                         <li class="home_yssj_minsu_logobg" TypeClassId="6" TypeId="home_yssj_minsu_logobg">
-                            <a title="云上四季民宿酒店" target="_blank" href="/About/yssjms"><span class="home_yssj_minsu_icon"><em
+                            <a title="云上四季民宿酒店" target="_blank" href="#"><span class="home_yssj_minsu_icon"><em
                                     class="em_cm home_yssj_minsu_span "></em></span></a>
                         </li>
 
@@ -467,15 +476,15 @@
 
                         <!--长租公寓-->
                         <li class="home_douhao_logobg" TypeClassId="8" TypeId="home_douhao_logobg">
-                            <a title="逗号公寓酒店" href="http://www.douhaogongyu.com/comma/list.html" target="_blank"><span
+                            <a title="逗号公寓酒店" href="#" target="_blank"><span
                                     class="home_douhao_icon"><em class="em_cm home_douhao_span"></em></span></a>
                         </li>
                         <li class="home_qingchao_logobg" TypeClassId="8" TypeId="home_qingchao_logobg">
-                            <a title="青巢公寓酒店" href="http://www.douhaogongyu.com/qc/list.html" target="_blank"><span
+                            <a title="青巢公寓酒店" href="#" target="_blank"><span
                                     class="home_qingchao_icon"><em class="em_cm home_qingchao_span"></em></span></a>
                         </li>
                         <li class="home_douhao_zhijia_logobg" TypeClassId="8" TypeId="home_douhao_zhijia_logobg">
-                            <a title="逗号之家酒店" href="http://www.douhaogongyu.com/dorm/list.html" target="_blank"><span
+                            <a title="逗号之家酒店" href="#" target="_blank"><span
                                     class="home_douhao_zhijia_icon"><em
                                     class="em_cm home_douhao_zhijia_span"></em></span></a>
                         </li>
@@ -486,230 +495,230 @@
                 <ul class="home_logo_main">
                     <div class="home_big_img1"
                          style="background: url(images/puyin.jpg) top center no-repeat; height: 550px;" TypeId="107">
-                        <a title="璞隐酒店" class="home_big_link" href="/About/py" target="_blank"></a>
+                        <a title="璞隐酒店" class="home_big_link" href="#" target="_blank"></a>
                         <dl>
                             <dt>行走间，<br/>为自己留白</dt>
                             <dd name="home_big_img1Log"></dd>
                             <dd>
-                                <a title="璞隐酒店" href="/About/py" target="_blank" class="btn_detail">了解详情</a>
+                                <a title="璞隐酒店" href="#" target="_blank" class="btn_detail">了解详情</a>
                             </dd>
                         </dl>
                     </div>
                     <div class="home_big_img1"
                          style="background: url(images/feiman.jpg) top center no-repeat; height: 550px;" TypeId="108">
-                        <a title="扉缦酒店" class="home_big_link" href="/About/jlfm" target="_blank"></a>
+                        <a title="扉缦酒店" class="home_big_link" href="#" target="_blank"></a>
                         <dl>
                             <dt>随性，随行</dt>
                             <dd name="home_big_img1Log"></dd>
                             <dd>
-                                <a title="扉缦酒店" href="/About/jlfm" target="_blank" class="btn_detail">了解详情</a>
+                                <a title="扉缦酒店" href="#" target="_blank" class="btn_detail">了解详情</a>
                             </dd>
                         </dl>
                     </div>
                     <div class="home_big_img1"
                          style="background: url(images/jianguo.jpg) top center no-repeat; height: 550px;" TypeId="109">
-                        <a title="首旅建国酒店" class="home_big_link" href="/About/JianGuo" target="_blank"></a>
+                        <a title="首旅建国酒店" class="home_big_link" href="#" target="_blank"></a>
                         <dl>
                             <dt>都市绿洲<br/>自在建国</dt>
                             <dd name="home_big_img1Log"></dd>
                             <dd>
-                                <a title="首旅建国酒店" href="/About/JianGuo" target="_blank" class="btn_detail">了解详情</a>
+                                <a title="首旅建国酒店" href="#" target="_blank" class="btn_detail">了解详情</a>
                             </dd>
                         </dl>
                     </div>
                     <div class="home_big_img1"
                          style="background: url(images/jinglun.jpg) top center no-repeat; height: 550px;" TypeId="110">
-                        <a title="首旅京伦酒店" class="home_big_link" href="/About/jlfd" target="_blank"></a>
+                        <a title="首旅京伦酒店" class="home_big_link" href="#" target="_blank"></a>
                         <dl>
                             <dt>京伦的微笑<br/>首都的骄傲</dt>
                             <dd name="home_big_img1Log"></dd>
                             <dd>
-                                <a title="首旅京伦酒店" href="/About/jlfd" target="_blank" class="btn_detail">了解详情</a>
+                                <a title="首旅京伦酒店" href="#" target="_blank" class="btn_detail">了解详情</a>
                             </dd>
                         </dl>
                     </div>
                     <div class="home_big_img1"
                          style="background: url(images/nanshan.jpg) top center no-repeat; height: 550px;" TypeId="111">
-                        <a title="南山休闲会馆" class="home_big_link" href="/About/nshg" target="_blank"></a>
+                        <a title="南山休闲会馆" class="home_big_link" href="#" target="_blank"></a>
                         <dl>
                             <dt>南山休闲会所</dt>
                             <dd name="home_big_img1Log"></dd>
                             <dd>
-                                <a title="南山休闲会馆" href="/About/nshg" target="_blank" class="btn_detail">了解详情</a>
+                                <a title="南山休闲会馆" href="#" target="_blank" class="btn_detail">了解详情</a>
                             </dd>
                         </dl>
                     </div>
                     <div class="home_big_img1"
                          style="background: url(images/nanyuan.jpg) top center no-repeat; height: 550px;" TypeId="112">
-                        <a title="首旅南苑酒店" class="home_big_link" href="/About/slny" target="_blank"></a>
+                        <a title="首旅南苑酒店" class="home_big_link" href="#" target="_blank"></a>
                         <dl>
                             <dt>服务创造价值<br/>品质铸就经典</dt>
                             <dd name="home_big_img1Log"></dd>
                             <dd>
-                                <a title="首旅南苑酒店" href="/About/slny" target="_blank" class="btn_detail">了解详情</a>
+                                <a title="首旅南苑酒店" href="#" target="_blank" class="btn_detail">了解详情</a>
                             </dd>
                         </dl>
                     </div>
                     <div class="home_big_img1"
                          style="background: url(images/motai.jpg) top center no-repeat; height: 550px;" TypeId="113">
-                        <a title="莫泰酒店" class="home_big_link" href="/About/motel" target="_blank"></a>
+                        <a title="莫泰酒店" class="home_big_link" href="#" target="_blank"></a>
                         <dl>
                             <dt>时尚如家</dt>
                             <dd name="home_big_img1Log"></dd>
                             <dd>
-                                <a title="莫泰酒店" href="/About/motel" target="_blank" class="btn_detail">了解详情</a>
+                                <a title="莫泰酒店" href="#" target="_blank" class="btn_detail">了解详情</a>
                             </dd>
                         </dl>
                     </div>
                     <div class="home_big_img1"
                          style="background: url(images/paibo.jpg) top center no-repeat; height: 550px;" TypeId="114">
-                        <a title="派柏云酒店" class="home_big_link" href="/About/pby" target="_blank"></a>
+                        <a title="派柏云酒店" class="home_big_link" href="#" target="_blank"></a>
                         <dl>
                             <dt>有态度<br/>有思想</dt>
                             <dd name="home_big_img1Log"></dd>
                             <dd>
-                                <a title="派柏云酒店" href="/About/pby" target="_blank" class="btn_detail">了解详情</a>
+                                <a title="派柏云酒店" href="#" target="_blank" class="btn_detail">了解详情</a>
                             </dd>
                         </dl>
                     </div>
                     <div class="home_big_img1"
                          style="background: url(images/rujia.jpg) top center no-repeat; height: 550px;" TypeId="115">
-                        <a title="如家酒店" class="home_big_link" href="/About/homeinn" target="_blank"></a>
+                        <a title="如家酒店" class="home_big_link" href="#" target="_blank"></a>
                         <dl>
                             <dt>舒适如家</dt>
                             <dd name="home_big_img1Log"></dd>
                             <dd>
-                                <a title="如家酒店" href="/About/homeinn" target="_blank" class="btn_detail">了解详情</a>
+                                <a title="如家酒店" href="#" target="_blank" class="btn_detail">了解详情</a>
                             </dd>
                         </dl>
                     </div>
                     <div class="home_big_img1"
                          style="background: url(images/xinyandu.jpg) top center no-repeat; height: 550px;" TypeId="116">
-                        <a title="欣燕都酒店" class="home_big_link" href="/About/xyd" target="_blank"></a>
+                        <a title="欣燕都酒店" class="home_big_link" href="#" target="_blank"></a>
                         <dl>
                             <dt>欣燕都<br/>新体验</dt>
                             <dd name="home_big_img1Log"></dd>
                             <dd>
-                                <a title="欣燕都酒店" href="/About/xyd" target="_blank" class="btn_detail">了解详情</a>
+                                <a title="欣燕都酒店" href="#" target="_blank" class="btn_detail">了解详情</a>
                             </dd>
                         </dl>
                     </div>
                     <div class="home_big_img1"
                          style="background: url(images/yake.jpg) top center no-repeat; height: 550px;" TypeId="117">
-                        <a title="雅客e家酒店" class="home_big_link" href="/About/ykej" target="_blank"></a>
+                        <a title="雅客e家酒店" class="home_big_link" href="#" target="_blank"></a>
                         <dl>
                             <dt>e家空间<br/>雅客共享</dt>
                             <dd name="home_big_img1Log"></dd>
                             <dd>
-                                <a title="雅客e家酒店" href="/About/ykej" target="_blank" class="btn_detail">了解详情</a>
+                                <a title="雅客e家酒店" href="#" target="_blank" class="btn_detail">了解详情</a>
                             </dd>
                         </dl>
                     </div>
                     <div class="home_big_img1"
                          style="background: url(images/yiju_lan.jpg) top center no-repeat; height: 550px;" TypeId="118">
-                        <a title="驿居酒店（蓝）" class="home_big_link" href="/About/slyj" target="_blank"></a>
+                        <a title="驿居酒店（蓝）" class="home_big_link" href="#" target="_blank"></a>
                         <dl>
                             <dt>品味驿动旅途</dt>
                             <dd name="home_big_img1Log"></dd>
                             <dd>
-                                <a title="驿居酒店（蓝）" href="/About/slyj" target="_blank" class="btn_detail">了解详情</a>
+                                <a title="驿居酒店（蓝）" href="#" target="_blank" class="btn_detail">了解详情</a>
                             </dd>
                         </dl>
                     </div>
                     <div class="home_big_img1"
                          style="background: url(images/yssj.jpg) top center no-repeat; height: 550px;" TypeId="119">
-                        <a title="云上四季酒店" class="home_big_link" href="/About/yssj" target="_blank"></a>
+                        <a title="云上四季酒店" class="home_big_link" href="#" target="_blank"></a>
                         <dl>
                             <dt>独特地域<br/>风情体验</dt>
                             <dd name="home_big_img1Log"></dd>
                             <dd>
-                                <a title="云上四季酒店" href="/About/yssj" target="_blank" class="btn_detail">了解详情</a>
+                                <a title="云上四季酒店" href="#" target="_blank" class="btn_detail">了解详情</a>
                             </dd>
                         </dl>
                     </div>
                     <div class="home_big_img1"
                          style="background: url(images/heyi_zhige.jpg) top center no-repeat; height: 550px;"
                          TypeId="120">
-                        <a title="和颐至格酒店" class="home_big_link" href="/About/ytelzg" target="_blank"></a>
+                        <a title="和颐至格酒店" class="home_big_link" href="#" target="_blank"></a>
                         <dl>
                             <dt>多彩人文<br/>商旅体验</dt>
                             <dd name="home_big_img1Log"></dd>
                             <dd>
-                                <a title="和颐至格酒店" href="/About/ytelzg" target="_blank" class="btn_detail">了解详情</a>
+                                <a title="和颐至格酒店" href="#" target="_blank" class="btn_detail">了解详情</a>
                             </dd>
                         </dl>
                     </div>
                     <div class="home_big_img1"
                          style="background: url(images/heyi_zhishang.jpg) top center no-repeat; height: 550px;"
                          TypeId="121">
-                        <a title="和颐至尚酒店" class="home_big_link" href="/About/ytelzs" target="_blank"></a>
+                        <a title="和颐至尚酒店" class="home_big_link" href="#" target="_blank"></a>
                         <dl>
                             <dt>人文商旅体验</dt>
                             <dd name="home_big_img1Log"></dd>
                             <dd>
-                                <a title="和颐至尚酒店" href="/About/ytelzs" target="_blank" class="btn_detail">了解详情</a>
+                                <a title="和颐至尚酒店" href="#" target="_blank" class="btn_detail">了解详情</a>
                             </dd>
                         </dl>
                     </div>
                     <div class="home_big_img1"
                          style="background: url(images/heyi_zhizun.jpg) top center no-repeat; height: 550px;"
                          TypeId="122">
-                        <a title="和颐至尊酒店" class="home_big_link" href="/About/ytel" target="_blank"></a>
+                        <a title="和颐至尊酒店" class="home_big_link" href="#" target="_blank"></a>
                         <dl>
                             <dt>精致人文<br/>商旅体验</dt>
                             <dd name="home_big_img1Log"></dd>
                             <dd>
-                                <a title="和颐至尊酒店" href="/About/ytel" target="_blank" class="btn_detail">了解详情</a>
+                                <a title="和颐至尊酒店" href="#" target="_blank" class="btn_detail">了解详情</a>
                             </dd>
                         </dl>
                     </div>
                     <div class="home_big_img1"
                          style="background: url(images/jingxuan.jpg) top center no-repeat; height: 550px;" TypeId="123">
-                        <a title="如家精选酒店" class="home_big_link" href="/About/plus" target="_blank"></a>
+                        <a title="如家精选酒店" class="home_big_link" href="#" target="_blank"></a>
                         <dl>
                             <dt>创意商旅体验</dt>
                             <dd name="home_big_img1Log"></dd>
                             <dd>
-                                <a title="如家精选酒店" href="/About/plus" target="_blank" class="btn_detail">了解详情</a>
+                                <a title="如家精选酒店" href="#" target="_blank" class="btn_detail">了解详情</a>
                             </dd>
                         </dl>
                     </div>
                     <div class="home_big_img1"
                          style="background: url(images/shanglv.jpg) top center no-repeat; height: 550px;" TypeId="124">
-                        <a title="如家商旅酒店" class="home_big_link" href="/About/rjsl" target="_blank"></a>
+                        <a title="如家商旅酒店" class="home_big_link" href="#" target="_blank"></a>
                         <dl>
                             <dt>品质商旅体验</dt>
                             <dd name="home_big_img1Log"></dd>
                             <dd>
-                                <a title="如家商旅酒店" href="/About/rjsl" target="_blank" class="btn_detail">了解详情</a>
+                                <a title="如家商旅酒店" href="#" target="_blank" class="btn_detail">了解详情</a>
                             </dd>
                         </dl>
                     </div>
                     <div class="home_big_img1"
                          style="background: url(images/ruibo.jpg) top center no-repeat; height: 550px;" TypeId="125">
-                        <a title="睿柏云酒店" class="home_big_link" href="/About/rby" target="_blank"></a>
+                        <a title="睿柏云酒店" class="home_big_link" href="#" target="_blank"></a>
                         <dl>
                             <dt>因睿智 显品质</dt>
                             <dd name="home_big_img1Log"></dd>
                             <dd>
-                                <a title="睿柏云酒店" href="/About/rby" target="_blank" class="btn_detail">了解详情</a>
+                                <a title="睿柏云酒店" href="#" target="_blank" class="btn_detail">了解详情</a>
                             </dd>
                         </dl>
                     </div>
                     <div class="home_big_img1"
                          style="background: url(images/subo.jpg) top center no-repeat; height: 550px;" TypeId="126">
-                        <a title="素柏云酒店" class="home_big_link" href="/About/sby" target="_blank"></a>
+                        <a title="素柏云酒店" class="home_big_link" href="#" target="_blank"></a>
                         <dl>
                             <dt>寻初心 显真我</dt>
                             <dd name="home_big_img1Log"></dd>
                             <dd>
-                                <a title="素柏云酒店" href="/About/sby" target="_blank" class="btn_detail">了解详情</a>
+                                <a title="素柏云酒店" href="#" target="_blank" class="btn_detail">了解详情</a>
                             </dd>
                         </dl>
                     </div>
                     <div class="home_big_img1"
                          style="background: url(images/yiju_jin.jpg) top center no-repeat; height: 550px;" TypeId="127">
-                        <a title="驿居酒店（金）" class="home_big_link" href="/About/yj" target="_blank"></a>
+                        <a title="驿居酒店（金）" class="home_big_link" href="#" target="_blank"></a>
                         <dl>
                             <dt>品味驿动旅途</dt>
                             <dd name="home_big_img1Log"></dd>
@@ -813,42 +822,42 @@
                     <div class="home_big_img1"
                          style="background:url(images/douhao.jpg) top center no-repeat; height:550px;"
                          TypeId="home_douhao_logobg">
-                        <a title="逗号公寓酒店" href="http://www.douhaogongyu.com/comma/list.html" target="_blank"
+                        <a title="逗号公寓酒店" href="#" target="_blank"
                            class="home_big_link"></a>
                         <dl>
                             <dt>逗号，<br/>人生最美好的停顿</dt>
-                            <dd><a title="逗号公寓酒店" href="http://www.douhaogongyu.com/comma/list.html"
+                            <dd><a title="逗号公寓酒店" href="#"
                                    target="_blank"><span class="home_douhao_icon"><em
                                     class="em_cm home_douhao_span"></em></span></a></dd>
-                            <dd><a title="逗号公寓酒店" href="http://www.douhaogongyu.com/comma/list.html" class="btn_detail"
+                            <dd><a title="逗号公寓酒店" href="#" class="btn_detail"
                                    target="_blank">了解详情</a></dd>
                         </dl>
                     </div>
                     <div class="home_big_img1"
                          style="background:url(images/qingchao.jpg) top center no-repeat; height:550px;"
                          TypeId="home_qingchao_logobg">
-                        <a title="青巢公寓酒店" href="http://www.douhaogongyu.com/qc/list.html" target="_blank"
+                        <a title="青巢公寓酒店" href="#" target="_blank"
                            class="home_big_link"></a>
                         <dl>
                             <dt>我行我宿<br/>自由自宅</dt>
-                            <dd><a title="青巢公寓酒店" href="http://www.douhaogongyu.com/qc/list.html" target="_blank"><span
+                            <dd><a title="青巢公寓酒店" href="#" target="_blank"><span
                                     class="home_qingchao_icon"><em class="em_cm home_qingchao_span"></em></span></a>
                             </dd>
-                            <dd><a title="青巢公寓酒店" href="http://www.douhaogongyu.com/qc/list.html" target="_blank"
+                            <dd><a title="青巢公寓酒店" href="#" target="_blank"
                                    class="btn_detail">了解详情</a></dd>
                         </dl>
                     </div>
                     <div class="home_big_img1"
                          style="background:url(images/douhao_zhijia.jpg) top center no-repeat; height:550px;"
                          TypeId="home_douhao_zhijia_logobg">
-                        <a title="逗号之家酒店" href="http://www.douhaogongyu.com/dorm/list.html" target="_blank"
+                        <a title="逗号之家酒店" href="#" target="_blank"
                            class="home_big_link"></a>
                         <dl>
                             <dt>城市栖居地<br/>未来添助力</dt>
-                            <dd><a title="逗号之家酒店" href="http://www.douhaogongyu.com/dorm/list.html"
+                            <dd><a title="逗号之家酒店" href="#"
                                    target="_blank"><span class="home_douhao_zhijia_icon"><em
                                     class="em_cm home_douhao_zhijia_span"></em></span></a></dd>
-                            <dd><a title="逗号之家酒店" href="http://www.douhaogongyu.com/dorm/list.html" target="_blank"
+                            <dd><a title="逗号之家酒店" href="#" target="_blank"
                                    class="btn_detail">了解详情</a></dd>
                         </dl>
                     </div>
@@ -857,46 +866,46 @@
                     <div class="home_big_img1"
                          style="background:url(images/hanshe.jpg) top center no-repeat; height:550px;"
                          TypeId="home_hanshe_logobg">
-                        <a title="首旅寒舍酒店" href="/About/slhs" target="_blank" class="home_big_link"></a>
+                        <a title="首旅寒舍酒店" href="#" target="_blank" class="home_big_link"></a>
                         <dl>
                             <dt>乡村院落式<br/>高端精品度假酒店</dt>
-                            <dd><a title="首旅寒舍酒店" href="/About/slhs" target="_blank"><span class="home_hanshe_icon"><em
+                            <dd><a title="首旅寒舍酒店" href="#" target="_blank"><span class="home_hanshe_icon"><em
                                     class="em_cm home_hanshe_span"></em></span></a></dd>
-                            <dd><a title="首旅寒舍酒店" href="/About/slhs" class="btn_detail" target="_blank">了解详情</a></dd>
+                            <dd><a title="首旅寒舍酒店" href="#" class="btn_detail" target="_blank">了解详情</a></dd>
                         </dl>
                     </div>
                     <div class="home_big_img1"
                          style="background:url(images/jialebi.jpg) top center no-repeat; height:550px;"
                          TypeId="home_jialebi_logobg">
-                        <a title="嘉乐比酒店" href="/About/jlb" target="_blank" class="home_big_link"></a>
+                        <a title="嘉乐比酒店" href="#" target="_blank" class="home_big_link"></a>
                         <dl>
                             <dt>嘉乐比，<br/>快乐在一起</dt>
-                            <dd><a title="嘉乐比酒店" href="/About/jlb" target="_blank"><span class="home_jialebi_icon"><em
+                            <dd><a title="嘉乐比酒店" href="#" target="_blank"><span class="home_jialebi_icon"><em
                                     class="em_cm home_jialebi_span"></em></span></a></dd>
-                            <dd><a title="嘉乐比酒店" href="/About/jlb" target="_blank" class="btn_detail">了解详情</a></dd>
+                            <dd><a title="嘉乐比酒店" href="#" target="_blank" class="btn_detail">了解详情</a></dd>
                         </dl>
                     </div>
                     <div class="home_big_img1"
                          style="background:url(images/shiby.jpg) top center no-repeat; height:550px;"
                          TypeId="home_shiby_logobg">
-                        <a title="诗柏云酒店" href="/About/shiby" target="_blank" class="home_big_link"></a>
+                        <a title="诗柏云酒店" href="#" target="_blank" class="home_big_link"></a>
                         <dl>
                             <dt>享舒适<br/>品意境</dt>
-                            <dd><a title="诗柏云酒店" href="/About/shiby" target="_blank"><span class="home_shiby_icon"><em
+                            <dd><a title="诗柏云酒店" href="#" target="_blank"><span class="home_shiby_icon"><em
                                     class="em_cm home_shiby_span"></em></span></a></dd>
-                            <dd><a title="诗柏云酒店" href="/About/shiby" target="_blank" class="btn_detail">了解详情</a></dd>
+                            <dd><a title="诗柏云酒店" href="#" target="_blank" class="btn_detail">了解详情</a></dd>
                         </dl>
                     </div>
                     <div class="home_big_img1"
                          style="background:url(images/manqu.jpg) top center no-repeat; height:550px;"
                          TypeId="home_manqu_logobg">
-                        <a title="漫趣乐园酒店" href="/hotel/K21001" target="_blank" class="home_big_link"></a>
+                        <a title="漫趣乐园酒店" href="#" target="_blank" class="home_big_link"></a>
                         <dl>
                             <dt style="padding:0;">&nbsp;</dt>
-                            <dd style="margin:78px 0 58px 0;"><a title="漫趣乐园酒店" href="/hotel/K21001"
+                            <dd style="margin:78px 0 58px 0;"><a title="漫趣乐园酒店" href="#"
                                                                  target="_blank"><span class="home_manqu_icon"><em
                                     class="em_cm home_manqu_span"></em></span></a></dd>
-                            <dd><a title="漫趣乐园酒店" href="/hotel/K21001" target="_blank" class="btn_detail">了解详情</a></dd>
+                            <dd><a title="漫趣乐园酒店" href="#" target="_blank" class="btn_detail">了解详情</a></dd>
                         </dl>
                     </div>
                     <div class="home_big_img1 no_link"
@@ -912,13 +921,13 @@
                     <div class="home_big_img1"
                          style="background:url(images/yssj_minsu.jpg) top center no-repeat; height:550px;"
                          TypeId="home_yssj_minsu_logobg">
-                        <a title="云上四季民宿酒店" href="/About/yssjms" target="_blank" class="home_big_link"></a>
+                        <a title="云上四季民宿酒店" href="#" target="_blank" class="home_big_link"></a>
                         <dl>
                             <dt>遇见，<br/>最美的等待</dt>
-                            <dd><a title="云上四季民宿酒店" href="/About/yssjms" target="_blank"><span
+                            <dd><a title="云上四季民宿酒店" href="#" target="_blank"><span
                                     class="home_yssj_minsu_icon"><em class="em_cm home_yssj_minsu_span"></em></span></a>
                             </dd>
-                            <dd><a title="云上四季民宿酒店" href="/About/yssjms" target="_blank" class="btn_detail">了解详情</a>
+                            <dd><a title="云上四季民宿酒店" href="#" target="_blank" class="btn_detail">了解详情</a>
                             </dd>
                         </dl>
                     </div>
@@ -960,11 +969,11 @@
                     寻回那份久违的初心<br/>
                     首旅如家愿伴你走过人生的每一段风景、每一个主题。
                 </dd>
-                <a href="/hotel/JG0026">探索更多主题</a>
+                <a href="#">探索更多主题</a>
             </dl>
             <div class="sub_imgbox fl" style="width:675px; margin-left:146px;">
                 <ul class="sub_imgL fl" style="margin-right:4px;">
-                    <a href="/hotel/Y21001 " target="_blank">
+                    <a href="#" target="_blank">
                         <img src="picture/subl2.jpg" width="446" height="446">
                         <span></span>
                         <b>YUNIK-上海中山公园延安西路店</b>
@@ -1009,7 +1018,7 @@
                     <dt>漫趣乐园<br/>如家上海浦东机场店</dt>
                     <p></p>
                     <dd>特惠价：<code>￥376</code>/晚</dd>
-                    <a href="http://www.bthhotels.com/hotel/K21001 " target='_blank'>立即预订</a>
+                    <a href="#" target='_blank'>立即预订</a>
                 </dl>
             </li>
             <li class="fl"
@@ -1021,7 +1030,7 @@
                     <dt>建国酒店<br/>郑州新华建国酒店</dt>
                     <p></p>
                     <dd>特惠价：<code>￥194</code>/晚</dd>
-                    <a href="http://www.bthhotels.com/hotel/JG0033" target='_blank'>立即预订</a>
+                    <a href="#" target='_blank'>立即预订</a>
                 </dl>
             </li>
             <li class="fl"
@@ -1033,7 +1042,7 @@
                     <dt>建国饭店<br/>郑州建国饭店</dt>
                     <p></p>
                     <dd>特惠价：<code>￥399</code>/晚</dd>
-                    <a href="http://www.bthhotels.com/hotel/JG0007" target='_blank'>立即预订</a>
+                    <a href="#" target='_blank'>立即预订</a>
                 </dl>
             </li>
 
@@ -1044,8 +1053,8 @@
     <div class="footer_tip">
         <div class="main_w1200">
             <div class="footer_tipL">
-                版权所有 © 2014 Homeinns Co.,Ltd All Rights Reserved.
-                <br/>和美酒店管理（上海）有限公司 沪ICP备06046495号
+                版权所有 © 2017 BellWoll.
+                <br/>XX酒店管理有限公司
             </div>
             <div class="clear"></div>
         </div>
@@ -1073,7 +1082,7 @@
             if (keyDescript==null || ""==keyDescript){
                 location.href="${pageContext.request.contextPath}/listHotel/"+cityName;
             }else{
-                location.href="http://127.0.0.1:83/Search/searchHotel?cityName="+cityName+"&keyword="+keyDescript;
+                location.href="http://www.legna.top/search/searchHotel?cityName="+cityName+"&keyword="+keyDescript;
                 //todo
             }
 

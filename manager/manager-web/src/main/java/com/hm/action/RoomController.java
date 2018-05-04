@@ -1,9 +1,8 @@
 package com.hm.action;
 
-import com.hm.pojo.po.InternetOrder;
-import com.hm.pojo.po.Room;
-import com.hm.pojo.po.RoomCustom;
+import com.hm.pojo.po.*;
 import com.hm.service.ICheckInfoService;
+import com.hm.service.IRoomCateService;
 import com.hm.service.IRoomService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,6 +22,8 @@ public class RoomController {
     private IRoomService service;
     @Autowired
     private ICheckInfoService checkinfoService;
+    @Autowired
+    private IRoomCateService roomCateService;
 
 
     @RequestMapping(value = "page/checkin/checkin", method = RequestMethod.GET)
@@ -70,6 +71,24 @@ public class RoomController {
             e.printStackTrace();
         }
         return "redirect:/page/room/listrooms";
+    }
+
+    @RequestMapping(value = "page/room/roomInfo/{rid}", method = RequestMethod.GET)
+    public String roomInfo(@PathVariable("rid") Integer rid,HttpServletRequest request) {
+        Room room=null;
+        CheckInfo checkInfo = null;
+        RoomCate roomCate = null;
+        try {
+            room = service.selectByRid(rid);
+            checkInfo = checkinfoService.selectByPrimaryKey(room.getStatue());
+            roomCate = roomCateService.selectRoomCate(room.getCateid());
+            request.setAttribute("room",room);
+            request.setAttribute("checkInfo",checkInfo);
+            request.setAttribute("roomCate",roomCate);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "page/room/roomInfo";
     }
 
     @RequestMapping(value = "/emptyRooms", method = RequestMethod.GET)

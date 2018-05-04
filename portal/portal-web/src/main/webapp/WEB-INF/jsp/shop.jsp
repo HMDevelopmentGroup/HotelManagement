@@ -32,13 +32,7 @@
         <div class="top">
             <div class="contain">
                 <div class="right client">
-                    <li>你好,尊敬的首旅如家客人</li>
-                    <li>
-                        <a href="https://login.bthhotels.com/?returnUrl=http%3a%2f%2fshop.bthhotels.com%2f">登录</a>
-                    </li>
-                    <li>
-                        <a href="https://login.bthhotels.com/reg?returnUrl=http%3a%2f%2fshop.bthhotels.com%2f">注册</a>
-                    </li>
+                    <li>你好,尊敬的${user.realname}</li>
                 </div>
                 <div class="logo_nav"></div>
                 <div class="clear">&nbsp;</div>

@@ -17,7 +17,7 @@
 <body class="childrenBody">
 	<div class="panel_box row">
 		<div class="panel col">
-			<a href="javascript:;" data-url="page/user/allUsers.html">
+			<a href="javascript:;" data-url="page/checkin/checkin">
 				<div class="panel_icon" style="background-color:#FF5722;">
 					<i class="iconfont icon-dongtaifensishu" data-icon="icon-dongtaifensishu"></i>
 				</div>
@@ -27,7 +27,7 @@
 			</a>
 		</div>
 		<div class="panel col">
-			<a href="javascript:;" data-url="">
+			<a href="javascript:;" data-url="page/checkin/checkin">
 				<div class="panel_icon" style="background-color:#5FB878;">
 					<i class="layui-icon" data-icon="&#xe622;">&#xe622;</i>
 				</div>
@@ -49,7 +49,7 @@
 			</a>
 		</div>
 		<div class="panel col">
-			<a href="javascript:;" data-url="">
+			<a href="javascript:;" data-url="page/checkin/internetCheckin">
 				<div class="panel_icon" style="background-color:#5FB878;">
 					<i class="layui-icon" data-icon="&#xe612;">&#xe612;</i>
 				</div>

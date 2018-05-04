@@ -29,17 +29,9 @@ public class InternetOrder implements Serializable {
 
     private Integer rid;
 
-    public Integer getRid() {
-        return rid;
-    }
-
-    public void setRid(Integer rid) {
-        this.rid = rid;
-    }
-
     private static final long serialVersionUID = 1L;
 
-    public InternetOrder(String ioid, String oid, String uid, String start, String end, Integer days, Integer rcate, String offer, String offerid, String subs, String subids, Integer status) {
+    public InternetOrder(String ioid, String oid, String uid, String start, String end, Integer days, Integer rcate, String offer, String offerid, String subs, String subids, Integer status, Integer rid) {
         this.ioid = ioid;
         this.oid = oid;
         this.uid = uid;
@@ -52,6 +44,7 @@ public class InternetOrder implements Serializable {
         this.subs = subs;
         this.subids = subids;
         this.status = status;
+        this.rid = rid;
     }
 
     public InternetOrder() {
@@ -152,5 +145,13 @@ public class InternetOrder implements Serializable {
 
     public void setStatus(Integer status) {
         this.status = status;
+    }
+
+    public Integer getRid() {
+        return rid;
+    }
+
+    public void setRid(Integer rid) {
+        this.rid = rid;
     }
 }

@@ -59,15 +59,14 @@ layui.config({
 		}
 	)
 
-	//预订数
-    $.get("#",
+
+
+    //待入住
+    $.get("../waitCheckinNum",
         function(data){
-    		data = 0;
             $(".netOrder span").text(data);
         }
     )
-
-    //退房
 
 
     //待清理

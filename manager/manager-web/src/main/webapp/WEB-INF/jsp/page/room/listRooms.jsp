@@ -322,7 +322,7 @@
         <div id="fj_new02">
             <div id="ps">
                 <div class='ps_txt_div'>
-                    <a href='' class='ps_txt'>
+                    <a href='#' onclick="checkInfo('${room.rid}')" class='ps_txt'>
                             ${room.rname}<br>
                         <span style='font-size:12px;color:#666666;'>
                     <c:if test="${room.cateid==1}">
@@ -359,7 +359,7 @@
                 </div>
             </div>
             <div id="wz">
-                <a href='' class='wz_txt'>${room.offer}</a>
+                <a href='#' onclick="checkInfo('${room.rid}')" class='wz_txt'>${room.offer}</a>
             </div>
         </div>
     </c:if>
@@ -420,6 +420,18 @@
             layer.confirm("确认清理房间了吗？",function () {
                 location.href="${pageContext.request.contextPath}/page/room/clearRoom/"+rid;
             })
+        });
+    }
+    function checkInfo(rid) {
+        layui.use(['layer','jquery'], function () {
+            var layer = layui.layer,
+            $ = layui.jquery;
+            layer.open({
+                title: '房间信息'
+                ,type:2
+                ,area: ['600px', '500px']
+                ,content: '${pageContext.request.contextPath}/page/room/roomInfo/'+rid
+            });
         });
     }
 </script>

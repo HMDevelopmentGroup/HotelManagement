@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hm.portal.dao.RoomCateMapper" >
+    <select id="roomCateList" resultType="com.hm.portal.pojo.po.RoomCate">
+        select * FROM room_cate;
+    </select>
+
+    <select id="emptyRoomList" resultType="com.hm.portal.pojo.po.Room">
+        select *from room where statue="0"
+    </select>
+
+    <select id="listRoomUseAge" resultType="com.hm.portal.pojo.dto.RoomUseAge">
+       SELECT c.rid,c.start,c.end,r.cateid FROM  checkinfo c LEFT JOIN room r ON r.rid=c.rid WHERE c.status=2 OR c.status=3
+    </select>
+
+
+    <insert id="addInternetOrder"   >
+
+        insert INTO  internetorder VALUES (#{ioid},#{oid},#{uid},#{start},#{end},#{days},#{rcate},#{offer},#{offerid},#{subs},#{subids},#{status},#{rid})
+
+    </insert>
+
+    <update id="updateStatusInternetOrder" >
+        UPDATE internetorder SET status='2' WHERE  ioid=#{ioid}
+    </update>
+
+    <update id="updateStatusOrder" >
+        UPDATE internetorder SET status='1' WHERE  oid=#{oid}
+    </update>
+
+    <insert id="addOrders">
+        INSERT  INTO  orders  VALUES (#{oid},#{ordertime},#{price},#{status})
+    </insert>
+
+    <insert id="addCheckinfo">
+        INSERT  INTO checkinfo VALUES (#{cid},#{rid},#{oid},#{uid},#{start},#{end},#{days},#{offer},#{offerid},#{subs},#{subids},#{ioid},#{status});
+    </insert>
+
+    <update id="updateStatusCheckinfo">
+         UPDATE checkinfo SET status='2' WHERE  cid=#{cid}
+    </update>
+</mapper>

@@ -9,6 +9,8 @@ import com.hm.portal.service.ICityService;
 import com.hm.utils.JsonUtils;
 import com.hm.utils.PingyinUtil;
 import com.hm.utils.StrKit;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import redis.clients.jedis.Jedis;
@@ -25,6 +27,8 @@ public class CityServiceImpl implements ICityService {
     @Autowired
     private JedisClient jedis;
 
+    Logger logger = LoggerFactory.getLogger(this.getClass());
+
     @Override
     public List<City> getCity(Integer pid) {
         try {
@@ -34,6 +38,7 @@ public class CityServiceImpl implements ICityService {
                 return cities;
             }
         } catch (Exception e) {
+            logger.debug(e.getMessage(),e);
             e.printStackTrace();
         }
 
@@ -45,6 +50,7 @@ public class CityServiceImpl implements ICityService {
         try {
             jedis.hset("CityByPid",pid+"",JsonUtils.objectToJson(cities));
         } catch (Exception e) {
+            logger.debug(e.getMessage(),e);
             e.printStackTrace();
         }
         return cities;
@@ -60,6 +66,7 @@ public class CityServiceImpl implements ICityService {
                 return city;
             }
         } catch (Exception e) {
+            logger.debug(e.getMessage(),e);
             e.printStackTrace();
         }
 
@@ -68,6 +75,7 @@ public class CityServiceImpl implements ICityService {
         try {
             jedis.hset("CityByCname", PingyinUtil.getPinyinString(cname) , JsonUtils.objectToJson(city));
         } catch (Exception e) {
+            logger.debug(e.getMessage(),e);
             e.printStackTrace();
         }
         return city;

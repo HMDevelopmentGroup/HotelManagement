@@ -1,6 +1,7 @@
 package com.hm.service;
 
 import com.hm.pojo.dto.Page;
+import com.hm.pojo.po.Order;
 import com.hm.pojo.po.User;
 
 import java.util.List;
@@ -16,4 +17,6 @@ public interface IUserService {
     int userNums();
     List<User> queryUser(String queryInfo);
     User findUserByTelephone(String telephone);
+
+    int addIntegration(String uid, Order order);
 }

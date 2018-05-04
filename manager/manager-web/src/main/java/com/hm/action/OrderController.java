@@ -5,7 +5,7 @@ import com.hm.pojo.dto.Page;
 import com.hm.pojo.vo.OrderCustom;
 import com.hm.pojo.vo.OrderQuery;
 import com.hm.service.IOrderService;
-import com.hm.utils.ViewExcel;
+//import com.hm.utils.ViewExcel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -36,13 +36,13 @@ public class OrderController {
         return result;
     }
 
-    @RequestMapping("/export")
-    public ModelAndView export(ModelMap map) {
-        List<Map<String, String>> list = orderService.exportOrder();
-        String[] titles = {"订单号", "客户名称", "身份证", "房间号", "入住时间", "退房时间","总天数","总金额","状态"};
-        ViewExcel excel = new ViewExcel(titles);
-        map.put("excelList", list);
-        return new ModelAndView(excel, map);
-    }
+//    @RequestMapping("/export")
+//    public ModelAndView export(ModelMap map) {
+//        List<Map<String, String>> list = orderService.exportOrder();
+//        String[] titles = {"订单号", "客户名称", "身份证", "房间号", "入住时间", "退房时间","总天数","总金额","状态"};
+//        ViewExcel excel = new ViewExcel(titles);
+//        map.put("excelList", list);
+//        return new ModelAndView(excel, map);
+//    }
 
 }

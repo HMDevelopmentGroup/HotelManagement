@@ -4,4 +4,15 @@
   <update id="confirmPay" parameterType="String" >
     update checkinfo SET status="3" where cid=#{cid}
   </update>
+
+  <update id="checkin" parameterType="com.hm.pojo.po.CheckInfo">
+    UPDATE checkinfo
+    <set>
+      cid = #{cid,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER}
+    </set>
+
+    WHERE
+    ioid = #{ioid,jdbcType=VARCHAR}
+  </update>
 </mapper>

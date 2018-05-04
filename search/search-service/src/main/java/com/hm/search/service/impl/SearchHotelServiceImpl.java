@@ -10,6 +10,8 @@ import org.apache.solr.client.solrj.SolrQuery;
 import org.apache.solr.client.solrj.SolrServer;
 import org.apache.solr.client.solrj.SolrServerException;
 import org.apache.solr.common.SolrInputDocument;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,6 +26,8 @@ public class SearchHotelServiceImpl implements ISearchHotelService {
     private HotelCustomMapper dao;
     @Autowired
     private SolrServer solrServer;
+
+    Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Override
     public List<HotelCustom> searchHotel() {
@@ -58,8 +62,10 @@ public class SearchHotelServiceImpl implements ISearchHotelService {
             mr.setMessage("一键导入成功");
             mr.setData(hotels);
         } catch (SolrServerException e) {
+            logger.debug(e.getMessage(),e);
             e.printStackTrace();
         } catch (IOException e) {
+            logger.debug(e.getMessage(),e);
             e.printStackTrace();
         }
         return mr;
@@ -87,6 +93,7 @@ public class SearchHotelServiceImpl implements ISearchHotelService {
             //list recordCounts totalPages
             result = searchIndexDao.searchIndex(solrQuery,pageSize);
         }catch (Exception e){
+            logger.debug(e.getMessage(),e);
             e.printStackTrace();
         }
         return result;

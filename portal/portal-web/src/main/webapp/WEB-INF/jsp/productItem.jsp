@@ -20,13 +20,7 @@
         <div class="top">
             <div class="contain">
                 <div class="right client">
-                    <li>你好,尊敬的首旅如家客人</li>
-                    <li>
-                        <a href="#">登录</a>
-                    </li>
-                    <li>
-                        <a href="#">注册</a>
-                    </li>
+                    <li>你好,尊敬的${user.realname}</li>
                 </div>
                 <div class="logo_nav">
                 </div>

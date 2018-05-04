@@ -12,6 +12,8 @@
         <module>../manager</module>
         <module>../portal</module>
         <module>../search</module>
+        <module>../backstage</module>
+        <module>../sso-web</module>
     </modules>
 
     <packaging>pom</packaging>

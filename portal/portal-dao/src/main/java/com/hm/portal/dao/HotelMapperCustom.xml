@@ -16,6 +16,7 @@
     where cid = #{cid,jdbcType=INTEGER}
   </select>
 
+
   <select id="selectBysearch" resultType="com.hm.portal.pojo.po.HotelCustom"  >
     select
     <include refid="Base_Column_List" />

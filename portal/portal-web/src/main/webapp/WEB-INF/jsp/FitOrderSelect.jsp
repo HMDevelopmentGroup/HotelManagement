@@ -42,90 +42,51 @@
 <body>
 <div class="main_pc">
 
+    <%--首页头--%>
     <div class="top">
         <div class="main_w1200 top_nav">
             <a href="/" class="top_logo">
                 <div class="brands_logo"></div>
             </a>
             <ul class="nav">
-                <li id="yuding">
-                    <a href="/list/shanghai" onclick="publicFn(1, '002359');">酒店预订</a>
-                    <div class="nav_con">
-                        <a href="/map/">地图预订</a>
-                        <a href="http://www.douhaogongyu.com">公寓预订</a>
-                        <a href="http://yl.homeinns.com/">银旅卡预订</a>
 
-                    </div>
-                </li>
-                <li id="cuxiao"><a href="/promotion/index">优惠促销</a></li>
-                <li id="jiabinhui">
-                    <a href="/Member/MemberIndex">家宾会</a>
-                    <div class="nav_con">
-                        <a href="/Member/MemberManual">会员手册</a>
-                        <a href="/Member/MemberNotice">会员公告</a>
-                        <a href="http://login.bthhotels.com/onlinecard/purchase" target="_blank">会员购卡</a>
-                    </div>
-                </li>
-                <li id="jifenshangcheng"><a href="http://shop.homeinns.com/">积分商城</a></li>
-                <li id="jingcaishanglv">
-                    <a style="cursor:default;">精彩商旅</a>
-                    <div class="nav_con">
-                        <a href="http://images.homeinns.com/sensual/index.html">商旅生活</a>
+                <li id="jifenshangcheng"><a href="${pageContext.request.contextPath}/shop">积分商城</a></li>
 
-                    </div>
-                </li>
                 <li id="about">
                     <a style="cursor:default;">
                         关于首旅如家</a>
                     <div class="nav_con">
-                        <a href="/Event">大事记</a>
-                        <a href="/About">品牌介绍</a>
-                        <a href="/News">集团快讯</a>
-                        <a href="/Recruit">招贤纳士</a>
-                        <a href="http://images.homeinns.com/Activity/senses.html">微电影</a>
+                        <a href="#">大事记</a>
+                        <a href="#">品牌介绍</a>
+                        <a href="#">集团快讯</a>
+                        <a href="#">招贤纳士</a>
+                        <a href="#">微电影</a>
                     </div>
                 </li>
             </ul>
-            <div class="right_icon">
 
-                <a href="/en" class="hover_icon english" title="">
-                    English
-
-                </a>
-                <a href="http://wkf.homeinns.com/robot/rujia.html?sysNum=139577692477010" target="_blank"
-                   class="hover_icon Customer_service">
-                    <span></span>
-                    <code>在线客服</code>
-                </a>
-                <a target="_blank" href="http://images.homeinns.com/Activity/game_money/index.html"
-                   class="hover_icon game_icon">
-                    <span></span>
-                    <code>游戏大厅</code>
-                </a>
-                <div class="app_head_box">
-                    <code></code>
-                    <dl>
-                        <dt><img src="${pageContext.request.contextPath}/picture/app_ewm_new.jpg"></dt>
-                        <dd>下载APP尊享超值礼包</dd>
-                        <a href="/App/index">立即下载</a>
-                    </dl>
-                </div>
-
-            </div>
-            <div class="top_login">
-                <div class="top_login_txt fl">
-                    <span class="icon iconfont login_icon">&#xe60a;</span>
-                    <a class="login_txt"
-                       href="https://login.bthhotels.com/login/index?returnUrl=http%3a%2f%2fwww.bthhotels.com%2fOrder%2fFitOrderSelect">登录家宾会</a>
-                    <code>|</code>
-                    <dl class="top_login_xl">
-                        <dt>
-                            <a href="https://login.bthhotels.com/login/index?returnUrl=http%3a%2f%2fwww.bthhotels.com%2fOrder%2fFitOrderSelect">登录</a>
-                        </dt>
-                        <dd><a href="${pageContext.request.contextPath}/Order/FitOrderSelect">非会员查订单</a></dd>
-                    </dl>
-                </div>
-                <a href="https://login.bthhotels.com/Reg" class="login_line fl">注册</a>
+            <div class="top_login" style="margin-top: 25px">
+                <c:if test="${empty user}">
+                    <div class="top_login_txt fl">
+                        <span class="icon iconfont login_icon">&#xe60a;</span>
+                        <a class="login_txt"
+                           href="http://www.legna.top/login">登录家宾会</a>
+                        <code>|</code>
+                        <dl class="top_login_xl">
+                            <dt>
+                                <a href="http://www.legna.top/login">登录</a>
+                            </dt>
+                            <dd><a href="${pageContext.request.contextPath}/Order/FitOrderSelect">非会员查订单</a></dd>
+                        </dl>
+                    </div>
+                    <a href="${pageContext.request.contextPath}/userRegister" class="login_line fl">注册</a>
+                </c:if>
+                <c:if test="${!empty user}">
+                    <div class="top_login_txt fl">
+                        欢迎您，${user.realname}
+                    </div>
+                    <a href="${pageContext.request.contextPath}/userInfo" class="login_line fl">个人中心</a>
+                </c:if>
             </div>
             <div class="clear"></div>
         </div>

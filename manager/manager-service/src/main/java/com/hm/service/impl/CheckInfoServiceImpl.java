@@ -1,16 +1,12 @@
 package com.hm.service.impl;
 
-import com.hm.dao.CheckInfoMapper;
-import com.hm.dao.CheckInfoMapperCustom;
-import com.hm.dao.InternetOrderCustomMapper;
-import com.hm.dao.InternetOrderMapper;
+import com.hm.dao.*;
 import com.hm.pojo.dto.Page;
-import com.hm.pojo.po.CheckInfo;
-import com.hm.pojo.po.CheckInfoExample;
-import com.hm.pojo.po.InternetOrder;
-import com.hm.pojo.po.InternetOrderExample;
+import com.hm.pojo.po.*;
 import com.hm.pojo.vo.InternetOrderCustom;
 import com.hm.service.ICheckInfoService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -27,41 +23,82 @@ public class CheckInfoServiceImpl implements ICheckInfoService {
     @Autowired
     private CheckInfoMapper dao;
     @Autowired
+    private RoomMapper roomMapper;
+    @Autowired
+    private CheckInfoMapper checkInfoMapper;
+    @Autowired
     private CheckInfoMapperCustom checkInfoCustomMapper;
     @Autowired
     private InternetOrderCustomMapper internetOrderCustomMapper;
     @Autowired
     private InternetOrderMapper internetOrderMapper;
 
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
+
     @Override
+    @Transactional
     public int updateCheckinfoRoom(CheckInfo checkInfo) {
-        return dao.updateByPrimaryKeySelective(checkInfo);
+        int i = 0;
+        try{
+            i = dao.updateByPrimaryKeySelective(checkInfo);
+        }catch (Exception e){
+            logger.debug(e.getMessage(), e);
+            e.printStackTrace();
+        }
+        return i;
+    }
+
+    @Override
+    public CheckInfo selectByPrimaryKey(String cid) {
+        return dao.selectByPrimaryKey(cid);
     }
 
     @Override
     public void confirmPay(String cid) {
-        checkInfoCustomMapper.confirmPay(cid);
+        try{
+            checkInfoCustomMapper.confirmPay(cid);
+        }catch (Exception e){
+            logger.debug(e.getMessage(), e);
+            e.printStackTrace();
+        }
     }
 
     @Override
+    @Transactional
     public List<InternetOrderCustom> internetorderList(Page page) {
-        List<InternetOrderCustom> internetOrderCustoms = internetOrderCustomMapper.internetorderList(page);
+        List<InternetOrderCustom> internetOrderCustoms = null;
+        try{
+            internetOrderCustoms = internetOrderCustomMapper.internetorderList(page);
+        }catch (Exception e){
+            logger.debug(e.getMessage(), e);
+            e.printStackTrace();
+        }
         return internetOrderCustoms;
     }
 
     @Override
+    @Transactional
     public int internetOrderCount() {
-        return internetOrderCustomMapper.internetOrderCount();
+        int i = 0;
+        try{
+            i = internetOrderCustomMapper.internetOrderCount();
+        }catch (Exception e){
+            logger.debug(e.getMessage(), e);
+            e.printStackTrace();
+        }
+        return i;
     }
 
     @Override
+    @Transactional
     public int confirmRoom(String rid, String ioid) {
         HashMap<String, String> objectObjectHashMap = new HashMap<>();
-        objectObjectHashMap.put("rid",rid);
-        objectObjectHashMap.put("ioid",ioid);
+        objectObjectHashMap.put("rid", rid);
+        objectObjectHashMap.put("ioid", ioid);
         try {
-           internetOrderCustomMapper.confirmRoom(objectObjectHashMap);
-        }catch (Exception e){
+            internetOrderCustomMapper.confirmRoom(objectObjectHashMap);
+        } catch (Exception e) {
+            logger.debug(e.getMessage(), e);
             e.printStackTrace();
             return 2;
         }
@@ -71,12 +108,18 @@ public class CheckInfoServiceImpl implements ICheckInfoService {
     @Override
     public InternetOrder selectInternetOrderByid(String ioid) {
         InternetOrder internetOrder = internetOrderMapper.selectByPrimaryKey(ioid);
-        return  internetOrder;
+        return internetOrder;
     }
 
     @Override
+    @Transactional
     public void deleteInternetOrder(String ioid) {
-        internetOrderCustomMapper.deleteInternetOrder(ioid);
+        try{
+            internetOrderCustomMapper.deleteInternetOrder(ioid);
+        }catch (Exception e){
+            logger.debug(e.getMessage(), e);
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -86,17 +129,61 @@ public class CheckInfoServiceImpl implements ICheckInfoService {
     }
 
     @Override
+    @Transactional
     public int internetOrderCountCheckin() {
-        int i = internetOrderCustomMapper.internetOrderCountCheckin();
+        int i = 0;
+        try{
+            i = internetOrderCustomMapper.internetOrderCountCheckin();
+        }catch (Exception e){
+            logger.debug(e.getMessage(), e);
+            e.printStackTrace();
+        }
         return i;
     }
 
     @Override
+    @Transactional
     public void internetOrderCompileStatus(String ioid) {
-         internetOrderCustomMapper.internetOrderCompileStatus(ioid);
+        try{
+            internetOrderCustomMapper.internetOrderCompileStatus(ioid);
+        }catch (Exception e){
+            logger.debug(e.getMessage(), e);
+            e.printStackTrace();
+        }
     }
 
     @Override
+    @Transactional
+    public int internetCheckin(String ioid) {
+        InternetOrder internetOrder = null;
+        Room room = null;
+        CheckInfo checkInfo = null;
+        int i = 0;
+        try{
+            internetOrder = internetOrderMapper.selectByPrimaryKey(ioid);
+            room = roomMapper.selectByPrimaryKey(internetOrder.getRid());
+            checkInfo = new CheckInfo();
+            checkInfo.setCid(room.getStatue());
+            checkInfo.setIoid(ioid);
+            checkInfo.setStatus(3);
+            i = checkInfoCustomMapper.checkin(checkInfo);
+        }catch (Exception e){
+            logger.debug(e.getMessage(), e);
+            e.printStackTrace();
+        }
+        return i;
+    }
+
+    @Override
+    public List<CheckInfo> selectWaitCheckin() {
+        CheckInfoExample example = new CheckInfoExample();
+        CheckInfoExample.Criteria criteria = example.createCriteria();
+        criteria.andStatusEqualTo(2);
+        return dao.selectByExample(example);
+    }
+
+    @Override
+    @Transactional
     public void refreshRoomStatus() {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         String rightNow = sdf.format(new Date()).toString();
@@ -106,21 +193,28 @@ public class CheckInfoServiceImpl implements ICheckInfoService {
             CheckInfoExample.Criteria criteria = example.createCriteria();
             criteria.andStatusEqualTo(3);
             List<CheckInfo> checkInfos = dao.selectByExample(example);
-            for (CheckInfo checkInfo:checkInfos) {
+            for (CheckInfo checkInfo : checkInfos) {
                 Date date = sdf.parse(checkInfo.getEnd());
-                if (now.getTime()==date.getTime()){
+                if (now.getTime() == date.getTime()) {
                     checkInfo.setStatus(4);
                     dao.updateByPrimaryKey(checkInfo);
                 }
             }
         } catch (ParseException e) {
+            logger.debug(e.getMessage(), e);
             e.printStackTrace();
         }
     }
 
     @Override
+    @Transactional
     public void addCheckInfo(CheckInfo checkInfo) {
-        dao.insertSelective(checkInfo);
+        try{
+            dao.insertSelective(checkInfo);
+        }catch (Exception e){
+            logger.debug(e.getMessage(), e);
+            e.printStackTrace();
+        }
     }
 
 }

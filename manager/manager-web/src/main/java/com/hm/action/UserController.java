@@ -4,15 +4,13 @@ import com.hm.pojo.dto.MessageResult;
 import com.hm.pojo.dto.Page;
 import com.hm.pojo.po.User;
 import com.hm.service.IUserService;
-import com.hm.utils.NumberUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.DigestUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Controller
 public class UserController {
@@ -24,6 +22,8 @@ public class UserController {
     public String forward1(User user) {
         int i = 0;
         try {
+            String md5pass = DigestUtils.md5DigestAsHex(user.getPassword().getBytes());
+            user.setPassword(md5pass);
             i = service.addUser(user);
         } catch (Exception e) {
             e.printStackTrace();

@@ -11,6 +11,8 @@ public interface ICheckInfoService {
 
     int updateCheckinfoRoom(CheckInfo checkInfo);
 
+    CheckInfo selectByPrimaryKey(String cid);
+
     void refreshRoomStatus();
 
     void  addCheckInfo(CheckInfo checkInfo);
@@ -18,6 +20,7 @@ public interface ICheckInfoService {
     void  confirmPay(String cid);
 
      List<InternetOrderCustom> internetorderList(Page page);
+
      int internetOrderCount();
 
     int confirmRoom(String rid, String ioid);
@@ -29,4 +32,8 @@ public interface ICheckInfoService {
     List<InternetOrderCustom> internetorderListCheckin(Page page);
     int internetOrderCountCheckin();
     void  internetOrderCompileStatus(String ioid);
+
+    int internetCheckin(String ioid);
+
+    List<CheckInfo> selectWaitCheckin();
 }

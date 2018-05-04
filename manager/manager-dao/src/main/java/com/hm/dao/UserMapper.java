@@ -35,4 +35,5 @@ public interface UserMapper {
 
     User selectByTelephone(String telephone);
 
+    int updateIntegration(@Param("uid")String uid,@Param("integration")int integration);
 }

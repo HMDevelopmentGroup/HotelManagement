@@ -25,6 +25,7 @@ public class ProductServiceImpl implements ProductService {
             productItem=  productdao.selectByPrimaryKey(productId);
         } catch (Exception e) {
             logger.debug(e.getMessage(),e);
+            e.printStackTrace();
         }
 
         return productItem;
@@ -36,6 +37,7 @@ public class ProductServiceImpl implements ProductService {
             productItems=  productdao.selectByExample(null);
         } catch (Exception e) {
             logger.debug(e.getMessage(),e);
+            e.printStackTrace();
         }
 
         return productItems;

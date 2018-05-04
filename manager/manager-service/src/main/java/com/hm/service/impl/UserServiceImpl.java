@@ -2,10 +2,13 @@ package com.hm.service.impl;
 
 import com.hm.dao.UserMapper;
 import com.hm.pojo.dto.Page;
+import com.hm.pojo.po.Order;
 import com.hm.pojo.po.User;
 import com.hm.service.IUserService;
 import com.hm.utils.IdUtils;
 import com.hm.utils.NumberUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,27 +20,50 @@ public class UserServiceImpl implements IUserService {
 
     @Autowired
     private UserMapper dao;
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
+
 
     @Transactional
     @Override
     public int addUser(User user) {
         String uid = IdUtils.getUUID();
-        user.setUid(uid);
-        user.setIntegration(0);
-        user.setState(1);
-        return dao.insertUser(user);
+        int i = 0;
+        try {
+            user.setUid(uid);
+            user.setIntegration(0);
+            user.setState(1);
+            i = dao.insertUser(user);
+        }catch (Exception e){
+            logger.debug(e.getMessage(),e);
+            e.printStackTrace();
+        }
+        return i;
     }
 
     @Transactional
     @Override
     public int deleteUser(String uid) {
-        return dao.removeUser(uid);
+        int i = 0;
+        try {
+            i = dao.removeUser(uid);
+        }catch (Exception e){
+            logger.debug(e.getMessage(),e);
+            e.printStackTrace();
+        }
+        return i;
     }
 
     @Override
     @Transactional
     public int alterUser(User user) {
-        return dao.updateUser(user);
+        int i = 0;
+        try {
+            i = dao.updateUser(user);
+        }catch (Exception e){
+            logger.debug(e.getMessage(),e);
+            e.printStackTrace();
+        }
+        return i;
     }
 
     @Override
@@ -85,5 +111,21 @@ public class UserServiceImpl implements IUserService {
     @Override
     public User findUserByTelephone(String telephone) {
         return dao.selectByTelephone(telephone);
+    }
+
+    @Override
+    @Transactional
+    public int addIntegration(String uid, Order order) {
+        User user = null;
+        int i = 0;
+        try {
+            user = dao.selectUserByUid(uid);
+            i = dao.updateIntegration(uid,user.getIntegration()+(int)order.getPrice().doubleValue());
+
+        }catch (Exception e){
+            logger.debug(e.getMessage(),e);
+            e.printStackTrace();
+        }
+        return i;
     }
 }

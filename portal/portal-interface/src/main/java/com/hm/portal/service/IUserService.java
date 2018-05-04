@@ -10,4 +10,6 @@ public interface IUserService {
     int insertUser(User user);
 
     int addUser(User user);
+
+    User autoLogin(String token);
 }

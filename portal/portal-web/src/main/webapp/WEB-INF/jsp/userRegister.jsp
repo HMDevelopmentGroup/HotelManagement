@@ -25,35 +25,43 @@
             </a>
             <ul class="nav">
 
-                <li id="jifenshangcheng"><a href="http://shop.homeinns.com/">积分商城</a></li>
+                <li id="jifenshangcheng"><a href="${pageContext.request.contextPath}/shop">积分商城</a></li>
 
                 <li id="about">
                     <a style="cursor:default;">
                         关于首旅如家</a>
                     <div class="nav_con">
-                        <a href="/Event">大事记</a>
-                        <a href="/About">品牌介绍</a>
-                        <a href="/News">集团快讯</a>
-                        <a href="/Recruit">招贤纳士</a>
-                        <a href="http://images.homeinns.com/Activity/senses.html">微电影</a>
+                        <a href="#">大事记</a>
+                        <a href="#">品牌介绍</a>
+                        <a href="#">集团快讯</a>
+                        <a href="#">招贤纳士</a>
+                        <a href="#">微电影</a>
                     </div>
                 </li>
             </ul>
 
             <div class="top_login" style="margin-top: 25px">
+                <c:if test="${empty user}">
                 <div class="top_login_txt fl">
                     <span class="icon iconfont login_icon">&#xe60a;</span>
                     <a class="login_txt"
-                       href="https://login.bthhotels.com/login/index?returnUrl=http%3a%2f%2fwww.bthhotels.com%2f">登录家宾会</a>
+                       href="http://www.legna.top/login">登录家宾会</a>
                     <code>|</code>
                     <dl class="top_login_xl">
                         <dt>
-                            <a href="https://login.bthhotels.com/login/index?returnUrl=http%3a%2f%2fwww.bthhotels.com%2f">登录</a>
+                            <a href="http://www.legna.top/login">登录</a>
                         </dt>
-                        <dd><a href="/Order/FitOrderSelect">非会员查订单</a></dd>
+                        <dd><a href="${pageContext.request.contextPath}/Order/FitOrderSelect">非会员查订单</a></dd>
                     </dl>
                 </div>
-                <a href="https://login.bthhotels.com/Reg" class="login_line fl">注册</a>
+                <a href="${pageContext.request.contextPath}/userRegister" class="login_line fl">注册</a>
+                </c:if>
+                <c:if test="${!empty user}">
+                    <div class="top_login_txt fl">
+                        欢迎您，${user.realname}
+                    </div>
+                    <a href="${pageContext.request.contextPath}/userInfo" class="login_line fl">个人中心</a>
+                </c:if>
             </div>
             <div class="clear"></div>
         </div>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hm.sso.dao.UserMapper">
+    <sql id="Base_Column_List">
+        uid, username, password, realname ,sex ,idCard,telephone,integration,state
+    </sql>
+
+
+    <select id="login" parameterType="com.hm.sso.pojo.po.User" resultType="com.hm.sso.pojo.po.User">
+        select
+        <include refid="Base_Column_List"/>
+        from user
+        where
+        username = #{username,jdbcType=VARCHAR}
+        AND
+        password = #{password,jdbcType=VARCHAR}
+    </select>
+
+    <select id="selectUserByUsername" parameterType="java.lang.String" resultType="com.hm.sso.pojo.po.User">
+        select
+        <include refid="Base_Column_List"/>
+        from user
+        where username = #{username,jdbcType=VARCHAR}
+    </select>
+
+
+</mapper>

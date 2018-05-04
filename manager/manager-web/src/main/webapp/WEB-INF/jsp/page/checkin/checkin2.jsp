@@ -277,7 +277,7 @@
     <div id="fj_new01">
         <div id="ps">
             <div class='ps_txt_div'>
-                <a href='JavaScript:void (0)' onclick="confirm2(${room.rid})" class='ps_txt'>
+                <a href='#' onclick="confirm2('${room.rid}','${ioid}')" class='ps_txt'>
                     <span style="display: none;" id="${romm.rid}">${room.rid}</span>
                         ${room.rname}<br>
                 <span style='font-size:12px;color:#666666;'>
@@ -315,7 +315,7 @@
             </div>
         </div>
         <div id="wz">
-            <a href='JavaScript:void (0)' onclick="confirm2(${room.rid})" class='wz_txt'>空房</a>
+            <a href='#' onclick="confirm2('${room.rid}','${ioid}')" class='wz_txt'>空房</a>
         </div>
     </div>
 </c:forEach>
@@ -323,9 +323,9 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/layui/layui.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/layui/layui.all.js"></script>
 <script type="text/javascript">
-    function confirm2(rid) {
+    function confirm2(rid,ioid) {
                 $.ajax({
-                    data:{rid:rid,ioid:${ioid}},
+                    data:{rid:rid,ioid:ioid},
                     url:"${pageContext.request.contextPath}/internetRoom",
                     success:function (data) {
                         if(data==1){

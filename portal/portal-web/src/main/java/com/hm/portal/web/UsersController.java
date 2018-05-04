@@ -5,6 +5,7 @@ import com.hm.portal.service.IUserService;
 import com.hm.utils.IdUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.DigestUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -25,6 +26,8 @@ public class UsersController {
     public String addUser(User user) {
         int i = 0;
         try {
+            String md5pass = DigestUtils.md5DigestAsHex(user.getPassword().getBytes());
+            user.setPassword(md5pass);
             i = service.addUser(user);
         } catch (Exception e) {
             e.printStackTrace();

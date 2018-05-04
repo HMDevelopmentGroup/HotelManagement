@@ -18,7 +18,7 @@ where rid=0 OR rid="" OR rid=null
 limit #{offset},#{limit}
  </select>
 
- <select id="internetorderListCheckin" resultType="com.hm.pojo.vo.InternetOrderCustom" parameterType="com.hm.pojo.dto.Page">
+<select id="internetorderListCheckin" resultType="com.hm.pojo.vo.InternetOrderCustom" parameterType="com.hm.pojo.dto.Page">
   SELECT i.ioid,i.oid,u.username,u.realname,rc.cname,i.start,i.end,i.days,i.status AS i_status,o.price
   FROM
   internetorder i
@@ -33,7 +33,7 @@ limit #{offset},#{limit}
   ON rc.cid=i.rcate
  where i.rid is not NULL AND  i.rid!=0 AND i.status=2
   limit #{offset},#{limit}
- </select>
+</select>
 
  <select id="internetOrderCount"  resultType="int">
    SELECT COUNT(1) FROM internetorder where rid=0 OR rid="" OR rid=null

@@ -1,14 +1,14 @@
 {
     "cmsName": "酒店后台管理",
     "version": "v1.0.1",
-    "author": "qf第七组",
+    "author": "陈胜锋",
     "homePage": "Bindex.com",
     "server": "windows",
     "dataBase": " 5.7.20",
     "maxUpload": "1M",
     "userRights": "管理员",
     "description": "",
-    "powerby": "copyright @2018 legna_yet",
+    "powerby": "copyright @2018 legna",
     "record": "",
     "keywords": ""
 }

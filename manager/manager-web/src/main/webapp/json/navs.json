@@ -25,11 +25,6 @@
 	"spread" : false,
 	"children" : [
 		{
-			"title" : "互联网退订",
-			"href" : "page/order/cancelInternetOrder",
-			"spread" : false
-		},
-		{
 			"title" : "退房",
 			"href" : "page/checkout/checkout",
 			"spread" : false

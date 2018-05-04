@@ -31,7 +31,6 @@ public class HotelController {
                 return textMessage;
             }
         });
-
         return "";
     }
 }

@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="backstage" />
         <module name="commons" />
         <module name="manager-dao" />
         <module name="manager-interface" />
@@ -23,9 +24,11 @@
         <module name="search-pojo" />
         <module name="search-service" />
         <module name="search-web" />
+        <module name="sso-web" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="backstage" target="1.8" />
       <module name="commons" target="1.8" />
       <module name="manager" target="1.8" />
       <module name="manager-dao" target="1.8" />
@@ -47,6 +50,7 @@
       <module name="search-pojo" target="1.8" />
       <module name="search-service" target="1.8" />
       <module name="search-web" target="1.8" />
+      <module name="sso-web" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

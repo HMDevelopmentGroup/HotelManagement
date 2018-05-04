@@ -61,7 +61,7 @@
 					<li class="layui-nav-item" pc>
 						<a href="javascript:;">
 							<img src="${pageContext.request.contextPath}/images/userface3.jpg" class="layui-circle" width="35" height="35">
-							<cite>${admin.adminName}admin.adminName</cite>
+							<cite>${admin.adminName}</cite>
 						</a>
 						<dl class="layui-nav-child">
 							<dd><a href="javascript:;" data-url="page/user/changePwd"><i class="iconfont icon-shezhi1" data-icon="icon-shezhi1"></i><cite>修改密码</cite></a></dd>
